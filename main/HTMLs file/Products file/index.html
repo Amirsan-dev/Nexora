@@ -1,0 +1,1388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products Page</title>
+    <link rel="stylesheet" href="../../../src/output.css" />
+  </head>
+  <body class="bg-bg-primary h-full">
+    <!-- svg-sprite -->
+    <svg class="hidden">
+      <symbol
+        id="search-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </symbol>
+      <symbol
+        id="shopping-card"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+        />
+      </symbol>
+      <symbol
+        id="main-header-icon"
+        width="230"
+        height="230"
+        viewBox="0 0 200 200"
+        fill="none"
+      >
+        <ellipse
+          cx="100"
+          cy="160"
+          rx="80"
+          ry="12"
+          stroke="#00D4FF"
+          stroke-opacity=".4"
+          stroke-width="1.5"
+        ></ellipse>
+        <rect
+          x="45"
+          y="55"
+          width="110"
+          height="95"
+          rx="10"
+          fill="#131B33"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect
+          x="55"
+          y="65"
+          width="90"
+          height="60"
+          rx="4"
+          fill="#0A0F1F"
+          stroke="#1E2A4A"
+        ></rect>
+        <path
+          d="M60 118 L78 95 L92 108 L108 82 L126 100 L140 78"
+          stroke="#00D4FF"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+        ></path>
+        <circle cx="78" cy="95" r="3" fill="#7C3AED"></circle>
+        <circle cx="108" cy="82" r="3" fill="#7C3AED"></circle>
+        <rect
+          x="85"
+          y="155"
+          width="30"
+          height="5"
+          rx="2.5"
+          fill="#1E2A4A"
+        ></rect>
+      </symbol>
+      <symbol
+        id="arrow-long-right"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+        />
+      </symbol>
+      <symbol
+        id="gaming-icon"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <path
+          d="M6 11h4M8 9v4M15 12h.01M18 10h.01M7 6h10a5 5 0 0 1 5 5v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5v-3a5 5 0 0 1 5-5Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="laptop-icon"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <rect x="3" y="5" width="18" height="12" rx="2"></rect>
+        <path d="M2 19h20"></path>
+      </symbol>
+      <symbol
+        id="mobile-icon"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <rect x="7" y="2" width="10" height="20" rx="2.5"></rect>
+        <path d="M11 18h2"></path>
+      </symbol>
+      <symbol
+        id="accessories-icon"
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <path d="M4 13a8 8 0 0 1 16 0"></path>
+        <rect x="2" y="13" width="5" height="7" rx="2"></rect>
+        <rect x="17" y="13" width="5" height="7" rx="2"></rect>
+      </symbol>
+      <symbol
+        id="nemodar-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="12"
+          y="12"
+          width="56"
+          height="36"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M18 42 L30 28 L40 37 L50 22 L62 34"
+          stroke="#00D4FF"
+          stroke-width="2"
+          fill="none"
+        ></path>
+      </symbol>
+      <symbol
+        id="border-star"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#FFC94D"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+        />
+      </symbol>
+      <symbol id="full-star" viewBox="0 0 20 20" fill="#FFC94D" class="size-5">
+        <path
+          fill-rule="evenodd"
+          d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+      <symbol
+        id="product-phone-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="26"
+          y="8"
+          width="28"
+          height="48"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect x="31" y="14" width="18" height="32" rx="2" fill="#0A0F1F"></rect>
+        <circle cx="40" cy="50" r="2.5" fill="#00D4FF"></circle>
+      </symbol>
+      <symbol
+        id="headphone-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <path
+          d="M14 40c0-14 11-24 26-24s26 10 26 24"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+          fill="#182240"
+        ></path>
+        <rect
+          x="8"
+          y="38"
+          width="14"
+          height="16"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect
+          x="58"
+          y="38"
+          width="14"
+          height="16"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+      </symbol>
+      <symbol
+        id="gaming-product-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="16"
+          y="18"
+          width="48"
+          height="28"
+          rx="6"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M24 34h6M27 31v6"
+          stroke="#7C3AED"
+          stroke-width="2"
+          stroke-linecap="round"
+        ></path>
+        <circle cx="52" cy="34" r="3" fill="#00D4FF"></circle>
+      </symbol>
+      <symbol
+        id="facebook-item"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="#8B95B0"
+      >
+        <path
+          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="instagram-icon"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#8B95B0"
+        stroke-width="2"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.5" cy="6.5" r="1" fill="#8B95B0"></circle>
+      </symbol>
+      <symbol
+        id="youtube-icon"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="#8B95B0"
+      >
+        <path
+          d="M22 5.8a3 3 0 0 0-2.1-2.1C18 3 12 3 12 3s-6 0-7.9.7A3 3 0 0 0 2 5.8 31 31 0 0 0 1.6 12 31 31 0 0 0 2 18.2a3 3 0 0 0 2.1 2.1C6 21 12 21 12 21s6 0 7.9-.7a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22.4 12 31 31 0 0 0 22 5.8ZM9.8 15.5v-7l6 3.5Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="search-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </symbol>
+      <symbol
+        id="chevron-bottom-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+        />
+      </symbol>
+      <symbol
+        id="heart-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+        />
+      </symbol>
+    </svg>
+    <!-- header -->
+    <header
+      class="sticky z-50 top-0 backdrop-blur-[14px] h-18 border-b border-b-border flex items-center justify-center"
+    >
+      <!-- container -->
+      <div class="container">
+        <!--header wrapper -->
+        <div class="w-full h-full flex items-center justify-between">
+          <!-- basket icon in mobile  -->
+          <div
+            id="basket-btn-mobile"
+            class="md:hidden w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition flex items-center justify-center hover:shadow-header-btn"
+          >
+            <svg class="w-4.5 h-4.5 text-text-secondary">
+              <use xlink:href="#shopping-card"></use>
+            </svg>
+            <span
+              class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
+              >3</span
+            >
+          </div>
+          <!-- logo -->
+          <div class="logo">
+            <a
+              href="#"
+              class="font-extrabold block text-[26px] text-Accent-Primary tracking-[5px]"
+            >
+              NEXORA
+            </a>
+          </div>
+          <!-- header nav -->
+          <nav class="desktop-nav hidden md:block">
+            <ul
+              class="flex items-center justify-center gap-7.5 lg:gap-10 text-text-primary child-hover:text-Accent-Primary child:transition child:font-medium child:text-[15px] child:text-text-secondary"
+            >
+              <li class="">
+                <a href="../../../index.html">Home</a>
+              </li>
+              <li class="active">
+                <a href="index.html">Products</a>
+              </li>
+              <li class="">
+                <a href="../Categories File/index.html">Category</a>
+              </li>
+              <li class="">
+                <a href="#">About</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- header sign and buy -->
+          <div
+            class="hidden sm:flex items-center justify-center gap-4 lg:gap-5.5"
+          >
+            <div
+              id="search-btn"
+              class="w-10 h-10 rounded-xl border border-border hover:border-Accent-Primary transition hidden sm:flex items-center justify-center hover:shadow-header-btn"
+            >
+              <svg class="w-4.5 h-4.5 text-text-secondary">
+                <use xlink:href="#search-icon"></use>
+              </svg>
+            </div>
+            <div
+              id="basket-btn"
+              class="w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition hidden md:flex items-center justify-center hover:shadow-header-btn"
+            >
+              <svg class="w-4.5 h-4.5 text-text-secondary">
+                <use xlink:href="#shopping-card"></use>
+              </svg>
+              <span
+                class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
+                >3</span
+              >
+            </div>
+
+            <a
+              href="#"
+              id="sign-in-btn"
+              class="w-[94px] h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm hidden sm:flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+              >Sign In</a
+            >
+          </div>
+          <!-- mobile nav -->
+          <div
+            class="mobile-nav sm:hidden w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition flex items-center justify-center hover:shadow-header-btn"
+          >
+            <span class="hamberger-menu"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- mobile menu from left -->
+    <div
+      id="left-mobile-menu"
+      class="fixed p-5 flex flex-col transition-[left] duration-300 -left-62 border border-Accent-Primary/70 top-2 bottom-2 rounded-2xl backdrop-blur-2xl bg-[rgba(0,0,0,0.1)] block w-60 z-[99] flex flex-col"
+    >
+      <h2
+        class="text-center tracking-[5px] text-2xl font-bold text-Accent-Primary border-b border-Accent-Primary/30 pb-2"
+      >
+        NEXORA
+      </h2>
+      <ul
+        class="flex flex-col mt-8 gap-8 child:pl-2 child:py-2 child:border child:border-transparent child-hover:border child:transition child-hover:border-Accent-Primary/50 child:rounded-xl child:text-text-primary child-hover:bg-Accent-Primary/20 child:cursor-pointer"
+      >
+        <li class="active">
+          <a href="../../../index.html">Home</a>
+        </li>
+        <li>
+          <a href="index.html">Products</a>
+        </li>
+        <li class="">
+          <a href="../Categories File/index.html">Categories</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+      <div class="mt-auto w-full h-10">
+        <a
+          href="#"
+          id="sign-in-btn-mobile"
+          class="w-full h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+          >Sign In</a
+        >
+      </div>
+    </div>
+    <!-- basket men from right -->
+    <div
+      id="right-mobile-basket"
+      class="fixed p-5 flex flex-col transition-[right] duration-300 -right-62 border border-Accent-Primary/70 top-2 bottom-2 rounded-2xl backdrop-blur-2xl bg-[rgba(0,0,0,0.1)] block w-60 z-[99] flex flex-col"
+    >
+      <h2
+        class="text-center tracking-[5px] text-2xl font-bold text-Accent-Primary border-b border-Accent-Primary/30 pb-2"
+      >
+        NEXORA
+      </h2>
+      <!-- <ul
+        class="flex flex-col mt-8 gap-8 child:pl-2 child:py-2 child:border child:border-transparent child-hover:border child:transition child-hover:border-Accent-Primary/50 child:rounded-xl child:text-text-primary child-hover:bg-Accent-Primary/20 child:cursor-pointer"
+      >
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Products</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul> -->
+      <div class="mt-auto w-full h-10">
+        <a
+          href="#"
+          id="buy-items-btn"
+          class="w-full h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+          >Buy</a
+        >
+      </div>
+    </div>
+    <!-- main -->
+    <main class="main py-20 relative">
+      <!-- neon in main -->
+      <div
+        class="absolute w-80 h-80 bg-Accent-Primary rounded-full top-0 right-0 blur-[500px]"
+      ></div>
+      <div
+        class="absolute w-80 h-80 bg-Accent-Secondary rounded-full top-0 left-0 blur-[500px]"
+      ></div>
+      <!-- products hero section -->
+      <section class="products-hero-section border-b border-border mb-13">
+        <div class="container">
+          <!-- wrapper -->
+          <div class="flex flex-col">
+            <span
+              class="product-hero-text pl-8 text-Accent-Primary text-sm relative mb-4"
+              >NEXORA STORE
+            </span>
+            <h1 class="text-text-primary font-bold text-[64px]/[1.07] mb-4">
+              Explore Our <br /><span class="text-Accent-Primary">Products</span
+              >.
+            </h1>
+            <p
+              class="text-text-secondary text-[15px]/[1.8] mb-20 max-w-[580px]"
+            >
+              Discover next-generation technology designed for gaming,
+              productivity and everyday performance.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- products section -->
+      <section class="products-section">
+        <div class="container">
+          <!-- wrapper -->
+          <div class="flex flex-col">
+            <!-- header -->
+            <div
+              class="flex items-center gap-2 text-sm text-text-secondary mb-6"
+            >
+              <a
+                href="../../../index.html"
+                class="text-text-secondary hover:text-text-primary transition"
+                >Home</a
+              >
+              /
+              <a href="index.html" class="text-text-primary">Products</a>
+            </div>
+            <!-- main -->
+            <div class="flex items-start flex-col md:flex-row gap-10">
+              <!-- left -->
+              <div
+                class="w-full sticky md:top-25 md:w-50 lg:w-60 border border-border py-5 px-5 rounded-xl bg-bg-secondary"
+              >
+                <!-- title and clear btn -->
+                <div
+                  class="flex items-center justify-between pb-5 mb-5 border-b border-border"
+                >
+                  <h4 class="text-text-primary font-semibold text-[15px]">
+                    Filters
+                  </h4>
+                  <button
+                    id="clear-filter-btn"
+                    class="text-Accent-Primary text-xs cursor-pointer border border-Accent-Primary py-0.5 px-1 rounded-[5px] hover:text-text-primary hover:bg-Accent-Primary/30 hover:shadow-normal transition"
+                  >
+                    clear
+                  </button>
+                </div>
+                <!-- category section -->
+                <div class="flex flex-col pb-7 mb-5 border-b border-border">
+                  <h5 class="text-text-primary font-semibold text-[13px]">
+                    category
+                  </h5>
+                  <div class="flex flex-col gap-4 mt-4">
+                    <!-- gaming div -->
+                    <div class="flex items-center gap-2 child:cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="gaming"
+                        class="accent-Accent-Primary"
+                      />
+                      <label
+                        for="gaming"
+                        class="text-text-secondary text-xs transition hover:text-text-primary"
+                        >Gaming</label
+                      >
+                    </div>
+                    <div class="flex items-center gap-2 child:cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="laptops"
+                        class="accent-Accent-Primary"
+                      />
+                      <label
+                        for="laptops"
+                        class="text-text-secondary text-xs transition hover:text-text-primary"
+                        >Laptops</label
+                      >
+                    </div>
+                    <div class="flex items-center gap-2 child:cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="smartphones"
+                        class="accent-Accent-Primary"
+                      />
+                      <label
+                        for="smartphones"
+                        class="text-text-secondary text-xs transition hover:text-text-primary"
+                        >Smartphones</label
+                      >
+                    </div>
+                    <div class="flex items-center gap-2 child:cursor-pointer">
+                      <input
+                        type="checkbox"
+                        id="accessories"
+                        class="accent-Accent-Primary"
+                      />
+                      <label
+                        for="accessories"
+                        class="text-text-secondary text-xs transition hover:text-text-primary"
+                        >Accessories</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <!-- price range -->
+                <div class="flex flex-col pb-7 border-b mb-5 border-border">
+                  <h4 class="mb-4 text-text-primary font-semibold text-[13px]">
+                    price range
+                  </h4>
+                  <!-- min & max -->
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-text-secondary text-xs">
+                      Min:
+                      <span class="minimum-price text-text-primary">$100</span>
+                    </span>
+                    <span class="text-text-secondary text-xs">
+                      Max:
+                      <span class="maximum-price text-text-primary">$2000</span>
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min="100"
+                    max="2000"
+                    value="500"
+                    class="accent-Accent-Primary"
+                  />
+                  <!-- input type number -->
+                  <div
+                    class="flex items-center gap-4 mt-4 child:w-full child:border child:border-border child:bg-card-bg child:h-10 child:rounded-md child:p-1.5"
+                  >
+                    <div class="">
+                      <input
+                        type="number"
+                        class="w-full h-full outline-none appearance-none text-text-primary text-xs"
+                        disabled
+                        value="100"
+                      />
+                    </div>
+                    <div class="">
+                      <input
+                        type="number"
+                        class="w-full h-full outline-none text-text-primary text-xs"
+                        min="100"
+                        max="2000"
+                        value="500"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Availability section -->
+                <div class="flex flex-col">
+                  <h4 class="mb-4 text-text-primary font-semibold text-[13px]">
+                    Availability
+                  </h4>
+                  <div
+                    class="flex items-center gap-2 child:cursor-pointer mb-3"
+                  >
+                    <input
+                      type="checkbox"
+                      id="in-stock"
+                      class="accent-Accent-Primary"
+                    />
+                    <label
+                      for="in-stock"
+                      class="text-text-secondary text-xs transition hover:text-text-primary"
+                      >In Stock</label
+                    >
+                  </div>
+                  <div class="flex items-center gap-2 child:cursor-pointer">
+                    <input
+                      type="checkbox"
+                      id="on-sale"
+                      class="accent-Accent-Primary"
+                    />
+                    <label
+                      for="on-sale"
+                      class="text-text-secondary text-xs transition hover:text-text-primary"
+                      >On Sale</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- right -->
+              <div class="w-full pt-4">
+                <!-- header of right -->
+                <div
+                  class="flex flex-col sm:flex-row gap-y-3 items-center justify-between"
+                >
+                  <!-- left -->
+                  <h4 class="text-text-secondary text-xs">
+                    Showing
+                    <span
+                      class="products-in-one-page text-text-primary font-bold"
+                      >12</span
+                    >
+                    of
+                    <span
+                      class="number-of-all-products text-text-primary font-bold"
+                      >48</span
+                    >
+                    products
+                  </h4>
+                  <!-- right -->
+                  <div
+                    class="flex items-center gap-3 child:bg-card-bg child:h-10 child:rounded-md child:border child:border-border flex-wrap"
+                  >
+                    <div class="w-55 pl-10 pr-3 relative overflow-hidden">
+                      <input
+                        type="text"
+                        class="w-full h-full outline-none border-none text-xs text-text-primary"
+                        placeholder="Search products ..."
+                      />
+                      <button
+                        id="submit-search"
+                        class="flex items-center justify-center w-10 h-10 absolute left-0 top-0 bottom-0 my-auto text-text-secondary cursor-pointer"
+                      >
+                        <svg class="size-4">
+                          <use xlink:href="#search-icon"></use>
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="w-30 relative text-text-primary text-xs group">
+                      <select
+                        class="w-full h-full px-4 appearance-none child:bg-bg-secondary rounded-md cursor-pointer"
+                      >
+                        <option value="sorted-by" selected>Sorted By</option>
+                        <option value="Newest">Newest</option>
+                        <option value="Low-to-High">Low to High</option>
+                        <option value="High-to-Low">High to Low</option>
+                        <option value="Best-Rated">Best Rated</option>
+                      </select>
+                      <svg
+                        class="size-3 absolute right-2.5 top-0 bottom-0 my-auto group-focus-within:rotate-180 transition duration-[250ms]"
+                      >
+                        <use xlink:href="#chevron-bottom-icon"></use>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <!-- main of right -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 items-center gap-4 child:border child:border-border child:bg-bg-secondary/80 child:rounded-2xl child:h-102 child:relative child:transition child-hover:-translate-y-1.5 child-hover:border-Accent-Primary/30 child:duration-[250ms]"
+                >
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="../product file/index.html"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="#"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="#"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="#"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="#"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="group overflow-hidden">
+                    <!-- offer elem -->
+                    <span
+                      class="product-offer absolute top-3 left-3 rounded-[5px] bg-Accent-Primary/90 text-bg-primary w-10 h-6 flex items-center justify-center text-xs"
+                      >15%</span
+                    >
+                    <!-- neon elem -->
+                    <span
+                      class="w-[50%] invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-[250ms] h-[50%] absolute inset-0 m-auto rounded-full blur-[100px] bg-Accent-Primary/30"
+                    ></span>
+                    <!-- fav elem -->
+                    <button
+                      class="size-8 absolute top-3 right-3 rounded-full border border-border bg-bg-secondary flex items-center justify-center cursor-pointer transition hover:border-Accent-Primary text-text-secondary hover:text-Accent-Primary"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#heart-icon"></use>
+                      </svg>
+                    </button>
+                    <!-- top -->
+                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <!-- bottom -->
+                    <div class="flex flex-col p-3">
+                      <h4
+                        class="text-xs text-Accent-Primary font-medium mb-2.5"
+                      >
+                        LAPTOPS
+                      </h4>
+                      <a
+                        href="#"
+                        class="text-text-primary text-[15px] font-semibold h-11.25 line-clamp-2 mb-2.5"
+                      >
+                        ASUS ROG Strix G16 Gaming Laptop
+                      </a>
+                      <!-- score -->
+                      <div class="flex items-center gap-2 mb-3">
+                        <!-- score wrapper -->
+                        <div class="flex items-center gap-0.5">
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                          <svg class="size-2.5">
+                            <use xlink:href="#full-star"></use>
+                          </svg>
+                        </div>
+                        <p class="rating-counter text-text-secondary text-xs">
+                          (24)
+                        </p>
+                      </div>
+                      <div class="flex items-center gap-3">
+                        <div class="flex flex-col">
+                          <span
+                            class="product-deleted-price relative text-[10px] text-text-secondary"
+                            >$1,799</span
+                          >
+                          <span
+                            class="main-price text-[16px] text-text-primary font-bold"
+                            >$1,529</span
+                          >
+                        </div>
+                        <button
+                          class="flex items-center justify-center rounded-md w-full h-10 bg-Accent-Primary text-sm text-bg-primary font-bold cursor-pointer transition duration-[250ms] hover:-translate-y-0.5 hover:shadow-normal"
+                        >
+                          Add to Cart
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- footer of right -->
+                <div
+                  class="pagination flex-wrap w-full mt-8 flex justify-center items-center gap-2 child:w-10 child:h-10 child:rounded-[5px] child:bg-bg-secondary child:border child:border-border child:flex child:items-center child:justify-center child:text-text-secondary child:text-xs child-hover:bg-Accent-Primary child:transition child-hover:text-bg-secondary child:duration-[250ms] child:cursor-pointer"
+                >
+                  <button class="pagination-item pagination-item--active">
+                    1
+                  </button>
+                  <button class="pagination-item">2</button>
+                  <button class="pagination-item">3</button>
+                  <button class="pagination-item">4</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer mt-10 border-t border-border pt-5 bg-bg-secondary">
+      <div class="container">
+        <!-- main wrapper -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-5">
+          <!-- first item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[5px] font-extrabold text-Accent-Primary text-[26px] mb-2"
+            >
+              NEXORA
+            </h4>
+            <p class="text-text-secondary text-[13px]/[1.5]">
+              Premium tech store built for the next generation. Quality
+              products, lightning-fast delivery, unmatched support.
+            </p>
+          </div>
+          <!-- second item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              SHOP
+            </h4>
+            <ul
+              class="flex flex-col child:text-text-secondary child:mb-2 child:text-[13.5px]"
+            >
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Gaming</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Laptops</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Smartphones</a
+                >
+              </li>
+              <li class="mb-0">
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Accessories</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- third item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              COMPANY
+            </h4>
+            <ul
+              class="flex flex-col child:text-text-secondary child:mb-2 child:text-[13.5px]"
+            >
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-0">
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- fourth item -->
+          <div class="flex flex-col child:mb-2">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              CONTACT
+            </h4>
+            <p class="text-text-secondary text-[13.5px] mb-2">
+              amirhoseinsanatdan@gmail.com
+            </p>
+            <p class="text-text-secondary text-[13.5px] mb-2">+98-9154044866</p>
+            <p class="text-text-secondary text-[13.5px] mb-0">Iran - mashhad</p>
+            <div
+              class="flex items-center gap-3 child:flex child:items-center child:justify-center child:border child:border-border child:w-9 child:h-9 child:rounded-[10px] child-hover:border-Accent-Primary child:transition"
+            >
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#facebook-item"></use>
+                </svg>
+              </a>
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#instagram-icon"></use>
+                </svg>
+              </a>
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#youtube-icon"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- footer of footer -->
+        <div
+          class="border-t flex items-center justify-between border-border py-5"
+        >
+          <p class="text-text-secondary text-sm">
+            © 2026 NEXORA — Designed & Developed With ❤️ by Mr.AmirSan.
+          </p>
+          <p class="text-text-secondary text-sm">Privacy · Terms · Cookies</p>
+        </div>
+      </div>
+    </footer>
+    <div class="basket-overlay hidden"></div>
+    <div class="overlay hidden"></div>
+    <script src="main/js/app.js"></script>
+  </body>
+</html>

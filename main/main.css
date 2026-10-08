@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant child-hover (& > *:hover);
+@custom-variant child (& > *);
+
+@theme {
+  --color-bg-primary: #0a0f1f; /* صفحه اصلی */
+  --color-bg-secondary: #0e1528; /* سطح‌های ثانویه (هدر/فوتر) */
+  --color-card-bg: #131b33; /* کارت‌ها */
+  --color-text-primary: #f2f6ff; /* تیتر و متن اصلی */
+  --color-text-secondary: #8b95b0; /* متن توضیحی */
+  --color-Accent-Primary: #00d4ff; /* نئون اصلی */
+  --color-Accent-Secondary: #7c3aed; /* نئون مکمل */
+  --color-border: #1e2a4a;
+  --color-btn-bg: #0090ff; /* پس‌زمینه دکمه */
+  --color-btn-hover: #33e0ff; /* حالت هاور */
+
+  --shadow-header-btn: 0 0 14px rgba(0, 212, 225, 0.2);
+  --shadow-sign-btn: 0 0 28px rgba(0, 212, 255, 0.45);
+  --shadow-pulse-span: 0 0 10px var(--color-Accent-Primary);
+  --shadow-normal: 0 0 24px rgba(0, 212, 255, 0.3);
+  --shadow-btn-hover-link: 0 0 38px rgba(0, 212, 255, 0.55);
+
+  --text-shadow-normal: 0 0 24px rgba(0, 212, 255, 0.3);
+
+  --breakpoint-sm: 480px;
+}
+
+body {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif;
+}
+
+@utility container {
+  @apply mx-auto px-6 md:px-8 xl:px-12  max-w-360;
+}
+/* lg:px-2.5 */
+
+@layer utilities {
+  .active {
+    color: var(--color-Accent-Primary);
+  }
+  .hamberger-menu {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--color-text-secondary);
+    position: relative;
+    transition: all 200ms ease-in;
+  }
+  .hamberger-menu::after,
+  .hamberger-menu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--color-text-secondary);
+    transition: all 200ms ease-in;
+    /* background-color: aqua; */
+  }
+  .hamberger-menu::after {
+    top: 5px;
+  }
+  .hamberger-menu::before {
+    top: -5px;
+  }
+  .hamberger-menu--active {
+    /* visibility: hidden;
+    opacity: 0; */
+    background-color: transparent;
+  }
+  .hamberger-menu--active::after {
+    transform: rotate(45deg);
+    top: 0px;
+  }
+  .hamberger-menu--active::before {
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+  .left-mobile-menu {
+    left: 8px;
+  }
+
+  .right-mobile-menu {
+    right: 8px;
+  }
+
+  .overlay,
+  .basket-overlay {
+    position: absolute;
+    z-index: 10;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .deleted-price:after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto auto;
+    width: 100%;
+    height: 1px;
+    border-radius: 10px;
+    background-color: var(--color-text-secondary);
+  }
+  .categories-header-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-color: var(--color-Accent-Primary);
+    width: 10px;
+    height: 2px;
+    border-radius: 10px;
+  }
+  .categories-hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    border-radius: 100%;
+
+    background-color: var(--color-Accent-Primary);
+    filter: blur(700px);
+  }
+
+  .categories-hero-section:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    border-radius: 100%;
+    background-color: var(--color-Accent-Secondary);
+    filter: blur(700px);
+  }
+  .categories-item:hover::before {
+    right: -100px;
+    bottom: -100px;
+    filter: blur(30px);
+  }
+
+  .categories-item::before {
+    content: "";
+    position: absolute;
+    right: -125px;
+    bottom: -125px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: var(--color-Accent-Primary);
+    opacity: 30%;
+    filter: blur(20px);
+    transition: all 400ms ease;
+  }
+
+  .categories-item:hover::after {
+    left: -100px;
+    bottom: -100px;
+    filter: blur(30px);
+  }
+
+  .categories-item::after {
+    content: "";
+    position: absolute;
+    left: -125px;
+    bottom: -125px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: var(--color-Accent-Primary);
+    opacity: 30%;
+    filter: blur(20px);
+    transition: all 400ms ease;
+  }
+  .product-hero-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    width: 20px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--color-Accent-Primary);
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .product-deleted-price::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 30px;
+    height: 1px;
+    border-radius: 10px;
+    background-color: var(--color-text-secondary);
+  }
+  .pagination-item--active {
+    background: var(--color-Accent-Primary);
+    color: var(--color-bg-secondary);
+  }
+  .product-datail-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--color-Accent-Primary);
+    margin: auto 0;
+  }
+}

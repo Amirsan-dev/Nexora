@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categories</title>
+    <link rel="stylesheet" href="../../../src/output.css" />
+  </head>
+  <body class="bg-bg-primary h-full">
+    <!-- svg -->
+    <svg class="hidden">
+      <symbol
+        id="search-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </symbol>
+      <symbol
+        id="shopping-card"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+        />
+      </symbol>
+      <symbol
+        id="main-header-icon"
+        width="230"
+        height="230"
+        viewBox="0 0 200 200"
+        fill="none"
+      >
+        <ellipse
+          cx="100"
+          cy="160"
+          rx="80"
+          ry="12"
+          stroke="#00D4FF"
+          stroke-opacity=".4"
+          stroke-width="1.5"
+        ></ellipse>
+        <rect
+          x="45"
+          y="55"
+          width="110"
+          height="95"
+          rx="10"
+          fill="#131B33"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect
+          x="55"
+          y="65"
+          width="90"
+          height="60"
+          rx="4"
+          fill="#0A0F1F"
+          stroke="#1E2A4A"
+        ></rect>
+        <path
+          d="M60 118 L78 95 L92 108 L108 82 L126 100 L140 78"
+          stroke="#00D4FF"
+          stroke-width="2.5"
+          fill="none"
+          stroke-linecap="round"
+        ></path>
+        <circle cx="78" cy="95" r="3" fill="#7C3AED"></circle>
+        <circle cx="108" cy="82" r="3" fill="#7C3AED"></circle>
+        <rect
+          x="85"
+          y="155"
+          width="30"
+          height="5"
+          rx="2.5"
+          fill="#1E2A4A"
+        ></rect>
+      </symbol>
+      <symbol
+        id="arrow-long-right"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+        />
+      </symbol>
+      <symbol
+        id="gaming-icon"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <path
+          d="M6 11h4M8 9v4M15 12h.01M18 10h.01M7 6h10a5 5 0 0 1 5 5v3a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5v-3a5 5 0 0 1 5-5Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="laptop-icon"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <rect x="3" y="5" width="18" height="12" rx="2"></rect>
+        <path d="M2 19h20"></path>
+      </symbol>
+      <symbol
+        id="mobile-icon"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <rect x="7" y="2" width="10" height="20" rx="2.5"></rect>
+        <path d="M11 18h2"></path>
+      </symbol>
+      <symbol
+        id="accessories-icon"
+        width="44"
+        height="44"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00D4FF"
+        stroke-width="1.8"
+      >
+        <path d="M4 13a8 8 0 0 1 16 0"></path>
+        <rect x="2" y="13" width="5" height="7" rx="2"></rect>
+        <rect x="17" y="13" width="5" height="7" rx="2"></rect>
+      </symbol>
+      <symbol
+        id="nemodar-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="12"
+          y="12"
+          width="56"
+          height="36"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M18 42 L30 28 L40 37 L50 22 L62 34"
+          stroke="#00D4FF"
+          stroke-width="2"
+          fill="none"
+        ></path>
+      </symbol>
+      <symbol
+        id="border-star"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="#FFC94D"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
+        />
+      </symbol>
+      <symbol id="full-star" viewBox="0 0 20 20" fill="#FFC94D" class="size-5">
+        <path
+          fill-rule="evenodd"
+          d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z"
+          clip-rule="evenodd"
+        />
+      </symbol>
+      <symbol
+        id="product-phone-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="26"
+          y="8"
+          width="28"
+          height="48"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect x="31" y="14" width="18" height="32" rx="2" fill="#0A0F1F"></rect>
+        <circle cx="40" cy="50" r="2.5" fill="#00D4FF"></circle>
+      </symbol>
+      <symbol
+        id="headphone-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <path
+          d="M14 40c0-14 11-24 26-24s26 10 26 24"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+          fill="#182240"
+        ></path>
+        <rect
+          x="8"
+          y="38"
+          width="14"
+          height="16"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <rect
+          x="58"
+          y="38"
+          width="14"
+          height="16"
+          rx="5"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+      </symbol>
+      <symbol
+        id="gaming-product-icon"
+        width="80"
+        height="64"
+        viewBox="0 0 80 64"
+        fill="none"
+      >
+        <rect
+          x="16"
+          y="18"
+          width="48"
+          height="28"
+          rx="6"
+          fill="#182240"
+          stroke="#00D4FF"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M24 34h6M27 31v6"
+          stroke="#7C3AED"
+          stroke-width="2"
+          stroke-linecap="round"
+        ></path>
+        <circle cx="52" cy="34" r="3" fill="#00D4FF"></circle>
+      </symbol>
+      <symbol
+        id="facebook-item"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="#8B95B0"
+      >
+        <path
+          d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="instagram-icon"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#8B95B0"
+        stroke-width="2"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.5" cy="6.5" r="1" fill="#8B95B0"></circle>
+      </symbol>
+      <symbol
+        id="youtube-icon"
+        width="15"
+        height="15"
+        viewBox="0 0 24 24"
+        fill="#8B95B0"
+      >
+        <path
+          d="M22 5.8a3 3 0 0 0-2.1-2.1C18 3 12 3 12 3s-6 0-7.9.7A3 3 0 0 0 2 5.8 31 31 0 0 0 1.6 12 31 31 0 0 0 2 18.2a3 3 0 0 0 2.1 2.1C6 21 12 21 12 21s6 0 7.9-.7a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22.4 12 31 31 0 0 0 22 5.8ZM9.8 15.5v-7l6 3.5Z"
+        ></path>
+      </symbol>
+      <symbol
+        id="find-tech-icon"
+        viewBox="0 0 320 320"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Decorative circuit lines -->
+
+        <path
+          d="M42 78H78V106"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle cx="42" cy="78" r="5" fill="currentColor" />
+
+        <path
+          d="M278 78H242V106"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle cx="278" cy="78" r="5" fill="currentColor" />
+
+        <path
+          d="M42 242H78V214"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle cx="42" cy="242" r="5" fill="currentColor" />
+
+        <path
+          d="M278 242H242V214"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <circle cx="278" cy="242" r="5" fill="currentColor" />
+
+        <!-- Decorative small circuits -->
+
+        <path
+          d="M88 52H112"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <circle cx="118" cy="52" r="4" stroke="currentColor" stroke-width="2" />
+
+        <path
+          d="M208 268H232"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <circle
+          cx="202"
+          cy="268"
+          r="4"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+
+        <!-- Main search circle -->
+
+        <circle
+          cx="145"
+          cy="145"
+          r="67"
+          stroke="currentColor"
+          stroke-width="7"
+        />
+
+        <!-- Inner tech circle -->
+
+        <circle
+          cx="145"
+          cy="145"
+          r="43"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-dasharray="5 7"
+          opacity="0.55"
+        />
+
+        <!-- Tech chip -->
+
+        <rect
+          x="123"
+          y="123"
+          width="44"
+          height="44"
+          rx="8"
+          stroke="currentColor"
+          stroke-width="3"
+        />
+
+        <rect
+          x="135"
+          y="135"
+          width="20"
+          height="20"
+          rx="4"
+          stroke="currentColor"
+          stroke-width="2.5"
+        />
+
+        <!-- Chip pins -->
+
+        <path
+          d="
+      M130 115V123
+      M140 115V123
+      M150 115V123
+      M160 115V123
+
+      M130 167V175
+      M140 167V175
+      M150 167V175
+      M160 167V175
+
+      M115 130H123
+      M115 140H123
+      M115 150H123
+      M115 160H123
+
+      M167 130H175
+      M167 140H175
+      M167 150H175
+      M167 160H175
+    "
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <!-- Search handle -->
+
+        <path
+          d="M194 194L250 250"
+          stroke="currentColor"
+          stroke-width="9"
+          stroke-linecap="round"
+        />
+
+        <!-- Handle accent -->
+
+        <path
+          d="M216 216L250 250"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.45"
+        />
+
+        <!-- Floating tech card -->
+
+        <rect
+          x="214"
+          y="103"
+          width="48"
+          height="62"
+          rx="8"
+          stroke="currentColor"
+          stroke-width="2.5"
+        />
+
+        <rect
+          x="225"
+          y="114"
+          width="26"
+          height="20"
+          rx="4"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+
+        <path
+          d="M225 145H251M225 153H243"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <!-- Small floating device -->
+
+        <rect
+          x="63"
+          y="178"
+          width="42"
+          height="28"
+          rx="5"
+          stroke="currentColor"
+          stroke-width="2.5"
+        />
+
+        <path
+          d="M72 214H96"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+        />
+
+        <!-- Small nodes -->
+
+        <circle cx="76" cy="124" r="5" stroke="currentColor" stroke-width="2" />
+
+        <circle
+          cx="236"
+          cy="202"
+          r="5"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+
+        <path
+          d="M76 129V145H91"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M236 197V183H218"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+
+        <!-- Decorative dots -->
+
+        <circle cx="103" cy="245" r="3" fill="currentColor" />
+
+        <circle cx="218" cy="74" r="3" fill="currentColor" />
+
+        <circle cx="65" cy="150" r="2.5" fill="currentColor" />
+
+        <circle cx="266" cy="150" r="2.5" fill="currentColor" />
+      </symbol>
+      <symbol
+        id="category-gaming-icon"
+        viewBox="0 0 160 160"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Controller body -->
+        <path
+          d="M42 52C32 52 25 61 22 73L16 101C14 111 19 118 27 118C34 118 38 112 42 105L47 96H113L118 105C122 112 126 118 133 118C141 118 146 111 144 101L138 73C135 61 128 52 118 52H42Z"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+
+        <!-- D-Pad -->
+        <path
+          d="M48 69V87"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M39 78H57"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <!-- Action buttons -->
+        <circle cx="112" cy="70" r="4" fill="currentColor" />
+
+        <circle cx="123" cy="80" r="4" fill="currentColor" />
+
+        <!-- Center touchpad -->
+        <rect
+          x="66"
+          y="64"
+          width="28"
+          height="11"
+          rx="5"
+          stroke="currentColor"
+          stroke-width="3"
+          opacity="0.8"
+        />
+
+        <!-- Analog sticks -->
+        <circle cx="64" cy="96" r="6" stroke="currentColor" stroke-width="3" />
+
+        <circle cx="96" cy="96" r="6" stroke="currentColor" stroke-width="3" />
+
+        <!-- Center light -->
+        <path
+          d="M72 83H88"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.4"
+        />
+      </symbol>
+      <symbol
+        id="category-laptop-icon"
+        viewBox="0 0 160 160"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Laptop screen -->
+        <rect
+          x="31"
+          y="28"
+          width="98"
+          height="68"
+          rx="7"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="round"
+        />
+
+        <!-- Screen -->
+        <rect
+          x="40"
+          y="37"
+          width="80"
+          height="50"
+          rx="3"
+          fill="currentColor"
+          opacity="0.07"
+        />
+
+        <!-- Screen accent -->
+        <path
+          d="M49 69L62 56L73 66L89 49L109 69"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.75"
+        />
+
+        <!-- Hinge -->
+        <path
+          d="M48 97H112"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <!-- Laptop base -->
+        <path
+          d="M25 99H135L143 119C145 124 141 128 136 128H24C19 128 15 124 17 119L25 99Z"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linejoin="round"
+        />
+
+        <!-- Trackpad -->
+        <rect
+          x="66"
+          y="107"
+          width="28"
+          height="12"
+          rx="3"
+          stroke="currentColor"
+          stroke-width="2.5"
+          opacity="0.65"
+        />
+
+        <!-- Keyboard hint -->
+        <path
+          d="M43 106H57M103 106H117"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          opacity="0.5"
+        />
+
+        <!-- Small status light -->
+        <circle cx="80" cy="35" r="2.5" fill="currentColor" opacity="0.7" />
+      </symbol>
+      <symbol
+        id="category-smart-phone"
+        viewBox="0 0 160 160"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Phone -->
+        <rect
+          x="48"
+          y="20"
+          width="64"
+          height="120"
+          rx="12"
+          stroke="currentColor"
+          stroke-width="5"
+        />
+
+        <!-- Screen -->
+        <rect
+          x="57"
+          y="34"
+          width="46"
+          height="82"
+          rx="5"
+          fill="currentColor"
+          opacity="0.06"
+        />
+
+        <!-- Speaker -->
+        <path
+          d="M73 28H87"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+        />
+
+        <!-- Sun -->
+        <circle cx="91" cy="51" r="5" fill="currentColor" opacity="0.75" />
+
+        <!-- Mountain -->
+        <path
+          d="M62 91L74 76L82 85L89 77L99 91"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          opacity="0.85"
+        />
+
+        <!-- Ground -->
+        <path
+          d="M62 98H98"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.55"
+        />
+
+        <!-- Home indicator -->
+        <path
+          d="M72 128H88"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.6"
+        />
+      </symbol>
+      <symbol
+        id="category-accessories-icon"
+        viewBox="0 0 160 160"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- Headphones -->
+        <path
+          d="M42 88V72C42 51 59 34 80 34C101 34 118 51 118 72V88"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <!-- Left earcup -->
+        <rect
+          x="35"
+          y="78"
+          width="20"
+          height="36"
+          rx="8"
+          stroke="currentColor"
+          stroke-width="5"
+        />
+
+        <!-- Right earcup -->
+        <rect
+          x="105"
+          y="78"
+          width="20"
+          height="36"
+          rx="8"
+          stroke="currentColor"
+          stroke-width="5"
+        />
+
+        <!-- Cable -->
+        <path
+          d="M115 114V121C115 132 106 138 96 138H88"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <!-- Connector -->
+        <path
+          d="M80 138H90"
+          stroke="currentColor"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+      </symbol>
+    </svg>
+    <!-- header -->
+    <header
+      class="sticky z-50 top-0 backdrop-blur-[14px] h-18 border-b border-b-border flex items-center justify-center"
+    >
+      <!-- container -->
+      <div class="container">
+        <!--header wrapper -->
+        <div class="w-full h-full flex items-center justify-between">
+          <!-- basket icon in mobile  -->
+          <div
+            id="basket-btn-mobile"
+            class="md:hidden w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition flex items-center justify-center hover:shadow-header-btn"
+          >
+            <svg class="w-4.5 h-4.5 text-text-secondary">
+              <use xlink:href="#shopping-card"></use>
+            </svg>
+            <span
+              class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
+              >3</span
+            >
+          </div>
+          <!-- logo -->
+          <div class="logo">
+            <a
+              href="#"
+              class="font-extrabold block text-[26px] text-Accent-Primary tracking-[5px]"
+            >
+              NEXORA
+            </a>
+          </div>
+          <!-- header nav -->
+          <nav class="desktop-nav hidden md:block">
+            <ul
+              class="flex items-center justify-center gap-7.5 lg:gap-10 text-text-primary child-hover:text-Accent-Primary child:transition child:font-medium child:text-[15px] child:text-text-secondary"
+            >
+              <li class="">
+                <a href="../../../index.html">Home</a>
+              </li>
+              <li class="">
+                <a href="../Products file/index.html">Products</a>
+              </li>
+              <li class="active">
+                <a href="index.html">Category</a>
+              </li>
+              <li class="">
+                <a href="#">About</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- header sign and buy -->
+          <div
+            class="hidden sm:flex items-center justify-center gap-4 lg:gap-5.5"
+          >
+            <div
+              id="search-btn"
+              class="w-10 h-10 rounded-xl border border-border hover:border-Accent-Primary transition hidden sm:flex items-center justify-center hover:shadow-header-btn"
+            >
+              <svg class="w-4.5 h-4.5 text-text-secondary">
+                <use xlink:href="#search-icon"></use>
+              </svg>
+            </div>
+            <div
+              id="basket-btn"
+              class="w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition hidden md:flex items-center justify-center hover:shadow-header-btn"
+            >
+              <svg class="w-4.5 h-4.5 text-text-secondary">
+                <use xlink:href="#shopping-card"></use>
+              </svg>
+              <span
+                class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
+                >3</span
+              >
+            </div>
+
+            <a
+              href="#"
+              id="sign-in-btn"
+              class="w-[94px] h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm hidden sm:flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+              >Sign In</a
+            >
+          </div>
+          <!-- mobile nav -->
+          <div
+            class="mobile-nav sm:hidden w-10 h-10 relative rounded-xl border border-border hover:border-Accent-Primary transition flex items-center justify-center hover:shadow-header-btn"
+          >
+            <span class="hamberger-menu"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- mobile menu from left -->
+    <div
+      id="left-mobile-menu"
+      class="fixed p-5 flex flex-col transition-[left] duration-300 -left-62 border border-Accent-Primary/70 top-2 bottom-2 rounded-2xl backdrop-blur-2xl bg-[rgba(0,0,0,0.1)] block w-60 z-[99] flex flex-col"
+    >
+      <h2
+        class="text-center tracking-[5px] text-2xl font-bold text-Accent-Primary border-b border-Accent-Primary/30 pb-2"
+      >
+        NEXORA
+      </h2>
+      <ul
+        class="flex flex-col mt-8 gap-8 child:pl-2 child:py-2 child:border child:border-transparent child-hover:border child:transition child-hover:border-Accent-Primary/50 child:rounded-xl child:text-text-primary child-hover:bg-Accent-Primary/20 child:cursor-pointer"
+      >
+        <li class="">
+          <a href="../../../index.html">Home</a>
+        </li>
+        <li>
+          <a href="../Products file/index.html">Products</a>
+        </li>
+        <li class="active">
+          <a href="index.html">Categories</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul>
+      <div class="mt-auto w-full h-10">
+        <a
+          href="#"
+          id="sign-in-btn-mobile"
+          class="w-full h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+          >Sign In</a
+        >
+      </div>
+    </div>
+    <!-- basket men from right -->
+    <div
+      id="right-mobile-basket"
+      class="fixed p-5 flex flex-col transition-[right] duration-300 -right-62 border border-Accent-Primary/70 top-2 bottom-2 rounded-2xl backdrop-blur-2xl bg-[rgba(0,0,0,0.1)] block w-60 z-[99] flex flex-col"
+    >
+      <h2
+        class="text-center tracking-[5px] text-2xl font-bold text-Accent-Primary border-b border-Accent-Primary/30 pb-2"
+      >
+        NEXORA
+      </h2>
+      <!-- <ul
+        class="flex flex-col mt-8 gap-8 child:pl-2 child:py-2 child:border child:border-transparent child-hover:border child:transition child-hover:border-Accent-Primary/50 child:rounded-xl child:text-text-primary child-hover:bg-Accent-Primary/20 child:cursor-pointer"
+      >
+        <li class="active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">Products</a>
+        </li>
+        <li>
+          <a href="#">Categories</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+      </ul> -->
+      <div class="mt-auto w-full h-10">
+        <a
+          href="#"
+          id="buy-items-btn"
+          class="w-full h-10 rounded-xl bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] font-bold text-sm flex items-center justify-center hover:from-btn-hover hover:to-btn-hover hover:shadow-sign-btn transition shadow-header-btn"
+          >Buy</a
+        >
+      </div>
+    </div>
+
+    <!-- main  -->
+    <main class="main my-10">
+      <!-- hero section -->
+      <section
+        class="categories-hero-section py-10 flex items-center bg-bg-secondary border border-border mx-3 sm:mx-10 rounded-[16px] relative"
+      >
+        <div class="container">
+          <!--  wrapper -->
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between relative"
+          >
+            <!-- left -->
+            <div class="flex flex-col">
+              <p
+                class="categories-header-text pl-4 mb-2 relative text-Accent-Primary text-sm font-bold tracking-[2px]"
+              >
+                Explore NEXORA
+              </p>
+              <h1
+                class="text-text-primary mb-2 font-extrabold text-[36px] lg:text-[58px]"
+              >
+                Find the right
+                <span
+                  class="text-Accent-Primary text-shadow-cyan-400 text-shadow-normal"
+                  >tech</span
+                >.
+              </h1>
+              <p
+                class="text-text-secondary text-sm max-w-[400px] lg:max-w-[570px]"
+              >
+                Explore NEXORA's technology categories and discover products
+                built for gaming, productivity, communication and everything in
+                between.
+              </p>
+            </div>
+            <!-- right -->
+            <div
+              class="flex items-center justify-center size-52.5 mx-auto md:mx-0"
+            >
+              <div
+                class="flex items-center justify-center rounded-full border border-Accent-Primary/40 size-[130px] sm:size-[160px] lg:size-[182px]"
+              >
+                <div
+                  class="flex items-center justify-center rounded-full border border-dotted border-Accent-Primary/40 size-[100px] sm:size-[118px] lg:size-[136px]"
+                >
+                  <div
+                    class="size-[88px] sm:size-[96px] lg:size-[107px] flex items-center relative justify-center rounded-[20px] border border-border bg-[rgba(19,27,51,0.8)] shadow-normal"
+                  >
+                    <svg class="size-20 sm:size-25 text-Accent-Primary">
+                      <use xlink:href="#find-tech-icon"></use>
+                    </svg>
+                    <span
+                      class="absolute w-2 h-2 rounded-full bg-Accent-Primary shadow-normal -top-[20px] mx-auto right-0 left-0 animate-bounce"
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- categories section -->
+      <section class="categories mt-20">
+        <div class="container">
+          <!-- wrapper -->
+          <div
+            class="wrapper grid grid-cols-1 md:grid-cols-2 items-center gap-7"
+          >
+            <a
+              href="#"
+              class="categories-item duration-[400ms] flex relative overflow-hidden py-5 px-4 sm:h-[225px] group rounded-[18px] border border-border transition hover:-translate-y-2"
+            >
+              <div
+                class="w-full h-full flex flex-col sm:flex-row gap-4 items-center justify-between"
+              >
+                <!-- left -->
+                <div
+                  class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start"
+                >
+                  <div
+                    class="shrink-0 w-22 h-22 rounded-2xl border border-Accent-Primary/30 transition group-hover:text-Accent-Primary group-hover:shadow-normal duration-[400ms] bg-Accent-Primary/10 text-text-primary/20 flex items-center justify-center"
+                  >
+                    <svg class="size-20">
+                      <use xlink:href="#category-gaming-icon"></use>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold text-[22px] text-text-primary">
+                      Gaming
+                    </h4>
+                    <p class="text-text-secondary text-xs/[1.7] mt-2 max-w-65">
+                      Gaming hardware, peripherals and gear for your ultimate
+                      setup.
+                    </p>
+                  </div>
+                </div>
+                <!-- right -->
+                <span
+                  class="flex items-center justify-center border border-border rounded-[10px] size-10 text-text-secondary group-hover:border-Accent-Primary group-hover:text-Accent-Primary group-hover:translate-x-1 duration-[400ms]"
+                >
+                  <svg class="size-5">
+                    <use xlink:href="#arrow-long-right"></use>
+                  </svg>
+                </span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="categories-item duration-[400ms] flex relative overflow-hidden py-5 px-4 sm:h-[225px] group rounded-[18px] border border-border transition hover:-translate-y-2"
+            >
+              <div
+                class="w-full h-full flex flex-col sm:flex-row gap-4 items-center justify-between"
+              >
+                <!-- left -->
+                <div
+                  class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start"
+                >
+                  <div
+                    class="shrink-0 w-22 h-22 rounded-2xl border border-Accent-Primary/30 transition group-hover:shadow-normal duration-[400ms] bg-Accent-Primary/10 flex items-center justify-center text-text-primary/20 group-hover:text-Accent-Primary"
+                  >
+                    <svg class="size-20">
+                      <use xlink:href="#category-laptop-icon"></use>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold text-[22px] text-text-primary">
+                      Laptops
+                    </h4>
+                    <p class="text-text-secondary text-xs/[1.7] mt-2 max-w-65">
+                      Portable performance for work, study, creativity and
+                      everyday use.
+                    </p>
+                  </div>
+                </div>
+                <!-- right -->
+                <span
+                  class="flex items-center justify-center border border-border rounded-[10px] size-10 text-text-secondary group-hover:border-Accent-Primary group-hover:text-Accent-Primary group-hover:translate-x-1 duration-[400ms]"
+                >
+                  <svg class="size-5">
+                    <use xlink:href="#arrow-long-right"></use>
+                  </svg>
+                </span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="categories-item duration-[400ms] flex relative overflow-hidden py-5 px-4 sm:h-[225px] group rounded-[18px] border border-border transition hover:-translate-y-2"
+            >
+              <div
+                class="w-full h-full flex flex-col sm:flex-row gap-4 items-center justify-between"
+              >
+                <!-- left -->
+                <div
+                  class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start"
+                >
+                  <div
+                    class="shrink-0 w-22 h-22 rounded-2xl border border-Accent-Primary/30 transition group-hover:shadow-normal duration-[400ms] bg-Accent-Primary/10 flex items-center justify-center text-text-primary/20 group-hover:text-Accent-Primary"
+                  >
+                    <svg class="size-20">
+                      <use xlink:href="#category-smart-phone"></use>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold text-[22px] text-text-primary">
+                      Smartphones
+                    </h4>
+                    <p class="text-text-secondary text-xs/[1.7] mt-2 max-w-65">
+                      Modern smartphones with powerful performance and next-gen
+                      features.
+                    </p>
+                  </div>
+                </div>
+                <!-- right -->
+                <span
+                  class="flex items-center justify-center border border-border rounded-[10px] size-10 text-text-secondary group-hover:border-Accent-Primary group-hover:text-Accent-Primary group-hover:translate-x-1 duration-[400ms]"
+                >
+                  <svg class="size-5">
+                    <use xlink:href="#arrow-long-right"></use>
+                  </svg>
+                </span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="categories-item duration-[400ms] flex relative overflow-hidden py-5 px-4 sm:h-[225px] group rounded-[18px] border border-border transition hover:-translate-y-2"
+            >
+              <div
+                class="w-full h-full flex flex-col sm:flex-row gap-4 items-center justify-between"
+              >
+                <!-- left -->
+                <div
+                  class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-start"
+                >
+                  <div
+                    class="shrink-0 w-22 h-22 rounded-2xl border border-Accent-Primary/30 transition group-hover:shadow-normal duration-[400ms] bg-Accent-Primary/10 text-text-primary/20 group-hover:text-Accent-Primary flex items-center justify-center"
+                  >
+                    <svg class="size-20">
+                      <use xlink:href="#category-accessories-icon"></use>
+                    </svg>
+                  </div>
+                  <div class="flex flex-col">
+                    <h4 class="font-bold text-[22px] text-text-primary">
+                      Accessories
+                    </h4>
+                    <p class="text-text-secondary text-xs/[1.7] mt-2 max-w-65">
+                      Essential accessories to complete and upgrade your entire
+                      setup.
+                    </p>
+                  </div>
+                </div>
+                <!-- right -->
+                <span
+                  class="flex items-center justify-center border border-border rounded-[10px] size-10 text-text-secondary group-hover:border-Accent-Primary group-hover:text-Accent-Primary group-hover:translate-x-1 duration-[400ms]"
+                >
+                  <svg class="size-5">
+                    <use xlink:href="#arrow-long-right"></use>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!--find products  -->
+      <section class="find-products my-10">
+        <div class="container">
+          <!-- wrapper -->
+          <div
+            class="flex items-center flex-col sm:flex-row gap-6 sm:gap-0 justify-between py-7 px-4 border border-border rounded-2xl bg-linear-to-r from-card-bg to-Accent-Secondary/20"
+          >
+            <!-- left -->
+            <div class="flex flex-col gap-2">
+              <h4 class="text-text-primary text-[20px] font-bold">
+                Looking for something specific?
+              </h4>
+              <p class="text-text-secondary text-xs">
+                Explore the complete NEXORA product collection.
+              </p>
+            </div>
+            <!-- right -->
+            <div class="flex items-center justify-center">
+              <a
+                href="#"
+                class="rounded-2xl bg-linear-to-r from-Accent-Primary/60 to-Accent-Primary w-30 h-10 flex items-center gap-2 justify-center text-black text-[13px] hover:from-Accent-Primary hover:text-text-primary hover:accent-Accent-Primary hover:shadow-normal transition duration-[250ms]"
+                >View all
+                <svg class="size-4">
+                  <use xlink:href="#arrow-long-right"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="footer mt-12.5 border-t border-border pt-5 bg-bg-secondary">
+      <div class="container">
+        <!-- main wrapper -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-5">
+          <!-- first item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[5px] font-extrabold text-Accent-Primary text-[26px] mb-2"
+            >
+              NEXORA
+            </h4>
+            <p class="text-text-secondary text-[13px]/[1.5]">
+              Premium tech store built for the next generation. Quality
+              products, lightning-fast delivery, unmatched support.
+            </p>
+          </div>
+          <!-- second item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              SHOP
+            </h4>
+            <ul
+              class="flex flex-col child:text-text-secondary child:mb-2 child:text-[13.5px]"
+            >
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Gaming</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Laptops</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Smartphones</a
+                >
+              </li>
+              <li class="mb-0">
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Accessories</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- third item -->
+          <div class="flex flex-col">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              COMPANY
+            </h4>
+            <ul
+              class="flex flex-col child:text-text-secondary child:mb-2 child:text-[13.5px]"
+            >
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Blog</a
+                >
+              </li>
+              <li class="mb-0">
+                <a href="#" class="hover:text-Accent-Primary transition"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- fourth item -->
+          <div class="flex flex-col child:mb-2">
+            <h4
+              class="tracking-[1px] text-Accent-Primary font-bold text-[13px] mb-2.5"
+            >
+              CONTACT
+            </h4>
+            <p class="text-text-secondary text-[13.5px] mb-2">
+              amirhoseinsanatdan@gmail.com
+            </p>
+            <p class="text-text-secondary text-[13.5px] mb-2">+98-9154044866</p>
+            <p class="text-text-secondary text-[13.5px] mb-0">Iran - mashhad</p>
+            <div
+              class="flex items-center gap-3 child:flex child:items-center child:justify-center child:border child:border-border child:w-9 child:h-9 child:rounded-[10px] child-hover:border-Accent-Primary child:transition"
+            >
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#facebook-item"></use>
+                </svg>
+              </a>
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#instagram-icon"></use>
+                </svg>
+              </a>
+              <a href="#">
+                <svg class="w-4 h-4 text-text-secondary">
+                  <use xlink:href="#youtube-icon"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- footer of footer -->
+        <div
+          class="border-t flex items-center justify-between border-border py-5"
+        >
+          <p class="text-text-secondary text-sm">
+            © 2026 NEXORA — Designed & Developed With ❤️ by Mr.AmirSan.
+          </p>
+          <p class="text-text-secondary text-sm">Privacy · Terms · Cookies</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="basket-overlay hidden"></div>
+    <div class="overlay hidden"></div>
+    <script src="../../js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!-- /* ===== NEXORA Design Tokens ===== */
+:root {
+  /* Background */
+  --bg-primary:     #0A0F1F;   /* صفحه اصلی */
+  --bg-secondary:   #0E1528;   /* سطح‌های ثانویه (هدر/فوتر) */
+
+  /* Card */
+  --card-bg:        #131B33;   /* کارت‌ها */
+
+  /* Text */
+  --text-primary:   #F2F6FF;   /* تیتر و متن اصلی */
+  --text-secondary: #8B95B0;   /* متن توضیحی */
+
+  /* Accent */
+  --accent-primary:   #00D4FF; /* نئون اصلی */
+  --accent-secondary: #7C3AED; /* نئون مکمل */
+
+  /* Border */
+  --border:         #1E2A4A;
+
+  /* CTA / Button */
+  --btn-bg:    #0090FF;        /* پس‌زمینه دکمه */
+  --btn-hover: #33E0FF;        /* حالت هاور */
+} -->
+
+
+
+<!-- | #  | نام کاربرد رنگ       | HEX       | محل استفاده در UI                                        |
+| -- | -------------------- | --------- | -------------------------------------------------------- |
+| 1  | Background Primary   | `#0A0F1F` | پس‌زمینه اصلی کل صفحه                                    |
+| 2  | Background Secondary | `#0E1528` | پس‌زمینه Header، Promo Banner و Footer                   |
+| 3  | Card Background      | `#131B33` | پس‌زمینه کارت‌های محصول، دسته‌بندی و Hero Visual         |
+| 4  | Primary Text         | `#F2F6FF` | تیترها، نام محصولات، متن اصلی                            |
+| 5  | Secondary Text       | `#8B95B0` | توضیحات، لینک‌های منو، آیکون‌ها، متن کم‌رنگ              |
+| 6  | Primary Accent       | `#00D4FF` | نئون اصلی — لوگو، قیمت‌ها، لینک‌های فعال، Glow محصول     |
+| 7  | Secondary Accent     | `#7C3AED` | گرادیان تیتر، Badge تخفیف، نکات داده‌ای در گراف          |
+| 8  | Border               | `#1E2A4A` | حاشیه کارت‌ها، Navbar، فوتر و دکمه Ghost                 |
+| 9  | Button Background    | `#0090FF` | دکمه‌های اصلی (Explore Products، Shop the Deal، Sign In) |
+| 10 | Button Hover         | `#33E0FF` | حالت Hover دکمه‌ها — افزایش Glow و روشنایی               | -->
