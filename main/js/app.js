@@ -2,9 +2,13 @@ const mobileNavBtn = document.querySelector(".mobile-nav");
 const hambergerMenuElem = document.querySelector(".hamberger-menu");
 const overlayElem = document.querySelector(".overlay");
 const basketOverlayElem = document.querySelector(".basket-overlay");
+const searchBarOverlayElem = document.querySelector(".search-bar-overlay");
 const leftMobileMenu = document.querySelector("#left-mobile-menu");
 const mobileBasketMenu = document.querySelector("#basket-btn-mobile");
 const rightMobileBasket = document.querySelector("#right-mobile-basket");
+const searchBtn = document.querySelector("#search-btn");
+const searchBarElem = document.querySelector(".search-bar");
+const searchBarXMark = document.querySelector(".search-bar-x-mark");
 
 let isOpen = false;
 let basketIsOpen = false;
@@ -50,6 +54,16 @@ const closeBasketHandler = () => {
   basketOverlayElem.classList.add("hidden");
 };
 
+const showSearchBar = () => {
+  searchBarElem.classList.remove("hidden");
+  searchBarOverlayElem.classList.remove("hidden");
+};
+
+const closeSearchBar = () => {
+  searchBarElem.classList.add("hidden");
+  searchBarOverlayElem.classList.add("hidden");
+};
+
 window.addEventListener("keyup", (event) => {
   if (event.key === "Escape" && isOpen) {
     isOpen = false;
@@ -64,11 +78,10 @@ mobileBasketMenu.addEventListener("click", mobileBasketHandler);
 overlayElem.addEventListener("click", mobileMenuHandler);
 basketOverlayElem.addEventListener("click", mobileBasketHandler);
 mobileNavBtn.addEventListener("click", mobileMenuHandler);
+searchBtn.addEventListener("click", showSearchBar);
+searchBarXMark.addEventListener("click", closeSearchBar);
 
 // https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/ Api url
 // sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h  published key
 const url = "https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/";
 const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
-
-
-

@@ -89,12 +89,17 @@ body {
   }
 
   .overlay,
-  .basket-overlay {
-    position: absolute;
+  .basket-overlay,
+  .search-bar-overlay {
+    position: fixed;
     z-index: 10;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
+  .search-bar-overlay {
+    z-index: 80;
+  }
+
   .deleted-price:after {
     content: "";
     position: absolute;

@@ -313,6 +313,20 @@
           d="M22 5.8a3 3 0 0 0-2.1-2.1C18 3 12 3 12 3s-6 0-7.9.7A3 3 0 0 0 2 5.8 31 31 0 0 0 1.6 12 31 31 0 0 0 2 18.2a3 3 0 0 0 2.1 2.1C6 21 12 21 12 21s6 0 7.9-.7a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22.4 12 31 31 0 0 0 22 5.8ZM9.8 15.5v-7l6 3.5Z"
         ></path>
       </symbol>
+      <symbol
+        id="x-mark"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
     </svg>
 
     <!-- header -->
@@ -407,6 +421,48 @@
         </div>
       </div>
     </header>
+    <!-- search bar elem -->
+    <div
+      class="search-bar fixed z-100 inset-0 m-auto w-[80%] h-140 rounded-2xl bg-bg-secondary border border-border flex flex-col p-5"
+    >
+      <!-- header -->
+      <div
+        class="flex items-center w-full border border-border transition hover:border-Accent-Primary rounded-2xl p-2"
+      >
+        <span
+          class="search-bar-x-mark size-10 rounded-full bg-bg-primary border border-border flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition hover:border-Accent-Primary"
+        >
+          <svg class="size-5 ">
+            <use xlink:href="#x-mark"></use>
+          </svg>
+        </span>
+        <p
+          class="text-Accent-Primary tracking-[3px] text-3xl font-bold mx-auto"
+        >
+          Nexora
+        </p>
+      </div>
+      <!-- main -->
+      <div
+        class="w-full h-full border border-border mt-2 rounded-2xl p-2 overflow-hidden hover:border-Accent-Primary transition"
+      >
+        <div class="relative w-full h-15 rounded-2xl border border-border p-1 hover:border-Accent-Primary transition">
+          <input
+            type="text"
+            id="searched-input"
+            class="w-full h-full outline-none text-[16px] text-text-secondary pl-12"
+            placeholder="Type Here ..."
+          />
+          <span
+            class="absolute top-0 left-2 bottom-0 my-auto size-10 cursor-pointer flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition"
+          >
+            <svg class="size-5">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
     <!-- mobile menu from left -->
     <div
       id="left-mobile-menu"
@@ -1020,6 +1076,7 @@
         </div>
       </section>
     </main>
+
     <!-- footer -->
     <footer class="footer mt-10 border-t border-border pt-5 bg-bg-secondary">
       <div class="container">
@@ -1145,7 +1202,7 @@
         </div>
       </div>
     </footer>
-
+    <div class="search-bar-overlay"></div>
     <div class="basket-overlay hidden"></div>
     <div class="overlay hidden"></div>
     <script src="main/js/app.js"></script>
