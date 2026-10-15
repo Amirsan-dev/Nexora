@@ -20,13 +20,6 @@ const products = [
 
     brand: "ASUS",
 
-    images: [
-      "/images/products/asus-rog-strix-g16-1.webp",
-      "/images/products/asus-rog-strix-g16-2.webp",
-      "/images/products/asus-rog-strix-g16-3.webp",
-      "/images/products/asus-rog-strix-g16-4.webp",
-      "/images/products/asus-rog-strix-g16-5.webp",
-    ],
 
     shortDescription:
       "A high-performance gaming laptop built for demanding games, creative workloads, and everyday performance.",
@@ -78,14 +71,6 @@ const products = [
 
     brand: "ASUS",
 
-    images: [
-      "/images/products/asus-rog-zephyrus-g14-1.webp",
-      "/images/products/asus-rog-zephyrus-g14-2.webp",
-      "/images/products/asus-rog-zephyrus-g14-3.webp",
-      "/images/products/asus-rog-zephyrus-g14-4.webp",
-      "/images/products/asus-rog-zephyrus-g14-5.webp",
-    ],
-
     shortDescription:
       "A compact and powerful gaming laptop designed for high-performance gaming, creative work, and portability.",
 
@@ -136,13 +121,7 @@ const products = [
 
     brand: "Lenovo",
 
-    images: [
-      "/images/products/lenovo-legion-pro-5i-gen-10-1.webp",
-      "/images/products/lenovo-legion-pro-5i-gen-10-2.webp",
-      "/images/products/lenovo-legion-pro-5i-gen-10-3.webp",
-      "/images/products/lenovo-legion-pro-5i-gen-10-4.webp",
-      "/images/products/lenovo-legion-pro-5i-gen-10-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful gaming laptop built for demanding games, high-performance applications, and competitive gaming.",
@@ -194,13 +173,7 @@ const products = [
 
     brand: "Lenovo",
 
-    images: [
-      "/images/products/lenovo-legion-7i-gen-10-1.webp",
-      "/images/products/lenovo-legion-7i-gen-10-2.webp",
-      "/images/products/lenovo-legion-7i-gen-10-3.webp",
-      "/images/products/lenovo-legion-7i-gen-10-4.webp",
-      "/images/products/lenovo-legion-7i-gen-10-5.webp",
-    ],
+
 
     shortDescription:
       "A premium gaming laptop that combines powerful hardware, a fast display, and a refined design for demanding users.",
@@ -252,13 +225,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-macbook-pro-14-inch-m5-1.webp",
-      "/images/products/apple-macbook-pro-14-inch-m5-2.webp",
-      "/images/products/apple-macbook-pro-14-inch-m5-3.webp",
-      "/images/products/apple-macbook-pro-14-inch-m5-4.webp",
-      "/images/products/apple-macbook-pro-14-inch-m5-5.webp",
-    ],
+
 
     shortDescription:
       "A premium 14-inch laptop designed for professional workflows, creative applications, and everyday productivity.",
@@ -310,13 +277,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-macbook-air-15-inch-m4-1.webp",
-      "/images/products/apple-macbook-air-15-inch-m4-2.webp",
-      "/images/products/apple-macbook-air-15-inch-m4-3.webp",
-      "/images/products/apple-macbook-air-15-inch-m4-4.webp",
-      "/images/products/apple-macbook-air-15-inch-m4-5.webp",
-    ],
+
 
     shortDescription:
       "A slim and lightweight 15-inch laptop offering efficient performance, a large display, and excellent portability.",
@@ -368,13 +329,7 @@ const products = [
 
     brand: "Dell",
 
-    images: [
-      "/images/products/dell-xps-16-1.webp",
-      "/images/products/dell-xps-16-2.webp",
-      "/images/products/dell-xps-16-3.webp",
-      "/images/products/dell-xps-16-4.webp",
-      "/images/products/dell-xps-16-5.webp",
-    ],
+
 
     shortDescription:
       "A premium 16-inch laptop built for productivity, creative work, and demanding everyday tasks.",
@@ -426,13 +381,7 @@ const products = [
 
     brand: "HP",
 
-    images: [
-      "/images/products/hp-omen-16-1.webp",
-      "/images/products/hp-omen-16-2.webp",
-      "/images/products/hp-omen-16-3.webp",
-      "/images/products/hp-omen-16-4.webp",
-      "/images/products/hp-omen-16-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful gaming laptop designed for smooth gameplay, demanding applications, and everyday performance.",
@@ -484,13 +433,6 @@ const products = [
 
     brand: "Acer",
 
-    images: [
-      "/images/products/acer-predator-helios-neo-16-1.webp",
-      "/images/products/acer-predator-helios-neo-16-2.webp",
-      "/images/products/acer-predator-helios-neo-16-3.webp",
-      "/images/products/acer-predator-helios-neo-16-4.webp",
-      "/images/products/acer-predator-helios-neo-16-5.webp",
-    ],
 
     shortDescription:
       "A performance-focused gaming laptop built for high-refresh-rate gaming and demanding applications.",
@@ -542,13 +484,7 @@ const products = [
 
     brand: "Razer",
 
-    images: [
-      "/images/products/razer-blade-16-1.webp",
-      "/images/products/razer-blade-16-2.webp",
-      "/images/products/razer-blade-16-3.webp",
-      "/images/products/razer-blade-16-4.webp",
-      "/images/products/razer-blade-16-5.webp",
-    ],
+
 
     shortDescription:
       "A premium high-performance gaming laptop combining powerful hardware with a sleek and minimalist aluminum design.",
@@ -600,13 +536,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-iphone-17-pro-1.webp",
-      "/images/products/apple-iphone-17-pro-2.webp",
-      "/images/products/apple-iphone-17-pro-3.webp",
-      "/images/products/apple-iphone-17-pro-4.webp",
-      "/images/products/apple-iphone-17-pro-5.webp",
-    ],
+
 
     shortDescription:
       "A premium flagship smartphone with powerful performance, an advanced camera system, and a high-quality display.",
@@ -657,13 +587,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-iphone-17-1.webp",
-      "/images/products/apple-iphone-17-2.webp",
-      "/images/products/apple-iphone-17-3.webp",
-      "/images/products/apple-iphone-17-4.webp",
-      "/images/products/apple-iphone-17-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful flagship smartphone offering a smooth display, strong performance, and an advanced camera system.",
@@ -714,13 +638,6 @@ const products = [
 
     brand: "Samsung",
 
-    images: [
-      "/images/products/samsung-galaxy-s26-ultra-1.webp",
-      "/images/products/samsung-galaxy-s26-ultra-2.webp",
-      "/images/products/samsung-galaxy-s26-ultra-3.webp",
-      "/images/products/samsung-galaxy-s26-ultra-4.webp",
-      "/images/products/samsung-galaxy-s26-ultra-5.webp",
-    ],
 
     shortDescription:
       "A premium Android flagship featuring a large high-resolution display, powerful performance, and an advanced camera system.",
@@ -771,13 +688,7 @@ const products = [
 
     brand: "Samsung",
 
-    images: [
-      "/images/products/samsung-galaxy-s26-1.webp",
-      "/images/products/samsung-galaxy-s26-2.webp",
-      "/images/products/samsung-galaxy-s26-3.webp",
-      "/images/products/samsung-galaxy-s26-4.webp",
-      "/images/products/samsung-galaxy-s26-5.webp",
-    ],
+
 
     shortDescription:
       "A compact flagship smartphone offering powerful performance, a vibrant AMOLED display, and a versatile camera system.",
@@ -828,13 +739,7 @@ const products = [
 
     brand: "Google",
 
-    images: [
-      "/images/products/google-pixel-10-pro-1.webp",
-      "/images/products/google-pixel-10-pro-2.webp",
-      "/images/products/google-pixel-10-pro-3.webp",
-      "/images/products/google-pixel-10-pro-4.webp",
-      "/images/products/google-pixel-10-pro-5.webp",
-    ],
+
 
     shortDescription:
       "A premium Google smartphone focused on computational photography, smooth performance, and a clean Android experience.",
@@ -885,13 +790,7 @@ const products = [
 
     brand: "Google",
 
-    images: [
-      "/images/products/google-pixel-10-1.webp",
-      "/images/products/google-pixel-10-2.webp",
-      "/images/products/google-pixel-10-3.webp",
-      "/images/products/google-pixel-10-4.webp",
-      "/images/products/google-pixel-10-5.webp",
-    ],
+ 
 
     shortDescription:
       "A clean and powerful Android smartphone with a bright display, capable cameras, and Google's latest software experience.",
@@ -942,13 +841,7 @@ const products = [
 
     brand: "OnePlus",
 
-    images: [
-      "/images/products/oneplus-13-1.webp",
-      "/images/products/oneplus-13-2.webp",
-      "/images/products/oneplus-13-3.webp",
-      "/images/products/oneplus-13-4.webp",
-      "/images/products/oneplus-13-5.webp",
-    ],
+
 
     shortDescription:
       "A high-performance flagship smartphone featuring a fast AMOLED display, powerful hardware, and a versatile camera system.",
@@ -999,13 +892,7 @@ const products = [
 
     brand: "Xiaomi",
 
-    images: [
-      "/images/products/xiaomi-15-ultra-1.webp",
-      "/images/products/xiaomi-15-ultra-2.webp",
-      "/images/products/xiaomi-15-ultra-3.webp",
-      "/images/products/xiaomi-15-ultra-4.webp",
-      "/images/products/xiaomi-15-ultra-5.webp",
-    ],
+
 
     shortDescription:
       "A premium flagship smartphone focused on photography, powerful performance, and a high-quality display.",
@@ -1056,13 +943,7 @@ const products = [
 
     brand: "Sony",
 
-    images: [
-      "/images/products/sony-xperia-1-vii-1.webp",
-      "/images/products/sony-xperia-1-vii-2.webp",
-      "/images/products/sony-xperia-1-vii-3.webp",
-      "/images/products/sony-xperia-1-vii-4.webp",
-      "/images/products/sony-xperia-1-vii-5.webp",
-    ],
+
 
     shortDescription:
       "A premium Sony smartphone focused on display quality, photography, audio, and a refined multimedia experience.",
@@ -1113,13 +994,7 @@ const products = [
 
     brand: "Nothing",
 
-    images: [
-      "/images/products/nothing-phone-3-1.webp",
-      "/images/products/nothing-phone-3-2.webp",
-      "/images/products/nothing-phone-3-3.webp",
-      "/images/products/nothing-phone-3-4.webp",
-      "/images/products/nothing-phone-3-5.webp",
-    ],
+
 
     shortDescription:
       "A distinctive flagship smartphone combining a unique transparent-inspired design with powerful hardware and a smooth display.",
@@ -1170,13 +1045,7 @@ const products = [
 
     brand: "Sony",
 
-    images: [
-      "/images/products/playstation-5-slim-1.webp",
-      "/images/products/playstation-5-slim-2.webp",
-      "/images/products/playstation-5-slim-3.webp",
-      "/images/products/playstation-5-slim-4.webp",
-      "/images/products/playstation-5-slim-5.webp",
-    ],
+
 
     shortDescription:
       "A compact next-generation gaming console offering fast performance, immersive graphics, and a large library of games.",
@@ -1228,13 +1097,7 @@ const products = [
 
     brand: "Sony",
 
-    images: [
-      "/images/products/playstation-5-pro-1.webp",
-      "/images/products/playstation-5-pro-2.webp",
-      "/images/products/playstation-5-pro-3.webp",
-      "/images/products/playstation-5-pro-4.webp",
-      "/images/products/playstation-5-pro-5.webp",
-    ],
+ 
 
     shortDescription:
       "A high-performance PlayStation console designed for enhanced graphics, smoother gameplay, and demanding next-generation gaming.",
@@ -1286,13 +1149,7 @@ const products = [
 
     brand: "Microsoft",
 
-    images: [
-      "/images/products/xbox-series-x-1.webp",
-      "/images/products/xbox-series-x-2.webp",
-      "/images/products/xbox-series-x-3.webp",
-      "/images/products/xbox-series-x-4.webp",
-      "/images/products/xbox-series-x-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful next-generation gaming console built for high-resolution gaming, fast loading times, and smooth performance.",
@@ -1344,13 +1201,7 @@ const products = [
 
     brand: "Microsoft",
 
-    images: [
-      "/images/products/xbox-series-s-1.webp",
-      "/images/products/xbox-series-s-2.webp",
-      "/images/products/xbox-series-s-3.webp",
-      "/images/products/xbox-series-s-4.webp",
-      "/images/products/xbox-series-s-5.webp",
-    ],
+
 
     shortDescription:
       "A compact all-digital gaming console designed for smooth next-generation gaming at an accessible price.",
@@ -1402,13 +1253,7 @@ const products = [
 
     brand: "Nintendo",
 
-    images: [
-      "/images/products/nintendo-switch-2-1.webp",
-      "/images/products/nintendo-switch-2-2.webp",
-      "/images/products/nintendo-switch-2-3.webp",
-      "/images/products/nintendo-switch-2-4.webp",
-      "/images/products/nintendo-switch-2-5.webp",
-    ],
+
 
     shortDescription:
       "A versatile next-generation gaming console designed for both handheld and home gaming with improved performance.",
@@ -1460,13 +1305,7 @@ const products = [
 
     brand: "Valve",
 
-    images: [
-      "/images/products/steam-deck-oled-1.webp",
-      "/images/products/steam-deck-oled-2.webp",
-      "/images/products/steam-deck-oled-3.webp",
-      "/images/products/steam-deck-oled-4.webp",
-      "/images/products/steam-deck-oled-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful handheld gaming PC featuring a vibrant OLED display and access to a large library of PC games.",
@@ -1518,13 +1357,7 @@ const products = [
 
     brand: "ASUS",
 
-    images: [
-      "/images/products/asus-rog-ally-x-1.webp",
-      "/images/products/asus-rog-ally-x-2.webp",
-      "/images/products/asus-rog-ally-x-3.webp",
-      "/images/products/asus-rog-ally-x-4.webp",
-      "/images/products/asus-rog-ally-x-5.webp",
-    ],
+
 
     shortDescription:
       "A powerful Windows-based handheld gaming PC designed for portable high-performance gaming.",
@@ -1576,13 +1409,7 @@ const products = [
 
     brand: "Sony",
 
-    images: [
-      "/images/products/playstation-portal-1.webp",
-      "/images/products/playstation-portal-2.webp",
-      "/images/products/playstation-portal-3.webp",
-      "/images/products/playstation-portal-4.webp",
-      "/images/products/playstation-portal-5.webp",
-    ],
+
 
     shortDescription:
       "A dedicated handheld device designed for streaming compatible PlayStation 5 games through Remote Play.",
@@ -1634,13 +1461,7 @@ const products = [
 
     brand: "Meta",
 
-    images: [
-      "/images/products/meta-quest-3-1.webp",
-      "/images/products/meta-quest-3-2.webp",
-      "/images/products/meta-quest-3-3.webp",
-      "/images/products/meta-quest-3-4.webp",
-      "/images/products/meta-quest-3-5.webp",
-    ],
+
 
     shortDescription:
       "An advanced standalone VR headset offering immersive virtual reality gaming, mixed reality, and interactive experiences.",
@@ -1692,13 +1513,6 @@ const products = [
 
     brand: "Nintendo",
 
-    images: [
-      "/images/products/nintendo-switch-oled-1.webp",
-      "/images/products/nintendo-switch-oled-2.webp",
-      "/images/products/nintendo-switch-oled-3.webp",
-      "/images/products/nintendo-switch-oled-4.webp",
-      "/images/products/nintendo-switch-oled-5.webp",
-    ],
 
     shortDescription:
       "A versatile hybrid gaming console featuring a vibrant OLED display and flexible handheld, tabletop, and TV gaming modes.",
@@ -1750,13 +1564,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-airpods-pro-3-1.webp",
-      "/images/products/apple-airpods-pro-3-2.webp",
-      "/images/products/apple-airpods-pro-3-3.webp",
-      "/images/products/apple-airpods-pro-3-4.webp",
-      "/images/products/apple-airpods-pro-3-5.webp",
-    ],
+
 
     shortDescription:
       "Premium wireless earbuds featuring active noise cancellation, immersive audio, and seamless integration with Apple devices.",
@@ -1807,13 +1615,7 @@ const products = [
 
     brand: "Sony",
 
-    images: [
-      "/images/products/sony-wh-1000xm6-1.webp",
-      "/images/products/sony-wh-1000xm6-2.webp",
-      "/images/products/sony-wh-1000xm6-3.webp",
-      "/images/products/sony-wh-1000xm6-4.webp",
-      "/images/products/sony-wh-1000xm6-5.webp",
-    ],
+
 
     shortDescription:
       "Premium wireless over-ear headphones designed for immersive sound, powerful noise cancellation, and long listening sessions.",
@@ -1864,13 +1666,7 @@ const products = [
 
     brand: "Apple",
 
-    images: [
-      "/images/products/apple-magic-keyboard-1.webp",
-      "/images/products/apple-magic-keyboard-2.webp",
-      "/images/products/apple-magic-keyboard-3.webp",
-      "/images/products/apple-magic-keyboard-4.webp",
-      "/images/products/apple-magic-keyboard-5.webp",
-    ],
+ 
 
     shortDescription:
       "A slim wireless keyboard featuring a minimalist design, comfortable typing experience, and seamless Apple device integration.",
@@ -1921,13 +1717,7 @@ const products = [
 
     brand: "Logitech",
 
-    images: [
-      "/images/products/logitech-mx-master-4-1.webp",
-      "/images/products/logitech-mx-master-4-2.webp",
-      "/images/products/logitech-mx-master-4-3.webp",
-      "/images/products/logitech-mx-master-4-4.webp",
-      "/images/products/logitech-mx-master-4-5.webp",
-    ],
+
 
     shortDescription:
       "A premium wireless productivity mouse designed for precise control, comfortable long-term use, and multi-device workflows.",
@@ -1978,13 +1768,7 @@ const products = [
 
     brand: "Logitech",
 
-    images: [
-      "/images/products/logitech-g-pro-x-superlight-2-1.webp",
-      "/images/products/logitech-g-pro-x-superlight-2-2.webp",
-      "/images/products/logitech-g-pro-x-superlight-2-3.webp",
-      "/images/products/logitech-g-pro-x-superlight-2-4.webp",
-      "/images/products/logitech-g-pro-x-superlight-2-5.webp",
-    ],
+
 
     shortDescription:
       "An ultra-lightweight wireless gaming mouse designed for competitive gaming with precise tracking and responsive controls.",
@@ -2035,13 +1819,7 @@ const products = [
 
     brand: "Logitech",
 
-    images: [
-      "/images/products/logitech-mx-keys-s-1.webp",
-      "/images/products/logitech-mx-keys-s-2.webp",
-      "/images/products/logitech-mx-keys-s-3.webp",
-      "/images/products/logitech-mx-keys-s-4.webp",
-      "/images/products/logitech-mx-keys-s-5.webp",
-    ],
+
 
     shortDescription:
       "A premium wireless keyboard designed for comfortable typing, quiet operation, and efficient multi-device workflows.",
@@ -2092,13 +1870,7 @@ const products = [
 
     brand: "Samsung",
 
-    images: [
-      "/images/products/samsung-t7-shield-portable-ssd-1.webp",
-      "/images/products/samsung-t7-shield-portable-ssd-2.webp",
-      "/images/products/samsung-t7-shield-portable-ssd-3.webp",
-      "/images/products/samsung-t7-shield-portable-ssd-4.webp",
-      "/images/products/samsung-t7-shield-portable-ssd-5.webp",
-    ],
+
 
     shortDescription:
       "A durable portable SSD offering fast data transfer speeds, compact storage, and enhanced protection for everyday use.",
@@ -2149,13 +1921,7 @@ const products = [
 
     brand: "Anker",
 
-    images: [
-      "/images/products/anker-737-power-bank-1.webp",
-      "/images/products/anker-737-power-bank-2.webp",
-      "/images/products/anker-737-power-bank-3.webp",
-      "/images/products/anker-737-power-bank-4.webp",
-      "/images/products/anker-737-power-bank-5.webp",
-    ],
+
 
     shortDescription:
       "A high-capacity portable power bank designed for fast charging laptops, smartphones, tablets, and other devices.",
@@ -2206,13 +1972,7 @@ const products = [
 
     brand: "Belkin",
 
-    images: [
-      "/images/products/belkin-boostcharge-pro-2-in-1-1.webp",
-      "/images/products/belkin-boostcharge-pro-2-in-1-2.webp",
-      "/images/products/belkin-boostcharge-pro-2-in-1-3.webp",
-      "/images/products/belkin-boostcharge-pro-2-in-1-4.webp",
-      "/images/products/belkin-boostcharge-pro-2-in-1-5.webp",
-    ],
+  
 
     shortDescription:
       "A compact 2-in-1 wireless charging station designed to power compatible smartphones and wireless earbuds simultaneously.",
@@ -2263,13 +2023,7 @@ const products = [
 
     brand: "Elgato",
 
-    images: [
-      "/images/products/elgato-stream-deck-mk-2-1.webp",
-      "/images/products/elgato-stream-deck-mk-2-2.webp",
-      "/images/products/elgato-stream-deck-mk-2-3.webp",
-      "/images/products/elgato-stream-deck-mk-2-4.webp",
-      "/images/products/elgato-stream-deck-mk-2-5.webp",
-    ],
+
 
     shortDescription:
       "A customizable control pad with programmable LCD keys designed for streaming, content creation, and productivity workflows.",

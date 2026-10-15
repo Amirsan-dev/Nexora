@@ -64,3 +64,11 @@ mobileBasketMenu.addEventListener("click", mobileBasketHandler);
 overlayElem.addEventListener("click", mobileMenuHandler);
 basketOverlayElem.addEventListener("click", mobileBasketHandler);
 mobileNavBtn.addEventListener("click", mobileMenuHandler);
+
+// https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/ Api url
+// sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h  published key
+const url = "https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/";
+const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
+
+
+
