@@ -6,7 +6,7 @@
     <title>Products Page</title>
     <link rel="stylesheet" href="../../../src/output.css" />
   </head>
-  <body class="bg-bg-primary h-full">
+  <body class="bg-bg-primary h-full" onload="mainOnLoadFunc()">
     <!-- svg-sprite -->
     <svg class="hidden">
       <symbol
@@ -446,6 +446,50 @@
         </div>
       </div>
     </header>
+    <!-- search bar elem -->
+    <div
+      class="search-bar hidden fixed z-100 inset-0 m-auto w-[80%] h-140 rounded-2xl bg-bg-secondary border border-border flex flex-col p-5"
+    >
+      <!-- header -->
+      <div
+        class="flex items-center w-full border border-border transition hover:border-Accent-Primary rounded-2xl p-2"
+      >
+        <span
+          class="search-bar-x-mark size-10 rounded-full bg-bg-primary border border-border flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition hover:border-Accent-Primary"
+        >
+          <svg class="size-5">
+            <use xlink:href="#x-mark"></use>
+          </svg>
+        </span>
+        <p
+          class="text-Accent-Primary tracking-[3px] text-3xl font-bold mx-auto"
+        >
+          Nexora
+        </p>
+      </div>
+      <!-- main -->
+      <div
+        class="w-full h-full border border-border mt-2 rounded-2xl p-2 overflow-hidden hover:border-Accent-Primary transition"
+      >
+        <div
+          class="relative w-full h-15 rounded-2xl border border-border p-1 hover:border-Accent-Primary transition"
+        >
+          <input
+            type="text"
+            id="searched-input"
+            class="w-full h-full outline-none text-[16px] text-text-secondary pl-12"
+            placeholder="Type Here ..."
+          />
+          <span
+            class="absolute top-0 left-2 bottom-0 my-auto size-10 cursor-pointer flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition"
+          >
+            <svg class="size-5">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
     <!-- mobile menu from left -->
     <div
       id="left-mobile-menu"
@@ -779,7 +823,7 @@
                 </div>
                 <!-- main of right -->
                 <div
-                  class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 items-center gap-4 child:border child:border-border child:bg-bg-secondary/80 child:rounded-2xl child:h-102 child:relative child:transition child-hover:-translate-y-1.5 child-hover:border-Accent-Primary/30 child:duration-[250ms]"
+                  class="products-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 items-center gap-4 child:border child:border-border child:bg-bg-secondary/80 child:rounded-2xl child:h-102 child:relative child:transition child-hover:-translate-y-1.5 child-hover:border-Accent-Primary/30 child:duration-[250ms]"
                 >
                   <div class="group overflow-hidden">
                     <!-- offer elem -->
@@ -800,7 +844,9 @@
                       </svg>
                     </button>
                     <!-- top -->
-                    <div class="w-full h-57.5 bg-Accent-Primary/5"></div>
+                    <div class="w-full h-57.5 bg-Accent-Primary/5">
+                      <img class="w-full h-full" src="https://bbbxnpocgxdwkobvubbb.supabase.co/storage/v1/object/public/product-images/Laptops/ASUS%20ROG%20Strix%20G16%20(2025)/h732%20(1).png" alt="product-img">
+                    </div>
                     <!-- bottom -->
                     <div class="flex flex-col p-3">
                       <h4
@@ -1383,6 +1429,7 @@
     </footer>
     <div class="basket-overlay hidden"></div>
     <div class="overlay hidden"></div>
-    <script src="main/js/app.js"></script>
+    <script src="../../js/basic.js"></script>
+    <script src="../Products file/main.js"></script>
   </body>
 </html>

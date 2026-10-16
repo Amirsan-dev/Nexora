@@ -81,7 +81,4 @@ mobileNavBtn.addEventListener("click", mobileMenuHandler);
 searchBtn.addEventListener("click", showSearchBar);
 searchBarXMark.addEventListener("click", closeSearchBar);
 
-// https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/ Api url
-// sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h  published key
-const url = "https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/";
-const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
+

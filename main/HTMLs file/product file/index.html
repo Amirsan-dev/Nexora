@@ -6,7 +6,7 @@
     <title>product web</title>
     <link rel="stylesheet" href="../../../src/output.css" />
   </head>
-  <body class="bg-bg-primary h-full">
+  <body class="bg-bg-primary h-full" onload="MainOnLoadFunc()">
     <!-- svg-sprite -->
     <svg class="hidden">
       <symbol
@@ -443,6 +443,50 @@
         </div>
       </div>
     </header>
+    <!-- search bar elem -->
+    <div
+      class="search-bar hidden fixed z-100 inset-0 m-auto w-[80%] h-140 rounded-2xl bg-bg-secondary border border-border flex flex-col p-5"
+    >
+      <!-- header -->
+      <div
+        class="flex items-center w-full border border-border transition hover:border-Accent-Primary rounded-2xl p-2"
+      >
+        <span
+          class="search-bar-x-mark size-10 rounded-full bg-bg-primary border border-border flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition hover:border-Accent-Primary"
+        >
+          <svg class="size-5">
+            <use xlink:href="#x-mark"></use>
+          </svg>
+        </span>
+        <p
+          class="text-Accent-Primary tracking-[3px] text-3xl font-bold mx-auto"
+        >
+          Nexora
+        </p>
+      </div>
+      <!-- main -->
+      <div
+        class="w-full h-full border border-border mt-2 rounded-2xl p-2 overflow-hidden hover:border-Accent-Primary transition"
+      >
+        <div
+          class="relative w-full h-15 rounded-2xl border border-border p-1 hover:border-Accent-Primary transition"
+        >
+          <input
+            type="text"
+            id="searched-input"
+            class="w-full h-full outline-none text-[16px] text-text-secondary pl-12"
+            placeholder="Type Here ..."
+          />
+          <span
+            class="absolute top-0 left-2 bottom-0 my-auto size-10 cursor-pointer flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition"
+          >
+            <svg class="size-5">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
     <!-- mobile menu from left -->
     <div
       id="left-mobile-menu"
@@ -531,7 +575,9 @@
               >Products</a
             >
             /
-            <a href="index.html" class="text-text-primary">ROG Strix G16</a>
+            <a href="index.html" class="product-header-link text-text-primary"
+              >ROG Strix G16</a
+            >
           </div>
           <!-- main of main -->
           <section
@@ -540,8 +586,13 @@
             <!-- left -->
             <div class="flex flex-col">
               <div
-                class="relative w-full h-120 rounded-2xl bg-bg-secondary border border-border"
+                class="relative w-full h-120 rounded-2xl bg-bg-secondary border border-border p-3"
               >
+                <img
+                  src=""
+                  class="main-img w-full h-full rounded-2xl"
+                  alt="product-img"
+                />
                 <span
                   class="product-offer--main absolute top-5 left-5 flex items-center justify-center w-15 h-7 rounded-[5px] bg-red-500 text-sm text-text-primary"
                   >15%</span
@@ -551,26 +602,52 @@
                 class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-5"
               >
                 <div
-                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center"
-                ></div>
+                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center p-1 cursor-pointer"
+                >
+                  <img
+                    src=""
+                    class="second-product-img w-full h-ful rounded-[10px]"
+                    alt="product-img"
+                  />
+                </div>
                 <div
-                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center"
-                ></div>
+                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center p-1 cursor-pointer"
+                >
+                  <img
+                    src=""
+                    class="third-product-img w-full h-full rounded-[10px]"
+                    alt="product-img"
+                  />
+                </div>
                 <div
-                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center"
-                ></div>
+                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center p-1 cursor-pointer"
+                >
+                  <img
+                    src=""
+                    class="forth-product-img w-full h-full rounded-[10px]"
+                    alt="product-img"
+                  />
+                </div>
                 <div
-                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center"
-                ></div>
+                  class="h-30 rounded-2xl bg-bg-secondary border border-border flex items-center justify-center p-1 cursor-pointer"
+                >
+                  <img
+                    src=""
+                    class="fifth-product-img w-full h-full rounded-[10px]"
+                    alt="product-img"
+                  />
+                </div>
               </div>
             </div>
             <!-- right -->
             <div class="flex flex-col pt-3">
-              <h5 class="text-Accent-Primary text-sm font-bold mb-3">
+              <h5
+                class="product-category text-Accent-Primary text-sm font-bold mb-3"
+              >
                 Gaming Laptop
               </h5>
               <h1
-                class="text-text-primary text-[46px]/[1.08] font-bold max-w-140 mb-4"
+                class="product-title text-text-primary text-[46px]/[1.08] font-bold max-w-140 mb-4"
               >
                 ASUS ROG Strix G16
               </h1>
@@ -578,7 +655,7 @@
               <div
                 class="flex items-center gap-4 pb-7 mb-6 border-b border-border"
               >
-                <div class="flex items-center gap-1">
+                <div class="star-wrapper flex items-center gap-1">
                   <svg class="size-3"><use xlink:href="#full-star"></use></svg>
                   <svg class="size-3"><use xlink:href="#full-star"></use></svg>
                   <svg class="size-3"><use xlink:href="#full-star"></use></svg>
@@ -593,12 +670,12 @@
               <!-- price -->
               <div class="flex flex-col pb-7 mb-5 border-b border-border">
                 <div class="flex items-center gap-4">
-                  <h3 class="text-text-primary font-bold text-[34px]">
+                  <h3
+                    class="main-price text-text-primary font-bold text-[34px]"
+                  >
                     $1,529
                   </h3>
-                  <p
-                    class="product-deleted-price text-text-secondary relative text-[15px]"
-                  >
+                  <p class="old-price text-text-secondary relative text-[15px]">
                     $1,799
                   </p>
                 </div>
@@ -609,7 +686,9 @@
                 </p>
               </div>
               <div class="flex flex-col">
-                <p class="text-[15px] max-w-140 text-text-secondary">
+                <p
+                  class="short-description text-[15px] max-w-140 text-text-secondary"
+                >
                   Built for high-performance gaming and demanding workloads, the
                   ROG Strix G16 combines powerful hardware with a fast
                   high-refresh-rate display in a modern gaming design.
@@ -628,13 +707,13 @@
                   <div
                     class="w-30.5 h-12 flex items-center rounded-[10px] bg-card-bg border border-border overflow-hidden child:w-full child:h-full child:flex child:items-center child:justify-center text-text-secondary child-hover:text-text-primary child:transition"
                   >
-                    <button class="cursor-pointer">
+                    <button class="cursor-pointer minus-btn">
                       <svg class="size-4">
                         <use xlink:href="#minus-icon"></use>
                       </svg>
                     </button>
                     <span class="user-product-count text-text-primary">1</span>
-                    <button class="cursor-pointer">
+                    <button class="cursor-pointer plus-btn">
                       <svg class="size-4">
                         <use xlink:href="#plus-icon"></use>
                       </svg>
@@ -642,7 +721,7 @@
                   </div>
                   <!-- right -->
                   <button
-                    class="w-full md:w-[50%] lg:w-full h-12 rounded-[10px] bg-blue-500 font-bold cursor-pointer transition hover:shadow-normal hover:-translate-y-1 duration-[250ms] hover:bg-Accent-Primary text-sm text-text-primary flex items-center justify-center"
+                    class="add-to-cart-btn w-full md:w-[50%] lg:w-full h-12 rounded-[10px] bg-blue-500 font-bold cursor-pointer transition hover:shadow-normal hover:-translate-y-1 duration-[250ms] hover:bg-Accent-Primary text-sm text-text-primary flex items-center justify-center"
                   >
                     Add to cart
                   </button>
@@ -662,7 +741,9 @@
               <div
                 class="border border-border rounded-2xl bg-card-bg flex flex-col p-8"
               >
-                <h4 class="text-text-primary text-[17px] font-bold mb-4">
+                <h4
+                  class="main-desciption text-text-primary text-[17px] font-bold mb-4"
+                >
                   Description
                 </h4>
                 <p class="description text-text-secondary text-sm">
@@ -680,12 +761,14 @@
                 <h4 class="text-text-primary text-[17px] font-bold mb-4">
                   Specifications
                 </h4>
-                <div class="flex flex-col child:last:border-none">
+                <div class="spec-wrapper flex flex-col child:last:border-none">
                   <div
-                    class="flex flex-wrap py-4 border-b border-border gap-y-4 gap-x-15 sm:gap-20"
+                    class="flex flex-wrap py-4 border-b border-border gap-y-4 child:w-[50%] sm:gap-20"
                   >
-                    <span class="text-text-secondary text-xs">Processor</span>
-                    <span class="text-text-primary text-xs">
+                    <span class="spec-key text-text-secondary text-xs"
+                      >Processor</span
+                    >
+                    <span class="spec-value text-text-primary text-xs">
                       Intel Core i9</span
                     >
                   </div>
@@ -738,7 +821,7 @@
             </div>
             <!-- main -->
             <div
-              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 items-center gap-4 child:border child:border-border child:bg-bg-secondary/80 child:rounded-2xl child:h-102 child:relative child:transition child-hover:-translate-y-1.5 child-hover:border-Accent-Primary/30 child:duration-[250ms]"
+              class="related-product-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-5 items-center gap-4 child:border child:border-border child:bg-bg-secondary/80 child:rounded-2xl child:h-102 child:relative child:transition child-hover:-translate-y-1.5 child-hover:border-Accent-Primary/30 child:duration-[250ms]"
             >
               <div class="group overflow-hidden">
                 <!-- offer elem -->
@@ -1095,6 +1178,7 @@
     </footer>
     <div class="basket-overlay hidden"></div>
     <div class="overlay hidden"></div>
-    <script src="main/js/app.js"></script>
+    <script src="../../js/basic.js"></script>
+    <script src="product.js"></script>
   </body>
 </html>
