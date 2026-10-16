@@ -11,6 +11,9 @@ const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
 // DOM
 
 const productsWrapperElem = document.querySelector(".products-wrapper");
+const CategoryInputs = document.querySelectorAll(".Category-input");
+
+let categoryArray = [];
 
 const getProductsByFetch = async () => {
   const response = await fetch(allProductsUrl, {
@@ -23,6 +26,7 @@ const getProductsByFetch = async () => {
   const data = await response.json();
   console.log(data[0]);
   createProductsBanner(data);
+  setCategoriesProducts(data);
 };
 
 const getProductId = (id) => {
@@ -125,3 +129,38 @@ const mainOnLoadFunc = () => {
   getProductsByFetch();
 };
 
+const setRelatedProduct = (data, category) => {
+  // console.log(data);
+  const filteredProduct = data.filter((product) => {
+    return product.category === category;
+  });
+  console.log(filteredProduct);
+  categoryArray.push(...filteredProduct);
+ 
+  createProductsBanner(categoryArray)
+
+};
+
+const setCategoriesProducts = (data) => {
+  CategoryInputs.forEach((input) => {
+    input.addEventListener("change", (e) => {
+      categoryArray = []
+      CategoryInputs.forEach((input) => {
+        if (input.id === "gaming" && input.checked) {
+          setRelatedProduct(data, "Gaming");
+          console.log("gaming is ok");
+        } else if (input.id === "laptops" && input.checked) {
+          setRelatedProduct(data, "Laptops");
+          console.log("laptops is ok");
+        } else if (input.id === "smartphones" && input.checked) {
+          setRelatedProduct(data, "Smartphones");
+          console.log("smartphones is ok");
+        } else if (input.id === "accessories" && input.checked) {
+          setRelatedProduct(data, "Accessories");
+          console.log("accessories is ok");
+        }
+      });
+      // console.log(e.target.id, e.target.checked);
+    });
+  });
+};
