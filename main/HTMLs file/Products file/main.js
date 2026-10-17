@@ -46,6 +46,7 @@ const getProductsByFetch = async () => {
       setRelatedProduct(data, "Accessories");
       console.log("ha ha accessories");
     }
+    setCategoriesProducts(data)
   } else {
     createProductsBanner(data);
     setCategoriesProducts(data);
@@ -162,6 +163,7 @@ const setRelatedProduct = (data, category) => {
   categoryArray.push(...filteredProduct);
 
   document.querySelector(`#${category.toLowerCase()}`).checked = true;
+  createProductsBanner(categoryArray)
 };
 
 const setCategoriesProducts = (data) => {
