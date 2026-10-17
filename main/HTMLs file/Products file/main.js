@@ -14,6 +14,13 @@ const productsWrapperElem = document.querySelector(".products-wrapper");
 const CategoryInputs = document.querySelectorAll(".Category-input");
 
 let categoryArray = [];
+let IsCategory;
+
+const getCategoryFromUrl = () => {
+  let params = new URLSearchParams(document.location.search);
+  let category = params.get("category");
+  IsCategory = category;
+};
 
 const getProductsByFetch = async () => {
   const response = await fetch(allProductsUrl, {
@@ -25,8 +32,24 @@ const getProductsByFetch = async () => {
   });
   const data = await response.json();
   console.log(data[0]);
-  createProductsBanner(data);
-  setCategoriesProducts(data);
+  console.log("category is " + IsCategory);
+  if (IsCategory) {
+    if (IsCategory === "gaming") {
+      setRelatedProduct(data, "Gaming");
+    } else if (IsCategory === "laptops") {
+      setRelatedProduct(data, "Laptops");
+      console.log("ha ha laptops");
+    } else if (IsCategory === "smartphones") {
+      setRelatedProduct(data, "Smartphones");
+      console.log("ha ha smartphones");
+    } else if (IsCategory === "accessories") {
+      setRelatedProduct(data, "Accessories");
+      console.log("ha ha accessories");
+    }
+  } else {
+    createProductsBanner(data);
+    setCategoriesProducts(data);
+  }
 };
 
 const getProductId = (id) => {
@@ -126,6 +149,7 @@ const createProductsBanner = (data) => {
 };
 
 const mainOnLoadFunc = () => {
+  getCategoryFromUrl();
   getProductsByFetch();
 };
 
@@ -136,15 +160,14 @@ const setRelatedProduct = (data, category) => {
   });
   console.log(filteredProduct);
   categoryArray.push(...filteredProduct);
- 
-  createProductsBanner(categoryArray)
 
+  document.querySelector(`#${category.toLowerCase()}`).checked = true;
 };
 
 const setCategoriesProducts = (data) => {
   CategoryInputs.forEach((input) => {
     input.addEventListener("change", (e) => {
-      categoryArray = []
+      categoryArray = [];
       CategoryInputs.forEach((input) => {
         if (input.id === "gaming" && input.checked) {
           setRelatedProduct(data, "Gaming");
