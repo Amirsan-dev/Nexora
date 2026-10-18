@@ -805,13 +805,21 @@
                     </div>
                     <div class="w-30 relative text-text-primary text-xs group">
                       <select
-                        class="w-full h-full px-4 appearance-none child:bg-bg-secondary rounded-md cursor-pointer"
+                        class="select-elem w-full h-full px-4 appearance-none child:bg-bg-secondary rounded-md cursor-pointer"
                       >
-                        <option value="sorted-by" selected>Sorted By</option>
-                        <option value="Newest">Newest</option>
-                        <option value="Low-to-High">Low to High</option>
-                        <option value="High-to-Low">High to Low</option>
-                        <option value="Best-Rated">Best Rated</option>
+                        <option class="option-first" value="sorted-by" selected>
+                          Sorted By
+                        </option>
+                        <option class="option" value="Newest">Newest</option>
+                        <option class="option" value="Low-to-High">
+                          Low to High
+                        </option>
+                        <option class="option" value="High-to-Low">
+                          High to Low
+                        </option>
+                        <option class="option" value="Best-Rated">
+                          Best Rated
+                        </option>
                       </select>
                       <svg
                         class="size-3 absolute right-2.5 top-0 bottom-0 my-auto group-focus-within:rotate-180 transition duration-[250ms]"

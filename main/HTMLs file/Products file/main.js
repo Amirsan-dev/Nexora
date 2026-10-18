@@ -12,9 +12,66 @@ const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
 
 const productsWrapperElem = document.querySelector(".products-wrapper");
 const CategoryInputs = document.querySelectorAll(".Category-input");
+const optionsElem = document.querySelectorAll(".option");
+const selectElem = document.querySelector(".select-elem");
+const optionFirstElem = document.querySelector(".option-first");
 
 let categoryArray = [];
 let IsCategory;
+// let fetchdData = [];
+
+const isNewFun = (data) => {
+  const sortedData = data.filter((item) => {
+    return item.is_new === true;
+  });
+  console.log(sortedData);
+  createProductsBanner(sortedData);
+};
+
+const sortLowToHightProduct = (data) => {
+  const copyData = [...data];
+  const sortedData = copyData.sort((a, b) => {
+    return a.price - b.price;
+  });
+  console.log(sortedData);
+  createProductsBanner(sortedData);
+};
+
+const sortHightToLowProduct = (data) => {
+  const copyData = [...data];
+  const sortedData = copyData.sort((a, b) => {
+    return b.price - a.price;
+  });
+  console.log(sortedData);
+  createProductsBanner(sortedData);
+};
+
+const sortTopRatedProduct = (data) => {
+  const copyData = [...data];
+  const sortedData = copyData.sort((a, b) => {
+    return b.rating - a.rating;
+  });
+  console.log(sortedData);
+  createProductsBanner(sortedData);
+};
+
+const sortedProduct = (data) => {
+  selectElem.addEventListener("change", (e) => {
+    optionFirstElem.disabled = true;
+    let selectElemValue = e.target.value;
+    // console.log(selectElemValue);
+
+    if (selectElemValue === "Newest") {
+      isNewFun(data);
+    } else if (selectElemValue === "Low-to-High") {
+      sortLowToHightProduct(data);
+    } else if (selectElemValue === "High-to-Low") {
+      sortHightToLowProduct(data);
+    } else if (selectElemValue === "Best-Rated") {
+      sortTopRatedProduct(data);
+    }
+  });
+};
 
 const getCategoryFromUrl = () => {
   let params = new URLSearchParams(document.location.search);
@@ -32,6 +89,7 @@ const getProductsByFetch = async () => {
   });
   const data = await response.json();
   console.log(data[0]);
+
   console.log("category is " + IsCategory);
   if (IsCategory) {
     if (IsCategory === "gaming") {
@@ -46,10 +104,11 @@ const getProductsByFetch = async () => {
       setRelatedProduct(data, "Accessories");
       console.log("ha ha accessories");
     }
-    setCategoriesProducts(data)
+    setCategoriesProducts(data);
   } else {
     createProductsBanner(data);
     setCategoriesProducts(data);
+    sortedProduct(data);
   }
 };
 
@@ -163,7 +222,8 @@ const setRelatedProduct = (data, category) => {
   categoryArray.push(...filteredProduct);
 
   document.querySelector(`#${category.toLowerCase()}`).checked = true;
-  createProductsBanner(categoryArray)
+  createProductsBanner(categoryArray);
+  sortedProduct(categoryArray);
 };
 
 const setCategoriesProducts = (data) => {
