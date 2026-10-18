@@ -15,6 +15,50 @@ const CategoryInputs = document.querySelectorAll(".Category-input");
 const optionsElem = document.querySelectorAll(".option");
 const selectElem = document.querySelector(".select-elem");
 const optionFirstElem = document.querySelector(".option-first");
+const minimumPrice = document.querySelector(".minimum-price");
+const maximumPriceElem = document.querySelector(".maximum-price");
+const rangeInputPrice = document.querySelector(".range-input-price");
+const minDisPriceElem = document.querySelector(".min-dis-price");
+const maxAblPriceElem = document.querySelector(".max-abl-price");
+
+let maxPrice;
+let minPrice;
+
+const setInputRangeValue = (data) => {
+  const copyData = [...data];
+  const sortedData = copyData.sort((a, b) => {
+    return a.price - b.price;
+  });
+
+  minimumPrice.innerHTML = `$${sortedData[0].price}`;
+  maximumPriceElem.innerHTML = `$${sortedData[sortedData.length - 1].price}`;
+  rangeInputPrice.min = sortedData[0].price;
+  minPrice = sortedData[0].price;
+  rangeInputPrice.max = sortedData[sortedData.length - 1].price;
+  minDisPriceElem.value = sortedData[0].price;
+};
+
+const sortProductByPrice = (data) => {
+  rangeInputPrice.addEventListener("input", (e) => {
+    maxPrice = e.target.value;
+    maxAblPriceElem.value = maxPrice;
+    const sortedProduct = data.filter((product) => {
+      return product.price <= maxPrice;
+    });
+    createProductsBanner(sortedProduct);
+  });
+  maxAblPriceElem.addEventListener("keyup", (e) => {
+    maxPrice = e.target.value;
+    rangeInputPrice.value = maxPrice;
+    if (maxPrice < minPrice) {
+      maxPrice = minPrice;
+    }
+    const sortedProduct = data.filter((product) => {
+      return product.price <= maxPrice;
+    });
+    createProductsBanner(sortedProduct);
+  });
+};
 
 let categoryArray = [];
 let IsCategory;
@@ -26,6 +70,7 @@ const isNewFun = (data) => {
   });
   console.log(sortedData);
   createProductsBanner(sortedData);
+  sortProductByPrice(sortedData);
 };
 
 const sortLowToHightProduct = (data) => {
@@ -35,6 +80,7 @@ const sortLowToHightProduct = (data) => {
   });
   console.log(sortedData);
   createProductsBanner(sortedData);
+  sortProductByPrice(sortedData);
 };
 
 const sortHightToLowProduct = (data) => {
@@ -44,6 +90,7 @@ const sortHightToLowProduct = (data) => {
   });
   console.log(sortedData);
   createProductsBanner(sortedData);
+  sortProductByPrice(sortedData);
 };
 
 const sortTopRatedProduct = (data) => {
@@ -53,6 +100,7 @@ const sortTopRatedProduct = (data) => {
   });
   console.log(sortedData);
   createProductsBanner(sortedData);
+  sortProductByPrice(sortedData);
 };
 
 const sortedProduct = (data) => {
@@ -88,7 +136,8 @@ const getProductsByFetch = async () => {
     },
   });
   const data = await response.json();
-  console.log(data[0]);
+  setInputRangeValue(data);
+  sortProductByPrice(data);
 
   console.log("category is " + IsCategory);
   if (IsCategory) {
@@ -224,6 +273,7 @@ const setRelatedProduct = (data, category) => {
   document.querySelector(`#${category.toLowerCase()}`).checked = true;
   createProductsBanner(categoryArray);
   sortedProduct(categoryArray);
+   sortProductByPrice(categoryArray)
 };
 
 const setCategoriesProducts = (data) => {
