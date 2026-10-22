@@ -1,8 +1,3 @@
-// Url and Api key
-
-// const allProductsUrl =
-//   "https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/all-products?select=*,product_images(*)&order=id.asc";
-
 const allProductsUrl =
   "https://bbbxnpocgxdwkobvubbb.supabase.co/rest/v1/all-products?select=*,product_images(*)&order=id.asc";
 
@@ -22,38 +17,71 @@ const minDisPriceElem = document.querySelector(".min-dis-price");
 const maxAblPriceElem = document.querySelector(".max-abl-price");
 const inStockCheck = document.querySelector("#in-stock");
 const onSaleCheck = document.querySelector("#on-sale");
+const searchInput = document.querySelector("#search-input");
 
 let maxPrice;
 let minPrice;
-let categoryArray = [];
+// let categoryArray = [];
 let IsCategory;
+let allProducts = [];
+let copyProducts = [];
+  let searchedProduct;
 
-const inSaleFun = (data) => {
-  onSaleCheck.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      const filteredProduct = data.filter((product) => {
-        return product.on_sale === true;
-      });
-      console.log(filteredProduct);
-      createProductsBanner(filteredProduct);
-    } else {
-      createProductsBanner(data);
-    }
-  });
+const mainSortFun = async () => {
+  copyProducts = [...allProducts];
+  copyProducts = searchProductFun(copyProducts);
+  copyProducts = isSearchValue(copyProducts);
+  copyProducts = onSaleFun(copyProducts);
+  copyProducts = inStockFun(copyProducts);
+  copyProducts = sortProductByTextInputPrice(copyProducts);
+  copyProducts = sortProductByRangeInputPrice(copyProducts);
+  copyProducts = sortingProduct(copyProducts);
+  copyProducts = setCategoriesProducts(copyProducts);
+  console.log("this is data final=>", copyProducts);
+  createProductsBanner(copyProducts);
+};
+
+const isSearchValue = (data) => {
+
+  if (searchInput.value.trim()) {
+    return data.filter((product) => {
+      return product.name.toLowerCase().includes(searchedProduct.toLowerCase());
+    });
+  } else {
+    return data;
+  }
+};
+
+const searchProductFun = (data) => {
+  searchedProduct = searchInput.value.trim();
+  if (searchedProduct) {
+    console.log(searchedProduct);
+    return data.filter((product) => {
+      return product.name.toLowerCase().includes(searchedProduct.toLowerCase());
+    });
+  } else {
+    return data;
+  }
+};
+
+const onSaleFun = (data) => {
+  if (onSaleCheck.checked) {
+    return data.filter((product) => {
+      return product.on_sale === true;
+    });
+  } else {
+    return data;
+  }
 };
 
 const inStockFun = (data) => {
-  inStockCheck.addEventListener("change", (e) => {
-    if (e.target.checked) {
-      const filteredProduct = data.filter((product) => {
-        return product.in_stock === true;
-      });
-      console.log(filteredProduct);
-      createProductsBanner(filteredProduct);
-    } else {
-      createProductsBanner(data);
-    }
-  });
+  if (inStockCheck.checked) {
+    return data.filter((product) => {
+      return product.in_stock === true;
+    });
+  } else {
+    return data;
+  }
 };
 
 const setInputRangeValue = (data) => {
@@ -67,98 +95,74 @@ const setInputRangeValue = (data) => {
   rangeInputPrice.min = sortedData[0].price;
   minPrice = sortedData[0].price;
   rangeInputPrice.max = sortedData[sortedData.length - 1].price;
+  rangeInputPrice.value = sortedData[sortedData.length - 1].price;
   minDisPriceElem.value = sortedData[0].price;
+  maxAblPriceElem.max = sortedData[sortedData.length - 1].price;
+  maxAblPriceElem.value = sortedData[sortedData.length - 1].price;
 };
 
-const sortProductByPrice = (data) => {
-  rangeInputPrice.addEventListener("input", (e) => {
-    maxPrice = e.target.value;
-    maxAblPriceElem.value = maxPrice;
-    const sortedProduct = data.filter((product) => {
-      return product.price <= maxPrice;
-    });
-    createProductsBanner(sortedProduct);
-    inSaleFun(sortedProduct);
-    inStockFun(sortedProduct);
+const sortProductByRangeInputPrice = (data) => {
+  maxPrice = maxAblPriceElem.value;
+  rangeInputPrice.value = maxPrice;
+  if (maxPrice < minPrice) {
+    maxPrice = minPrice;
+  }
+  return data.filter((product) => {
+    return product.price <= maxPrice;
   });
-  maxAblPriceElem.addEventListener("keyup", (e) => {
-    maxPrice = e.target.value;
-    rangeInputPrice.value = maxPrice;
-    if (maxPrice < minPrice) {
-      maxPrice = minPrice;
-    }
-    const sortedProduct = data.filter((product) => {
-      return product.price <= maxPrice;
-    });
-    createProductsBanner(sortedProduct);
-    inSaleFun(sortedProduct);
-    inStockFun(sortedProduct);
+};
+
+const sortProductByTextInputPrice = (data) => {
+  maxPrice = rangeInputPrice.value;
+  maxAblPriceElem.value = maxPrice;
+  return data.filter((product) => {
+    return product.price <= maxPrice;
   });
 };
 
 const isNewFun = (data) => {
-  const sortedData = data.filter((item) => {
+  return data.filter((item) => {
     return item.is_new === true;
   });
-  console.log(sortedData);
-  createProductsBanner(sortedData);
-  sortProductByPrice(sortedData);
-  inSaleFun(sortedData);
-  inStockFun(sortedData);
 };
 
 const sortLowToHightProduct = (data) => {
-  const copyData = [...data];
-  const sortedData = copyData.sort((a, b) => {
+  return data.sort((a, b) => {
     return a.price - b.price;
   });
-  console.log(sortedData);
-  createProductsBanner(sortedData);
-  sortProductByPrice(sortedData);
-  inSaleFun(sortedData);
-  inStockFun(sortedData);
 };
 
 const sortHightToLowProduct = (data) => {
-  const copyData = [...data];
-  const sortedData = copyData.sort((a, b) => {
+  return data.sort((a, b) => {
     return b.price - a.price;
   });
-  console.log(sortedData);
-  createProductsBanner(sortedData);
-  sortProductByPrice(sortedData);
-  inSaleFun(sortedData);
-  inStockFun(sortedData);
 };
 
 const sortTopRatedProduct = (data) => {
-  const copyData = [...data];
-  const sortedData = copyData.sort((a, b) => {
+  return data.sort((a, b) => {
     return b.rating - a.rating;
   });
-  console.log(sortedData);
-  createProductsBanner(sortedData);
-  sortProductByPrice(sortedData);
-  inSaleFun(sortedData);
-  inStockFun(sortedData);
 };
 
-const sortedProduct = (data) => {
-  selectElem.addEventListener("change", (e) => {
-    optionFirstElem.disabled = true;
-    let selectElemValue = e.target.value;
-    // console.log(selectElemValue);
+const sortingProduct = (data) => {
+  optionFirstElem.disabled = true;
+  let selectElemValue = selectElem.value;
 
-    if (selectElemValue === "Newest") {
-      isNewFun(data);
-    } else if (selectElemValue === "Low-to-High") {
-      sortLowToHightProduct(data);
-    } else if (selectElemValue === "High-to-Low") {
-      sortHightToLowProduct(data);
-    } else if (selectElemValue === "Best-Rated") {
-      sortTopRatedProduct(data);
-    }
-  });
+  if (selectElemValue === "Newest") {
+    isNewFun(data);
+    return isNewFun(data);
+  } else if (selectElemValue === "Low-to-High") {
+    sortLowToHightProduct(data);
+    return sortLowToHightProduct(data);
+  } else if (selectElemValue === "High-to-Low") {
+    sortHightToLowProduct(data);
+    return sortHightToLowProduct(data);
+  } else if (selectElemValue === "Best-Rated") {
+    sortTopRatedProduct(data);
+    return sortTopRatedProduct(data);
+  } else {
+    return data;
+  }
 };
 
 const getCategoryFromUrl = () => {
@@ -167,21 +171,7 @@ const getCategoryFromUrl = () => {
   IsCategory = category;
 };
 
-const getProductsByFetch = async () => {
-  const response = await fetch(allProductsUrl, {
-    method: "GET",
-    headers: {
-      apikey: `${key}`,
-      Authorization: `Bearer ${key}`,
-    },
-  });
-  const data = await response.json();
-  setInputRangeValue(data);
-  sortProductByPrice(data);
-  inStockFun(data);
-  inSaleFun(data);
-
-  console.log("category is " + IsCategory);
+const IsCategoryOn = (data) => {
   if (IsCategory) {
     if (IsCategory === "gaming") {
       setRelatedProduct(data, "Gaming");
@@ -195,14 +185,26 @@ const getProductsByFetch = async () => {
       setRelatedProduct(data, "Accessories");
       console.log("ha ha accessories");
     }
-    setCategoriesProducts(data);
-  } else {
-    createProductsBanner(data);
-    setCategoriesProducts(data);
-    sortedProduct(data);
   }
 };
 
+const getProductsByFetch = async () => {
+  const response = await fetch(allProductsUrl, {
+    method: "GET",
+    headers: {
+      apikey: `${key}`,
+      Authorization: `Bearer ${key}`,
+    },
+  });
+  const data = await response.json();
+  allProducts = data;
+  console.log(allProducts);
+  setInputRangeValue(data);
+  IsCategoryOn(data);
+  mainSortFun();
+};
+
+// ! برای قسمت اد کردن محصول به سبد خرید
 const getProductId = (id) => {
   console.log(id);
 };
@@ -305,41 +307,36 @@ const mainOnLoadFunc = () => {
 };
 
 const setRelatedProduct = (data, category) => {
-  // console.log(data);
-  const filteredProduct = data.filter((product) => {
+  document.querySelector(`#${category.toLowerCase()}`).checked = true;
+
+  return data.filter((product) => {
     return product.category === category;
   });
-  console.log(filteredProduct);
-  categoryArray.push(...filteredProduct);
-
-  document.querySelector(`#${category.toLowerCase()}`).checked = true;
-  createProductsBanner(categoryArray);
-  sortedProduct(categoryArray);
-  sortProductByPrice(categoryArray);
-  inSaleFun(categoryArray);
-  inStockFun(categoryArray);
 };
 
 const setCategoriesProducts = (data) => {
-  CategoryInputs.forEach((input) => {
-    input.addEventListener("change", (e) => {
-      categoryArray = [];
-      CategoryInputs.forEach((input) => {
-        if (input.id === "gaming" && input.checked) {
-          setRelatedProduct(data, "Gaming");
-          console.log("gaming is ok");
-        } else if (input.id === "laptops" && input.checked) {
-          setRelatedProduct(data, "Laptops");
-          console.log("laptops is ok");
-        } else if (input.id === "smartphones" && input.checked) {
-          setRelatedProduct(data, "Smartphones");
-          console.log("smartphones is ok");
-        } else if (input.id === "accessories" && input.checked) {
-          setRelatedProduct(data, "Accessories");
-          console.log("accessories is ok");
-        }
-      });
-      // console.log(e.target.id, e.target.checked);
-    });
+  const foundedInputs = [...CategoryInputs].filter((input) => {
+    return input.checked === true;
   });
+
+  if (foundedInputs.length) {
+    return data.filter((product) => {
+      return foundedInputs.some((item) => {
+        let category = item.id.charAt(0).toUpperCase() + item.id.slice(1);
+        return product.category === category;
+      });
+    });
+  } else {
+    return data;
+  }
 };
+
+searchInput.addEventListener("keyup", mainSortFun);
+onSaleCheck.addEventListener("change", mainSortFun);
+inStockCheck.addEventListener("change", mainSortFun);
+rangeInputPrice.addEventListener("input", mainSortFun);
+maxAblPriceElem.addEventListener("keyup", mainSortFun);
+selectElem.addEventListener("change", mainSortFun);
+CategoryInputs.forEach((input) => {
+  input.addEventListener("change", mainSortFun);
+});
