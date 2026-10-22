@@ -203,6 +203,9 @@
   .invisible {
     visibility: hidden;
   }
+  .visible {
+    visibility: visible;
+  }
   .absolute {
     position: absolute;
   }
@@ -1420,6 +1423,9 @@
   }
   .opacity-0 {
     opacity: 0%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .shadow-header-btn {
     --tw-shadow: 0 0 14px var(--tw-shadow-color, rgba(0, 212, 225, 0.2));

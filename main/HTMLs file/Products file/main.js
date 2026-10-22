@@ -343,10 +343,25 @@ CategoryInputs.forEach((input) => {
 // ? basket btn dom
 
 const basketBtn = document.querySelector("#basket-btn");
+const desktopBasketElem = document.querySelector(".desktop-basket");
+const desktopBasketOverlay = document.querySelector(".desktop-basket-overlay");
 
-const showBasket = () => {};
 
-const hideBasket = () => {};
+const showBasket = () => {
+  desktopBasketElem.classList.remove("opacity-0");
+  desktopBasketElem.classList.remove("invisible");
+  desktopBasketElem.classList.add("opacity-100");
+  desktopBasketElem.classList.add("visible");
+  desktopBasketOverlay.classList.remove("hidden")
+};
+
+const hideBasket = () => {
+  desktopBasketElem.classList.add("opacity-0");
+  desktopBasketElem.classList.add("invisible");
+  desktopBasketElem.classList.remove("opacity-100");
+  desktopBasketElem.classList.remove("visible");
+    desktopBasketOverlay.classList.add("hidden")
+};
 
 basketBtn.addEventListener("mouseover", showBasket);
 basketBtn.addEventListener("mouseout", hideBasket);
