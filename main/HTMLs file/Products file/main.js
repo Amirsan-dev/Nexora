@@ -37,7 +37,6 @@ const mainSortFun = async () => {
   copyProducts = sortProductByRangeInputPrice(copyProducts);
   copyProducts = sortingProduct(copyProducts);
   copyProducts = setCategoriesProducts(copyProducts);
-  console.log("this is data final=>", copyProducts);
   createProductsBanner(copyProducts);
 };
 
@@ -203,11 +202,6 @@ const getProductsByFetch = async () => {
   mainSortFun();
 };
 
-// ! برای قسمت اد کردن محصول به سبد خرید
-const getProductId = (id) => {
-  console.log(id);
-};
-
 const createProductsBanner = (data) => {
   productsWrapperElem.innerHTML = "";
   data.forEach((product) => {
@@ -303,6 +297,7 @@ const createProductsBanner = (data) => {
 const mainOnLoadFunc = () => {
   getCategoryFromUrl();
   getProductsByFetch();
+  isLocalStorageLength();
 };
 
 const setRelatedProduct = (data, category) => {
@@ -346,13 +341,12 @@ const basketBtn = document.querySelector("#basket-btn");
 const desktopBasketElem = document.querySelector(".desktop-basket");
 const desktopBasketOverlay = document.querySelector(".desktop-basket-overlay");
 
-
 const showBasket = () => {
   desktopBasketElem.classList.remove("opacity-0");
   desktopBasketElem.classList.remove("invisible");
   desktopBasketElem.classList.add("opacity-100");
   desktopBasketElem.classList.add("visible");
-  desktopBasketOverlay.classList.remove("hidden")
+  desktopBasketOverlay.classList.remove("hidden");
 };
 
 const hideBasket = () => {
@@ -360,8 +354,115 @@ const hideBasket = () => {
   desktopBasketElem.classList.add("invisible");
   desktopBasketElem.classList.remove("opacity-100");
   desktopBasketElem.classList.remove("visible");
-    desktopBasketOverlay.classList.add("hidden")
+  desktopBasketOverlay.classList.add("hidden");
 };
 
 basketBtn.addEventListener("mouseover", showBasket);
 basketBtn.addEventListener("mouseout", hideBasket);
+
+//! basket btn logic
+let basket = [];
+const basketProductWrapper = document.querySelector(".basket-product-wrapper");
+// let localstorage = []
+
+const saveToLocalStorage = (products) => {
+  // console.log(products);
+  localStorage.setItem("basket", JSON.stringify(products));
+};
+
+const createBasketBanner = (basket) => {
+  basketProductWrapper.innerHTML = "";
+  basket.forEach((product) => {
+    console.log(product);
+    basketProductWrapper.insertAdjacentHTML(
+      "beforeend",
+      `
+        <div
+            class="flex items-center justify-between w-full h-20 border border-border rounded-[10px] bg-bg-secondary hover:border-Accent-Primary/60 p-2 transition"
+        >
+         <!-- left -->
+         <div class="flex flex-col gap-1.5">
+           <h6 class="text-text-secondary text-sm">
+             price :
+             <span class="text-sm font-bold text-text-primary"
+               >$${product.price}</span
+             >
+           </h6>
+           <div
+             class="flex items-center justify-center gap-1 child:size-7 child:rounded-[10px] child:bg-bg-secondary child:border child: child:border-border child:flex child:items-center child:justify-center"
+           >
+             <button
+               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+             >
+               <svg class="size-4 transition">
+                 <use xlink:href="#minus-icon"></use>
+               </svg>
+             </button>
+             <span class="text-text-primary text-xs font-bold"
+               >${product.qty}</span
+             >
+             <button
+               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+             >
+               <svg class="size-4 transition">
+                 <use xlink:href="#plus-icon"></use>
+               </svg>
+             </button>
+             <button
+                  class="hover:text-red-600 hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+                >
+                  <svg class="size-4 transition">
+                    <use xlink:href="#trash-icon"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <!-- right -->
+            <div class="flex items-center gap-2">
+              <a
+                href="#"
+                class="text-xs font-bold line-clamp-2 max-w-25 text-text-primary"
+                >${product.name}</a
+              >
+              <div
+                class="w-17 rounded-[10px] border border-border overflow-hidden"
+              >
+                <img
+                  src="${product.product_images[0].image_url}"
+                  class="size-full"
+                  alt="product-img"
+                />
+              </div>
+            </div>
+          </div>
+      `,
+    );
+  });
+};
+
+const isLocalStorageLength = () => {
+  const localstorage = localStorage.getItem("basket");
+
+  let receivedItem = JSON.parse(localstorage);
+  if (receivedItem) {
+    basket = receivedItem;
+    // console.log(basket);
+    createBasketBanner(basket);
+  } else {
+    basket = [];
+  }
+};
+
+const getProductId = (id) => {
+  const foundedProduct = allProducts.find((product) => {
+    return product.id === id;
+  });
+  // console.log(foundedProduct)
+
+  isInBasket = basket.some((product) => {
+    return product.id === foundedProduct.id;
+  })
+
+  // الان باید منطق کیو تی وای رو بسازی که اگه از محصول وجود داشت توی سبد یکی به تعدادش اصافه کنی 
+
+};

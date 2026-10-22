@@ -1508,6 +1508,14 @@
     --tw-duration: 400ms;
     transition-duration: 400ms;
   }
+  .duration-\[800ms\] {
+    --tw-duration: 800ms;
+    transition-duration: 800ms;
+  }
+  .duration-\[ms\] {
+    --tw-duration: ms;
+    transition-duration: ms;
+  }
   .outline-none {
     --tw-outline-style: none;
     outline-style: none;
