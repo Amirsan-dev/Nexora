@@ -90,7 +90,8 @@ body {
 
   .overlay,
   .basket-overlay,
-  .search-bar-overlay {
+  .search-bar-overlay,
+  .desktop-basket-overlay {
     position: fixed;
     z-index: 10;
     inset: 0;
@@ -234,5 +235,8 @@ body {
     border-radius: 10px;
     background-color: var(--color-Accent-Primary);
     margin: auto 0;
+  }
+  .basket-product-wrapper::-webkit-scrollbar{
+    display: none;
   }
 }

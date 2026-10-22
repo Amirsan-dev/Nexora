@@ -25,7 +25,7 @@ let minPrice;
 let IsCategory;
 let allProducts = [];
 let copyProducts = [];
-  let searchedProduct;
+let searchedProduct;
 
 const mainSortFun = async () => {
   copyProducts = [...allProducts];
@@ -42,7 +42,6 @@ const mainSortFun = async () => {
 };
 
 const isSearchValue = (data) => {
-
   if (searchInput.value.trim()) {
     return data.filter((product) => {
       return product.name.toLowerCase().includes(searchedProduct.toLowerCase());
@@ -340,3 +339,14 @@ selectElem.addEventListener("change", mainSortFun);
 CategoryInputs.forEach((input) => {
   input.addEventListener("change", mainSortFun);
 });
+
+// ? basket btn dom
+
+const basketBtn = document.querySelector("#basket-btn");
+
+const showBasket = () => {};
+
+const hideBasket = () => {};
+
+basketBtn.addEventListener("mouseover", showBasket);
+basketBtn.addEventListener("mouseout", hideBasket);
