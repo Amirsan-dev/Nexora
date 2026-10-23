@@ -342,19 +342,13 @@ const desktopBasketElem = document.querySelector(".desktop-basket");
 const desktopBasketOverlay = document.querySelector(".desktop-basket-overlay");
 
 const showBasket = () => {
-  desktopBasketElem.classList.remove("opacity-0");
-  desktopBasketElem.classList.remove("invisible");
-  desktopBasketElem.classList.add("opacity-100");
-  desktopBasketElem.classList.add("visible");
-  desktopBasketOverlay.classList.remove("hidden");
+  desktopBasketElem.classList.add("desktop-basket--show");
+  desktopBasketOverlay.classList.add("desktop-basket-overlay--show");
 };
 
 const hideBasket = () => {
-  desktopBasketElem.classList.add("opacity-0");
-  desktopBasketElem.classList.add("invisible");
-  desktopBasketElem.classList.remove("opacity-100");
-  desktopBasketElem.classList.remove("visible");
-  desktopBasketOverlay.classList.add("hidden");
+  desktopBasketElem.classList.remove("desktop-basket--show");
+  desktopBasketOverlay.classList.remove("desktop-basket-overlay--show");
 };
 
 basketBtn.addEventListener("mouseover", showBasket);
@@ -410,7 +404,7 @@ const IsInLocalStorageLength = () => {
   let receivedBasket = localStorage.getItem("basket");
   let parsedBasket = JSON.parse(receivedBasket);
 
-  if (parsedBasket) {
+  if (parsedBasket.length > 0) {
     basket = parsedBasket;
     createBasketBanner(basket);
     calculateFinalPrice(basket);
@@ -444,7 +438,7 @@ const createBasketBanner = (basket) => {
              class="flex items-center justify-center gap-1 child:size-7 child:rounded-[10px] child:bg-bg-secondary child:border child: child:border-border child:flex child:items-center child:justify-center"
            >
              <button
-               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition" onclick="decreaseProductFun(${product.id})"
              >
                <svg class="size-4 transition">
                  <use xlink:href="#minus-icon"></use>
@@ -454,14 +448,14 @@ const createBasketBanner = (basket) => {
                >${product.qty}</span
              >
              <button
-               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+               class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition" onclick="increaseProductFun(${product.id})"
              >
                <svg class="size-4 transition">
                  <use xlink:href="#plus-icon"></use>
                </svg>
              </button>
              <button
-                  class="hover:text-red-600 hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+                  class="hover:text-red-600 hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition" onclick="deleteProduct(${product.id})"
                 >
                   <svg class="size-4 transition">
                     <use xlink:href="#trash-icon"></use>
@@ -517,5 +511,45 @@ const calculateFinalPrice = (basket) => {
 
     productCountElem.innerHTML = `(${productCounter})`;
     finalPriceBasketElem.innerHTML = `$${finalPrice}`;
+  }
+};
+
+const decreaseProductFun = (id) => {
+  let foundedInBasket = basket.find((product) => {
+    return product.id === id;
+  });
+
+  foundedInBasket.qty -= 1;
+
+  if (foundedInBasket.qty < 1) {
+    deleteProduct(id);
+  } else {
+    saveProductsToLocalStorage();
+    createBasketBanner(basket);
+    calculateFinalPrice(basket);
+  }
+};
+const increaseProductFun = (id) => {
+  let foundedInBasket = basket.find((product) => {
+    return product.id === id;
+  });
+
+  foundedInBasket.qty += 1;
+  saveProductsToLocalStorage();
+  createBasketBanner(basket);
+  calculateFinalPrice(basket);
+};
+const deleteProduct = (id) => {
+  console.log(id);
+  let foundedInBasket = basket.findIndex((product) => {
+    return product.id === id;
+  });
+
+  basket.splice(foundedInBasket, 1);
+  saveProductsToLocalStorage();
+  createBasketBanner(basket);
+  calculateFinalPrice(basket);
+  if (basket.length < 1) {
+    createEmptyBasketBanner();
   }
 };

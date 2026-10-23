@@ -236,7 +236,25 @@ body {
     background-color: var(--color-Accent-Primary);
     margin: auto 0;
   }
-  .basket-product-wrapper::-webkit-scrollbar{
+  .basket-product-wrapper::-webkit-scrollbar {
     display: none;
+  }
+  .desktop-basket {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms ease-in;
+  }
+  .desktop-basket--show {
+    opacity: 100;
+    visibility: visible;
+  }
+  .desktop-basket-overlay {
+    transition: all 200ms ease-in;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .desktop-basket-overlay--show {
+    opacity: 100;
+    visibility: visible;
   }
 }
