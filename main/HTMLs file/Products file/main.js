@@ -418,6 +418,7 @@ const IsInLocalStorageLength = () => {
     basket = [];
     console.log(basket);
     createEmptyBasketBanner();
+    calculateFinalPrice();
   }
 };
 
@@ -504,11 +505,17 @@ const createEmptyBasketBanner = () => {
 const calculateFinalPrice = (basket) => {
   let finalPrice = 0;
   let productCounter = 0;
-  basket.forEach((product) => {
-    finalPrice += product.price * product.qty;
-    productCounter += 1 * product.qty;
-  });
 
-  productCountElem.innerHTML = `(${productCounter})`;
-  finalPriceBasketElem.innerHTML = `$${finalPrice}`;
+  if (!basket) {
+    productCountElem.innerHTML = "(0)";
+    finalPriceBasketElem.innerHTML = "$ 0";
+  } else {
+    basket.forEach((product) => {
+      finalPrice += product.price * product.qty;
+      productCounter += 1 * product.qty;
+    });
+
+    productCountElem.innerHTML = `(${productCounter})`;
+    finalPriceBasketElem.innerHTML = `$${finalPrice}`;
+  }
 };
