@@ -196,7 +196,7 @@ const getProductsByFetch = async () => {
   });
   const data = await response.json();
   allProducts = data;
-  console.log(allProducts);
+  // console.log(allProducts);
   setInputRangeValue(data);
   IsCategoryOn(data);
   mainSortFun();
@@ -297,7 +297,7 @@ const createProductsBanner = (data) => {
 const mainOnLoadFunc = () => {
   getCategoryFromUrl();
   getProductsByFetch();
-  isLocalStorageLength();
+  IsInLocalStorageLength();
 };
 
 const setRelatedProduct = (data, category) => {
@@ -361,13 +361,59 @@ basketBtn.addEventListener("mouseover", showBasket);
 basketBtn.addEventListener("mouseout", hideBasket);
 
 //! basket btn logic
-let basket = [];
-const basketProductWrapper = document.querySelector(".basket-product-wrapper");
-// let localstorage = []
 
-const saveToLocalStorage = (products) => {
-  // console.log(products);
-  localStorage.setItem("basket", JSON.stringify(products));
+let basket = [];
+const basketProductWrapper = document.querySelector(".basket-product-wrapper")
+
+const getProductId = (id) => {
+  console.log(basket);
+  getProductById(id);
+};
+
+const getProductById = (id) => {
+  const foundedProduct = allProducts.find((product) => {
+    return product.id === id;
+  });
+
+  isInBasketFun(foundedProduct);
+};
+
+const isInBasketFun = (foundedProduct) => {
+  let foundedInBasket = basket.find((product) => {
+    return product.id === foundedProduct.id;
+  });
+
+  if (foundedInBasket) {
+    foundedInBasket.qty += 1;
+    saveProductsToLocalStorage();
+    createBasketBanner(basket)
+  } else {
+    let copiedProduct = { ...foundedProduct, qty: 1 };
+    basket.push(copiedProduct);
+    console.log(basket);
+    saveProductsToLocalStorage();
+    createBasketBanner(basket)
+  }
+};
+
+const saveProductsToLocalStorage = () => {
+  let stringBasket = JSON.stringify(basket);
+  localStorage.setItem("basket", stringBasket);
+};
+
+const IsInLocalStorageLength = () => {
+  console.log("hi amir");
+  let receivedBasket = localStorage.getItem("basket");
+  let parsedBasket = JSON.parse(receivedBasket);
+
+  if (parsedBasket) {
+    basket = parsedBasket;
+    createBasketBanner(basket)
+  } else {
+    basket = [];
+    console.log(basket);
+  }
+
 };
 
 const createBasketBanner = (basket) => {
@@ -440,29 +486,3 @@ const createBasketBanner = (basket) => {
   });
 };
 
-const isLocalStorageLength = () => {
-  const localstorage = localStorage.getItem("basket");
-
-  let receivedItem = JSON.parse(localstorage);
-  if (receivedItem) {
-    basket = receivedItem;
-    // console.log(basket);
-    createBasketBanner(basket);
-  } else {
-    basket = [];
-  }
-};
-
-const getProductId = (id) => {
-  const foundedProduct = allProducts.find((product) => {
-    return product.id === id;
-  });
-  // console.log(foundedProduct)
-
-  isInBasket = basket.some((product) => {
-    return product.id === foundedProduct.id;
-  })
-
-  // الان باید منطق کیو تی وای رو بسازی که اگه از محصول وجود داشت توی سبد یکی به تعدادش اصافه کنی 
-
-};
