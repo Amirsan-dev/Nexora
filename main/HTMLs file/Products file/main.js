@@ -363,7 +363,9 @@ basketBtn.addEventListener("mouseout", hideBasket);
 //! basket btn logic
 
 let basket = [];
-const basketProductWrapper = document.querySelector(".basket-product-wrapper")
+const basketProductWrapper = document.querySelector(".basket-product-wrapper");
+const productCountElem = document.querySelector(".product-count");
+const finalPriceBasketElem = document.querySelector(".final-price-basket");
 
 const getProductId = (id) => {
   console.log(basket);
@@ -386,13 +388,15 @@ const isInBasketFun = (foundedProduct) => {
   if (foundedInBasket) {
     foundedInBasket.qty += 1;
     saveProductsToLocalStorage();
-    createBasketBanner(basket)
+    createBasketBanner(basket);
+    calculateFinalPrice(basket);
   } else {
     let copiedProduct = { ...foundedProduct, qty: 1 };
     basket.push(copiedProduct);
     console.log(basket);
     saveProductsToLocalStorage();
-    createBasketBanner(basket)
+    createBasketBanner(basket);
+    calculateFinalPrice(basket);
   }
 };
 
@@ -408,12 +412,13 @@ const IsInLocalStorageLength = () => {
 
   if (parsedBasket) {
     basket = parsedBasket;
-    createBasketBanner(basket)
+    createBasketBanner(basket);
+    calculateFinalPrice(basket);
   } else {
     basket = [];
     console.log(basket);
+    createEmptyBasketBanner();
   }
-
 };
 
 const createBasketBanner = (basket) => {
@@ -486,3 +491,24 @@ const createBasketBanner = (basket) => {
   });
 };
 
+const createEmptyBasketBanner = () => {
+  basketProductWrapper.innerHTML = "";
+  basketProductWrapper.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="w-full h-full rounded-2xl bg-card-bg flex items-center justify-center text-xl text-text-primary font-bold">There is no product yet</div>
+    `,
+  );
+};
+
+const calculateFinalPrice = (basket) => {
+  let finalPrice = 0;
+  let productCounter = 0;
+  basket.forEach((product) => {
+    finalPrice += product.price * product.qty;
+    productCounter += 1 * product.qty;
+  });
+
+  productCountElem.innerHTML = `(${productCounter})`;
+  finalPriceBasketElem.innerHTML = `$${finalPrice}`;
+};
