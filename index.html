@@ -6,7 +6,7 @@
     <link href="./src/output.css" rel="stylesheet" />
     <title>NEXORA Store</title>
   </head>
-  <body class="bg-bg-primary h-full">
+  <body class="bg-bg-primary h-full" onload="mainOnLoadFun()">
     <!-- svg-sprite -->
     <svg class="hidden">
       <symbol
@@ -386,7 +386,7 @@
           >
             <div
               id="search-btn"
-              class="w-10 h-10 rounded-xl border border-border hover:border-Accent-Primary transition hidden sm:flex items-center justify-center hover:shadow-header-btn"
+              class="w-10 h-10 rounded-xl border border-border hover:border-Accent-Primary transition hidden sm:flex items-center justify-center hover:shadow-header-btn cursor-pointer"
             >
               <svg class="w-4.5 h-4.5 text-text-secondary">
                 <use xlink:href="#search-icon"></use>
@@ -432,7 +432,7 @@
         <span
           class="search-bar-x-mark size-10 rounded-full bg-bg-primary border border-border flex items-center justify-center text-text-secondary hover:text-Accent-Primary transition hover:border-Accent-Primary"
         >
-          <svg class="size-5 ">
+          <svg class="size-5">
             <use xlink:href="#x-mark"></use>
           </svg>
         </span>
@@ -446,7 +446,10 @@
       <div
         class="w-full h-full border border-border mt-2 rounded-2xl p-2 overflow-hidden hover:border-Accent-Primary transition"
       >
-        <div class="relative w-full h-15 rounded-2xl border border-border p-1 hover:border-Accent-Primary transition">
+        <!-- search input section -->
+        <div
+          class="relative w-full h-15 rounded-2xl border border-border p-1 hover:border-Accent-Primary transition"
+        >
           <input
             type="text"
             id="searched-input"
@@ -460,6 +463,40 @@
               <use xlink:href="#search-icon"></use>
             </svg>
           </span>
+        </div>
+        <!-- products wrapper -->
+        <div
+          class="product-wrapper-in-searchbar overflow-y-scroll h-full w-full flex flex-col py-2"
+        >
+          <!-- product -->
+          <div
+            class="flex items-center justify-between border border-border p-2 rounded-[10px]"
+          >
+            <!-- left  -->
+            <div class="flex items-center gap-4">
+              <button
+                class="add-to-cart-from-searchbar-btn w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-Accent-Primary/60 cursor-pointer hover:bg-Accent-Primary hover:shadow-normal transition"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="view-product-from-searchbar-btn w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-Accent-Secondary/60 cursor-pointer hover:bg-Accent-Secondary hover:shadow-normal transition"
+              >
+                visit Product
+              </button>
+            </div>
+            <!-- right -->
+            <div class="flex items-center justify-center gap-4">
+              <a href="#" class="text-text-primary text-[16px] font-bold"
+                >Asus flen flen</a
+              >
+              <div
+                class="size-15 rounded-[10px] border border-border overflow-hidden bg-card-bg"
+              >
+                <img src="" alt="product-img" class="w-full h-full" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1206,6 +1243,7 @@
     <div class="basket-overlay hidden"></div>
     <div class="overlay hidden"></div>
     <div class="desktop-basket-overlay hidden"></div>
+
     <script src="main/js/basic.js"></script>
     <!-- <script src="main/js/main.js"></script> -->
   </body>

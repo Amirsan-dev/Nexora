@@ -470,6 +470,10 @@
     width: calc(var(--spacing) * 10);
     height: calc(var(--spacing) * 10);
   }
+  .size-15 {
+    width: calc(var(--spacing) * 15);
+    height: calc(var(--spacing) * 15);
+  }
   .size-20 {
     width: calc(var(--spacing) * 20);
     height: calc(var(--spacing) * 20);
@@ -904,6 +908,12 @@
       background-color: color-mix(in oklab, var(--color-Accent-Primary) 30%, transparent);
     }
   }
+  .bg-Accent-Primary\/60 {
+    background-color: color-mix(in srgb, #00d4ff 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-Accent-Primary) 60%, transparent);
+    }
+  }
   .bg-Accent-Primary\/80 {
     background-color: color-mix(in srgb, #00d4ff 80%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -918,6 +928,12 @@
   }
   .bg-Accent-Secondary {
     background-color: var(--color-Accent-Secondary);
+  }
+  .bg-Accent-Secondary\/60 {
+    background-color: color-mix(in srgb, #7c3aed 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-Accent-Secondary) 60%, transparent);
+    }
   }
   .bg-\[\#35d07f\] {
     background-color: #35d07f;
@@ -1450,6 +1466,9 @@
         background-color: color-mix(in oklab, var(--color-Accent-Primary) 30%, transparent);
       }
     }
+    .hover\:bg-Accent-Secondary:hover {
+      background-color: var(--color-Accent-Secondary);
+    }
     .hover\:bg-btn-bg:hover {
       background-color: var(--color-btn-bg);
     }
@@ -1959,7 +1978,7 @@ body {
   .right-mobile-menu {
     right: 8px;
   }
-  .overlay, .basket-overlay, .search-bar-overlay, .desktop-basket-overlay {
+  .overlay, .basket-overlay, .search-bar-overlay, .desktop-basket-overlay, .search-product-overlay {
     position: fixed;
     z-index: 10;
     inset: 0;
@@ -2096,7 +2115,7 @@ body {
     background-color: var(--color-Accent-Primary);
     margin: auto 0;
   }
-  .basket-product-wrapper::-webkit-scrollbar {
+  .basket-product-wrapper::-webkit-scrollbar, .product-wrapper-in-searchbar::-webkit-scrollbar {
     display: none;
   }
   .desktop-basket {

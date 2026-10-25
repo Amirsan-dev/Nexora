@@ -91,7 +91,8 @@ body {
   .overlay,
   .basket-overlay,
   .search-bar-overlay,
-  .desktop-basket-overlay {
+  .desktop-basket-overlay,
+  .search-product-overlay {
     position: fixed;
     z-index: 10;
     inset: 0;
@@ -236,7 +237,8 @@ body {
     background-color: var(--color-Accent-Primary);
     margin: auto 0;
   }
-  .basket-product-wrapper::-webkit-scrollbar {
+  .basket-product-wrapper::-webkit-scrollbar,
+  .product-wrapper-in-searchbar::-webkit-scrollbar {
     display: none;
   }
   .desktop-basket {

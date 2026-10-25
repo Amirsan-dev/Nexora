@@ -560,6 +560,7 @@ const deleteProduct = (id) => {
 
 const paginationWrapper = document.querySelector(".pagination-wrapper");
 const paginationItems = document.querySelectorAll(".pagination-item");
+let pageNumber = 1;
 
 const createPagination = (copyProducts) => {
   let productPerPage = 6;
@@ -590,18 +591,13 @@ const createPagination = (copyProducts) => {
       paginationItems.forEach((pagination) => {
         pagination.classList.remove("pagination-item--active");
       });
-      pageNumber = +e.target.innerHTML
+      pageNumber = +e.target.innerHTML;
       mainSortFun();
-      
     });
   });
 };
-
-let pageNumber = 1;
 
 const createProduct = (copyProducts) => {
   let sliceNumb = (pageNumber - 1) * 6;
   return copyProducts.splice(sliceNumb, 6);
 };
-
-

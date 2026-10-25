@@ -393,6 +393,20 @@
       >
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
       </symbol>
+      <symbol
+        id="x-mark"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </symbol>
     </svg>
     <!-- header -->
     <header
@@ -866,6 +880,7 @@
                         min="100"
                         max="2000"
                         value="500"
+                        disabled
                       />
                     </div>
                   </div>
@@ -1440,7 +1455,9 @@
                 <div
                   class="pagination-wrapper flex-wrap w-full mt-8 flex justify-center items-center gap-2 child:w-10 child:h-10 child:rounded-[5px] child:bg-bg-secondary child:border child:border-border child:flex child:items-center child:justify-center child:text-text-secondary child:text-xs child-hover:bg-Accent-Primary child:transition child-hover:text-bg-secondary child:duration-[250ms] child:cursor-pointer"
                 >
-                  <button class="pagination-item pagination-item--active">1</button>
+                  <button class="pagination-item pagination-item--active">
+                    1
+                  </button>
                   <button class="pagination-item">2</button>
                   <button class="pagination-item">3</button>
                   <button class="pagination-item">4</button>
@@ -1579,7 +1596,9 @@
     </footer>
     <div class="basket-overlay hidden"></div>
     <div class="overlay hidden"></div>
+    <div class="search-bar-overlay hidden"></div>
     <div class="desktop-basket-overlay"></div>
+    <div class="search-product-overlay hidden"></div>
     <script src="../../js/basic.js"></script>
     <script src="../Products file/main.js"></script>
   </body>
