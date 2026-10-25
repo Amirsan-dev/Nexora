@@ -7,7 +7,6 @@ const key = "sb_publishable_xCj8247yZyi_BQ4kUEwBUg_KvBkhW6h";
 
 const productsWrapperElem = document.querySelector(".products-wrapper");
 const CategoryInputs = document.querySelectorAll(".Category-input");
-const optionsElem = document.querySelectorAll(".option");
 const selectElem = document.querySelector(".select-elem");
 const optionFirstElem = document.querySelector(".option-first");
 const minimumPrice = document.querySelector(".minimum-price");
@@ -202,6 +201,7 @@ const getProductsByFetch = async () => {
   setInputRangeValue(data);
   IsCategoryOn(data);
   mainSortFun();
+  
 };
 
 const createProductsBanner = (data) => {
@@ -337,24 +337,7 @@ CategoryInputs.forEach((input) => {
   input.addEventListener("change", mainSortFun);
 });
 
-// ? basket btn dom
 
-const basketBtn = document.querySelector("#basket-btn");
-const desktopBasketElem = document.querySelector(".desktop-basket");
-const desktopBasketOverlay = document.querySelector(".desktop-basket-overlay");
-
-const showBasket = () => {
-  desktopBasketElem.classList.add("desktop-basket--show");
-  desktopBasketOverlay.classList.add("desktop-basket-overlay--show");
-};
-
-const hideBasket = () => {
-  desktopBasketElem.classList.remove("desktop-basket--show");
-  desktopBasketOverlay.classList.remove("desktop-basket-overlay--show");
-};
-
-basketBtn.addEventListener("mouseover", showBasket);
-basketBtn.addEventListener("mouseout", hideBasket);
 
 //! basket btn logic
 

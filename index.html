@@ -327,6 +327,44 @@
           d="M6 18 18 6M6 6l12 12"
         />
       </symbol>
+      <symbol
+        id="trash-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+        />
+      </symbol>
+      <symbol
+        id="plus-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 4.5v15m7.5-7.5h-15"
+        />
+      </symbol>
+      <symbol
+        id="minus-icon"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+      </symbol>
     </svg>
 
     <!-- header -->
@@ -403,6 +441,107 @@
                 class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
                 >3</span
               >
+              <!-- basket component -->
+              <div
+                class="desktop-basket absolute right-0 top-10 bg-transparent w-100 h-77.5 pt-2.5"
+              >
+                <div
+                  class="w-100 h-75 rounded-2xl border flex flex-col p-2.5 border-border bg-bg-secondary"
+                >
+                  <!-- products wrapper -->
+                  <div
+                    class="basket-product-wrapper w-full h-[73%] overflow-y-scroll flex flex-col gap-y-1"
+                  >
+                    <!-- product -->
+                    <div
+                      class="flex items-center justify-between w-full h-20 border border-border rounded-[10px] bg-bg-secondary hover:border-Accent-Primary/60 p-2 transition"
+                    >
+                      <!-- left -->
+                      <div class="flex flex-col gap-1.5">
+                        <h6 class="text-text-secondary text-sm">
+                          price :
+                          <span class="text-sm font-bold text-text-primary"
+                            >$2449</span
+                          >
+                        </h6>
+                        <div
+                          class="flex items-center justify-center gap-1 child:size-7 child:rounded-[10px] child:bg-bg-secondary child:border child: child:border-border child:flex child:items-center child:justify-center"
+                        >
+                          <button
+                            class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+                          >
+                            <svg class="size-4 transition">
+                              <use xlink:href="#minus-icon"></use>
+                            </svg>
+                          </button>
+                          <span class="text-text-primary text-xs font-bold"
+                            >3</span
+                          >
+                          <button
+                            class="hover:text-text-primary hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+                          >
+                            <svg class="size-4 transition">
+                              <use xlink:href="#plus-icon"></use>
+                            </svg>
+                          </button>
+                          <button
+                            class="hover:text-red-600 hover:border-Accent-Primary/60 cursor-pointer text-text-secondary transition"
+                          >
+                            <svg class="size-4 transition">
+                              <use xlink:href="#trash-icon"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <!-- right -->
+                      <div class="flex items-center gap-2">
+                        <a
+                          href="#"
+                          class="text-xs font-bold line-clamp-2 max-w-25 text-text-primary"
+                          >ASUS ROG Strix G16 (2025)</a
+                        >
+                        <div
+                          class="w-17 rounded-[10px] border border-border overflow-hidden"
+                        >
+                          <img
+                            src="https://bbbxnpocgxdwkobvubbb.supabase.co/storage/v1/object/public/product-images/Laptops/ASUS%20ROG%20Strix%20G16%20(2025)/h732%20(1).png"
+                            class="size-full"
+                            alt="product-img"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- add to cart section -->
+                  <div
+                    class="w-full mt-auto h-[25%] pt-1.5 border-t border-text-secondary/50 flex justify-between items-center"
+                  >
+                    <!-- left -->
+                    <div class="flex flex-col gap-1.5">
+                      <span class="text-text-secondary text-xs"
+                        ><span
+                          class="text-text-primary text-sm font-bold product-count"
+                          >(3)</span
+                        >
+                        product</span
+                      >
+                      <p class="text-text-secondary text-sm">
+                        price :
+                        <span
+                          class="final-price-basket text-text-primary font-bold"
+                          >$2449</span
+                        >
+                      </p>
+                    </div>
+                    <!-- right  -->
+                    <button
+                      class="w-[60%] h-10 rounded-[10px] border border-border cursor-pointer bg-Accent-Primary/80 hover:bg-Accent-Primary hover:shadow-normal transition flex items-center justify-center text-[16px] text-text-primary font-bold"
+                    >
+                      Buy
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <a
@@ -466,37 +605,9 @@
         </div>
         <!-- products wrapper -->
         <div
-          class="product-wrapper-in-searchbar overflow-y-scroll h-full w-full flex flex-col py-2"
+          class="product-wrapper-in-searchbar overflow-y-scroll h-[84%] w-full flex flex-col py-2 gap-y-2"
         >
-          <!-- product -->
-          <div
-            class="flex items-center justify-between border border-border p-2 rounded-[10px]"
-          >
-            <!-- left  -->
-            <div class="flex items-center gap-4">
-              <button
-                class="add-to-cart-from-searchbar-btn w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-Accent-Primary/60 cursor-pointer hover:bg-Accent-Primary hover:shadow-normal transition"
-              >
-                Add to Cart
-              </button>
-              <button
-                class="view-product-from-searchbar-btn w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-Accent-Secondary/60 cursor-pointer hover:bg-Accent-Secondary hover:shadow-normal transition"
-              >
-                visit Product
-              </button>
-            </div>
-            <!-- right -->
-            <div class="flex items-center justify-center gap-4">
-              <a href="#" class="text-text-primary text-[16px] font-bold"
-                >Asus flen flen</a
-              >
-              <div
-                class="size-15 rounded-[10px] border border-border overflow-hidden bg-card-bg"
-              >
-                <img src="" alt="product-img" class="w-full h-full" />
-              </div>
-            </div>
-          </div>
+          <!--? data loaded from js -->
         </div>
       </div>
     </div>
@@ -612,12 +723,12 @@
                 class="header-link-wrapper flex flex-col sm:flex-row items-center gap-4 child:py-[13px] child:px-[30px] child:rounded-[14px] child:font-bold child:text-sm child-hover:translate-y-[-2px] child:transition child:w-full child:sm:w-auto child:text-center"
               >
                 <a
-                  href="#"
+                  href="main/HTMLs file/Products file/index.html"
                   class="bg-linear-to-r from-btn-bg to-Accent-Primary text-[#04101F] mt-5 sm:mt-0 shadow-normal hover:shadow-btn-hover-link hover:from-Accent-Primary hover:to-Accent-Primary"
                   >Explore Products</a
                 >
                 <a
-                  href="#"
+                  href="main/HTMLs file/Categories File/index.html"
                   class="border border-border text-text-primary hover:border-Accent-Primary hover:text-Accent-Primary"
                   >Start Shopping</a
                 >
@@ -714,7 +825,10 @@
             <div
               class="cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5 mt-4 child:w-full child:h-18.5 child:bg-card-bg child:border child:border-border child:rounded-2xl child:flex child:items-center child:py-2.5 child:px-4 child-hover:border-Accent-Primary child:transition child-hover:-translate-y-1"
             >
-              <a href="#" class="gap-4">
+              <a
+                href="main/HTMLs file/Products file/index.html?category=gaming"
+                class="gap-4"
+              >
                 <div
                   class="w-13 h-13 rounded-[14px] text-Accent-Primary border border-[rgba(0,212,255,0.30)] bg-[rgba(0,212,255,0.10)] flex items-center justify-center"
                 >
@@ -732,7 +846,10 @@
                   </span>
                 </div>
               </a>
-              <a href="#" class="gap-4">
+              <a
+                href="main/HTMLs file/Products file/index.html?category=laptops"
+                class="gap-4"
+              >
                 <div
                   class="w-13 h-13 rounded-[14px] text-Accent-Primary border border-[rgba(0,212,255,0.30)] bg-[rgba(0,212,255,0.10)] flex items-center justify-center"
                 >
@@ -750,7 +867,10 @@
                   </span>
                 </div>
               </a>
-              <a href="#" class="gap-4">
+              <a
+                href="main/HTMLs file/Products file/index.html?category=smartphones"
+                class="gap-4"
+              >
                 <div
                   class="w-13 h-13 rounded-[14px] text-Accent-Primary border border-[rgba(0,212,255,0.30)] bg-[rgba(0,212,255,0.10)] flex items-center justify-center"
                 >
@@ -768,7 +888,10 @@
                   </span>
                 </div>
               </a>
-              <a href="#" class="gap-4">
+              <a
+                href="main/HTMLs file/Products file/index.html?category=accessories"
+                class="gap-4"
+              >
                 <div
                   class="w-13 h-13 rounded-[14px] text-Accent-Primary border border-[rgba(0,212,255,0.30)] bg-[rgba(0,212,255,0.10)] flex items-center justify-center"
                 >
@@ -804,7 +927,7 @@
                 Featured<span class="text-Accent-Primary">Products</span>
               </h3>
               <a
-                href="#"
+                href="main/HTMLs file/Products file/index.html"
                 class="flex items-center justify-center text-sm text-text-secondary gap-1 transition hover:text-Accent-Primary"
               >
                 View all
@@ -815,7 +938,7 @@
             </div>
             <!-- main -->
             <div
-              class="cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5 mt-4 child:w-full child:h-46 child:bg-card-bg child:border child:border-border child:rounded-2xl child:flex child:flex-col child-hover:border-Accent-Primary child:transition child-hover:-translate-y-1"
+              class="cards-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 xl:gap-5 mt-4 child:w-full child:h-46 child:bg-card-bg child:border child:border-border child:rounded-2xl child:flex child:flex-col child-hover:border-Accent-Primary child:transition child-hover:-translate-y-1"
             >
               <div class="overflow-hidden">
                 <!-- top -->
@@ -880,6 +1003,7 @@
                       >Add to Cart</a
                     >
                   </div>
+                  <button></button>
                 </div>
               </div>
               <div class="overflow-hidden">
@@ -1245,6 +1369,8 @@
     <div class="desktop-basket-overlay hidden"></div>
 
     <script src="main/js/basic.js"></script>
+    <script src="main/js/main.js"></script>
+
     <!-- <script src="main/js/main.js"></script> -->
   </body>
 </html>
