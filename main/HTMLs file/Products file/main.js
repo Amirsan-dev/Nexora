@@ -37,6 +37,8 @@ const mainSortFun = async () => {
   copyProducts = sortProductByRangeInputPrice(copyProducts);
   copyProducts = sortingProduct(copyProducts);
   copyProducts = setCategoriesProducts(copyProducts);
+  createPagination(copyProducts);
+  copyProducts = createProduct(copyProducts);
   createProductsBanner(copyProducts);
 };
 
@@ -466,7 +468,7 @@ const createBasketBanner = (basket) => {
             <!-- right -->
             <div class="flex items-center gap-2">
               <a
-                href="#"
+                href="../product file/index.html?id=${product.id}"
                 class="text-xs font-bold line-clamp-2 max-w-25 text-text-primary"
                 >${product.name}</a
               >
@@ -553,3 +555,53 @@ const deleteProduct = (id) => {
     createEmptyBasketBanner();
   }
 };
+
+// ! Pagination Logic
+
+const paginationWrapper = document.querySelector(".pagination-wrapper");
+const paginationItems = document.querySelectorAll(".pagination-item");
+
+const createPagination = (copyProducts) => {
+  let productPerPage = 6;
+  let numOfPaginationItem = Math.floor(copyProducts.length / productPerPage);
+
+  if (copyProducts.length % productPerPage > 0) {
+    numOfPaginationItem += 1;
+  }
+  paginationWrapper.innerHTML = "";
+  for (let i = 0; i < numOfPaginationItem; i++) {
+    paginationWrapper.insertAdjacentHTML(
+      "beforeend",
+      `
+      <button class="pagination-item">${i + 1}</button>
+      `,
+    );
+  }
+  const paginationItems = document.querySelectorAll(".pagination-item");
+  paginationItems.forEach((pagination) => {
+    if (+pagination.innerHTML === pageNumber) {
+      pagination.classList.add("pagination-item--active");
+    }
+  });
+
+  paginationItems.forEach((pagination) => {
+    pagination.addEventListener("click", (e) => {
+      pageNumber = e.target.innerHTML;
+      paginationItems.forEach((pagination) => {
+        pagination.classList.remove("pagination-item--active");
+      });
+      pageNumber = +e.target.innerHTML
+      mainSortFun();
+      
+    });
+  });
+};
+
+let pageNumber = 1;
+
+const createProduct = (copyProducts) => {
+  let sliceNumb = (pageNumber - 1) * 6;
+  return copyProducts.splice(sliceNumb, 6);
+};
+
+
