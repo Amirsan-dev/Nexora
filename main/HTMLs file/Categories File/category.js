@@ -15,7 +15,6 @@ const getProductsByFetch = async () => {
   });
   const data = await response.json();
   allProducts = data;
-
 };
 
 const createProductsInSearchBar = () => {
@@ -31,24 +30,24 @@ const createProductsInSearchBar = () => {
       `
                 <!-- product -->
           <div
-            class="flex items-center justify-between border border-border p-2 rounded-[10px]"
+            class="flex md:items-center justify-between gap-x-4 md:flex-row flex-col-reverse gap-y-2 flex-wrap-reverse border border-border p-4 md:p-2 rounded-[10px]"
           >
             <!-- left  -->
-            <div class="flex items-center gap-4">
+            <div class="flex items-center justify-center gap-4">
               <button
-                class="add-to-cart-from-searchbar-btn  w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-Accent-Primary/60 cursor-pointer hover:bg-Accent-Primary hover:shadow-normal transition" onclick="getProductId(${product.id})"
+                class="add-to-cart-from-searchbar-btn  w-30 h-10 rounded-[10px] font-bold text-text-primary text-[16px] bg-btn-bg cursor-pointer hover:bg-btn-hover hover:shadow-normal transition" onclick="getProductId(${product.id})"
               >
                 Add to Cart
               </button>
 
             </div>
             <!-- right -->
-            <div class="flex items-center justify-center gap-4">
+            <div class="flex items-center justify-end gap-4">
               <a href="main/HTMLs file/product file/index.html?id=${product.id}" class="text-text-primary text-[16px] font-bold"
-                >${product.name}}</a
+                >${product.name}</a
               >
               <div
-                class="size-15 rounded-[10px] border border-border overflow-hidden bg-card-bg"
+                class="size-15 rounded-[10px] border border-border overflow-hidden shrink-0 bg-card-bg"
               >
                 <img src="${product.product_images[0].image_url}" alt="product-img" class="w-full h-full" />
               </div>
@@ -72,6 +71,16 @@ let basket = [];
 const basketProductWrapper = document.querySelector(".basket-product-wrapper");
 const productCountElem = document.querySelector(".product-count");
 const finalPriceBasketElem = document.querySelector(".final-price-basket");
+const mobileBasketWrapper = document.querySelector(".mobile-basket-wrapper");
+const mobileBasketProductCount = document.querySelector(
+  ".mobile-basket-product-count",
+);
+const basketMobileTotalPrice = document.querySelector(
+  ".basket-mobile-total-price",
+);
+const productCounterDesktop = document.querySelector(
+  ".product-counter-desctop",
+);
 
 const getProductId = (id) => {
   console.log(basket);
@@ -95,6 +104,7 @@ const isInBasketFun = (foundedProduct) => {
     foundedInBasket.qty += 1;
     saveProductsToLocalStorage();
     createBasketBanner(basket);
+    createMobileBasketBanner(basket);
     calculateFinalPrice(basket);
   } else {
     let copiedProduct = { ...foundedProduct, qty: 1 };
@@ -102,6 +112,7 @@ const isInBasketFun = (foundedProduct) => {
     console.log(basket);
     saveProductsToLocalStorage();
     createBasketBanner(basket);
+    createMobileBasketBanner(basket);
     calculateFinalPrice(basket);
   }
 };
@@ -119,6 +130,7 @@ const IsInLocalStorageLength = () => {
   if (parsedBasket.length > 0) {
     basket = parsedBasket;
     createBasketBanner(basket);
+    createMobileBasketBanner(basket);
     calculateFinalPrice(basket);
   } else {
     basket = [];
@@ -198,6 +210,37 @@ const createBasketBanner = (basket) => {
   });
 };
 
+const createMobileBasketBanner = (basket) => {
+  mobileBasketWrapper.innerHTML = "";
+  basket.forEach((product) => {
+    mobileBasketWrapper.insertAdjacentHTML(
+      "beforeend",
+      `
+              <!-- product -->
+        <a
+          href="#"
+          class="flex flex-col gap-y-3 p-2 border border-border rounded-[10px] hover:border-Accent-Primary transition"
+        >
+
+          <div class="flex items-center justify-end gap-x-3">
+            <h4
+              class="text-text-primary text-[16px] font-bold line-clamp-2"
+            >
+              ${product.name}
+            </h4>
+            <div
+              class="size-12 rounded-[10px] border border-border bg-card-bg overflow-hidden shrink-0"
+            >
+              <img src="${product.product_images[0].image_url}" alt="product-img" class="w-full h-full" />
+            </div>
+          </div>
+
+        </a>
+      `,
+    );
+  });
+};
+
 const createEmptyBasketBanner = () => {
   basketProductWrapper.innerHTML = "";
   basketProductWrapper.insertAdjacentHTML(
@@ -214,7 +257,10 @@ const calculateFinalPrice = (basket) => {
 
   if (!basket) {
     productCountElem.innerHTML = "(0)";
+    mobileBasketProductCount.innerHTML = "(0)";
+    productCounterDesktop.innerHTML = "0";
     finalPriceBasketElem.innerHTML = "$ 0";
+    basketMobileTotalPrice.innerHTML = "$ 0";
   } else {
     basket.forEach((product) => {
       finalPrice += product.price * product.qty;
@@ -222,7 +268,10 @@ const calculateFinalPrice = (basket) => {
     });
 
     productCountElem.innerHTML = `(${productCounter})`;
+    productCounterDesktop.innerHTML = productCounter;
+    mobileBasketProductCount.innerHTML = `(${productCounter})`;
     finalPriceBasketElem.innerHTML = `$${finalPrice}`;
+    basketMobileTotalPrice.innerHTML = `$${finalPrice}`;
   }
 };
 
@@ -238,6 +287,7 @@ const decreaseProductFun = (id) => {
   } else {
     saveProductsToLocalStorage();
     createBasketBanner(basket);
+    createMobileBasketBanner(basket);
     calculateFinalPrice(basket);
   }
 };
@@ -249,6 +299,7 @@ const increaseProductFun = (id) => {
   foundedInBasket.qty += 1;
   saveProductsToLocalStorage();
   createBasketBanner(basket);
+  createMobileBasketBanner(basket);
   calculateFinalPrice(basket);
 };
 const deleteProduct = (id) => {
@@ -260,10 +311,9 @@ const deleteProduct = (id) => {
   basket.splice(foundedInBasket, 1);
   saveProductsToLocalStorage();
   createBasketBanner(basket);
+  createMobileBasketBanner(basket);
   calculateFinalPrice(basket);
   if (basket.length < 1) {
     createEmptyBasketBanner();
   }
 };
-
-

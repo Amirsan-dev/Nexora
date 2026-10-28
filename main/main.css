@@ -238,7 +238,8 @@ body {
     margin: auto 0;
   }
   .basket-product-wrapper::-webkit-scrollbar,
-  .product-wrapper-in-searchbar::-webkit-scrollbar {
+  .product-wrapper-in-searchbar::-webkit-scrollbar,
+  .mobile-basket-wrapper::-webkit-scrollbar {
     display: none;
   }
   .desktop-basket {

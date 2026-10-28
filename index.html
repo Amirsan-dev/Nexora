@@ -438,7 +438,7 @@
                 <use xlink:href="#shopping-card"></use>
               </svg>
               <span
-                class="absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
+                class="product-counter-desctop absolute w-4.25 h-4.25 rounded-full bg-Accent-Primary -top-1.25 -right-1.25 font-extrabold text-[10px] text-[#04101F] flex items-center justify-center"
                 >3</span
               >
               <!-- basket component -->
@@ -646,33 +646,56 @@
         >
       </div>
     </div>
-    <!-- basket men from right -->
+
+    <!-- basket menu from right -->
     <div
       id="right-mobile-basket"
       class="fixed p-5 flex flex-col transition-[right] duration-300 -right-62 border border-Accent-Primary/70 top-2 bottom-2 rounded-2xl backdrop-blur-2xl bg-[rgba(0,0,0,0.1)] block w-60 z-[99] flex flex-col"
     >
+      <!-- header -->
       <h2
         class="text-center tracking-[5px] text-2xl font-bold text-Accent-Primary border-b border-Accent-Primary/30 pb-2"
       >
         NEXORA
       </h2>
-      <!-- <ul
-        class="flex flex-col mt-8 gap-8 child:pl-2 child:py-2 child:border child:border-transparent child-hover:border child:transition child-hover:border-Accent-Primary/50 child:rounded-xl child:text-text-primary child-hover:bg-Accent-Primary/20 child:cursor-pointer"
+      <!-- main -->
+      <div
+        class="mobile-basket-wrapper w-full h-full my-2 flex flex-col gap-y-3 overflow-y-scroll"
       >
-        <li class="active">
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">Products</a>
-        </li>
-        <li>
-          <a href="#">Categories</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-      </ul> -->
-      <div class="mt-auto w-full h-10">
+        <!-- product -->
+        <a
+          href="#"
+          class="flex flex-col gap-y-3 p-2 border border-border rounded-[10px] hover:border-Accent-Primary transition"
+        >
+          <div class="flex items-center justify-end gap-x-3">
+            <h4 class="text-text-primary text-[16px] font-bold line-clamp-2">
+              Asus flen flem Asus flen flem Asus flen flem
+            </h4>
+            <div
+              class="size-12 rounded-[10px] border border-border bg-card-bg overflow-hidden shrink-0"
+            >
+              <img src="" alt="product-img" class="w-full h-full" />
+            </div>
+          </div>
+
+          <!-- bottom -->
+        </a>
+      </div>
+
+      <!-- footer -->
+      <div class="mt-auto flex flex-col w-full gap-y-3 h-25">
+        <!-- top -->
+        <div
+          class="w-full h-15 rounded-[10px] p-2 border border-border flex flex-col justify-between gap-y-2"
+        >
+          <p class="text-text-secondary text-xs">
+            <span class="text-text-primary font-bold mobile-basket-product-count">(3)</span> Product
+          </p>
+          <p class="text-text-secondary text-sm">
+            Total Price : <span class="text-text-primary font-bold basket-mobile-total-price"> $2444</span>
+          </p>
+        </div>
+        <!-- bottom -->
         <a
           href="#"
           id="buy-items-btn"
@@ -1327,7 +1350,7 @@
               CONTACT
             </h4>
             <p class="text-text-secondary text-[13.5px] mb-2">
-              amirhoseinsanatdan@gmail.com
+              amirsan.dev@gmail.com
             </p>
             <p class="text-text-secondary text-[13.5px] mb-2">+98-9154044866</p>
             <p class="text-text-secondary text-[13.5px] mb-0">Iran - mashhad</p>
