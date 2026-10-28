@@ -530,8 +530,39 @@ const addToCartFunc = () => {
   getProductById(productID);
 };
 
+// ! change img logic
+
+const secondGetImageSrc = () => {
+  let imgSrc = secondProductImg.src;
+  let mainImgSrc = mainImgElem.src;
+  mainImgElem.src = imgSrc;
+  secondProductImg.src = mainImgSrc;
+};
+const thirdGetImageSrc = () => {
+  let imgSrc = thirdProductImg.src;
+  let mainImgSrc = mainImgElem.src;
+  mainImgElem.src = imgSrc;
+  thirdProductImg.src = mainImgSrc;
+};
+const forthGetImageSrc = () => {
+  let imgSrc = forthProductImg.src;
+  let mainImgSrc = mainImgElem.src;
+  mainImgElem.src = imgSrc;
+  forthProductImg.src = mainImgSrc;
+};
+const fifthGetImageSrc = () => {
+  let imgSrc = fifthProductImg.src;
+  let mainImgSrc = mainImgElem.src;
+  mainImgElem.src = imgSrc;
+  fifthProductImg.src = mainImgSrc;
+};
+
 // ! Event listeners
 
-minusBtn.addEventListener("click", minusProduct);
-plusBtn.addEventListener("click", plusProduct);
+// minusBtn.addEventListener("click", minusProduct);
+// plusBtn.addEventListener("click", plusProduct);
 addToCartBtn.addEventListener("click", addToCartFunc);
+secondProductImg.addEventListener("click", secondGetImageSrc);
+thirdProductImg.addEventListener("click", thirdGetImageSrc);
+forthProductImg.addEventListener("click", forthGetImageSrc);
+fifthProductImg.addEventListener("click", fifthGetImageSrc);
