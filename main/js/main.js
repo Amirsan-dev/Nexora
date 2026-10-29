@@ -60,9 +60,12 @@ const createProductsInSearchBar = () => {
   });
 };
 
-const mainOnLoadFun = () => {
+const mainOnLoadFun = async () => {
   getProductsByFetch();
   IsInLocalStorageLength();
+  await typeWriter1(text1, typeIndex);
+  await typeWriter2(text2, typeIndex);
+  await typeWriter3(text3, typeIndex);
 };
 
 searchedInput.addEventListener("keyup", createProductsInSearchBar);
@@ -83,6 +86,71 @@ const basketMobileTotalPrice = document.querySelector(
 const productCounterDesktop = document.querySelector(
   ".product-counter-desctop",
 );
+const productCounterMobile = document.querySelector(".product-counter-mobile");
+
+const headerTitle1 = document.querySelector(".header-title-1");
+const headerTitle2 = document.querySelector(".header-title-2");
+const headerTitle3 = document.querySelector(".header-title-3");
+let text1 = "The Future of";
+let text2 = "Technology";
+let text3 = ", Delivered to Your Door.";
+let typeIndex = 0;
+
+const typeWriter1 = (text, index) => {
+  return new Promise((resolve) => {
+    const type = () => {
+      if (index < text.length) {
+        headerTitle1.textContent += text[index];
+        index++;
+
+        setTimeout(type, 100);
+      } else {
+        resolve();
+      }
+    };
+
+    type();
+  });
+};
+
+const typeWriter2 = (text, index) => {
+  return new Promise((resolve) => {
+    const type = () => {
+      if (index < text.length) {
+        headerTitle2.textContent += text[index];
+        index++;
+
+        setTimeout(type, 100);
+      } else {
+        resolve();
+      }
+    };
+
+    type();
+  });
+};
+
+const typeWriter3 = (text, index) => {
+  return new Promise((resolve) => {
+    const type = () => {
+      if (index < text.length) {
+        headerTitle3.textContent += text[index];
+        index++;
+
+        setTimeout(type, 100);
+      } else {
+        resolve();
+      }
+    };
+
+    type();
+  });
+};
+
+// typeWriter(text1, typeIndex);
+//break
+
+const timerWrapper = () => {};
 
 const getProductId = (id) => {
   console.log(basket);
@@ -220,7 +288,7 @@ const createMobileBasketBanner = (basket) => {
       `
               <!-- product -->
         <a
-          href="#"
+          href="main/HTMLs file/product file/index.html?id=${product.id}"
           class="flex flex-col gap-y-3 p-2 border border-border rounded-[10px] hover:border-Accent-Primary transition"
         >
 
@@ -260,6 +328,7 @@ const calculateFinalPrice = (basket) => {
   if (!basket) {
     productCountElem.innerHTML = "(0)";
     productCounterDesktop.innerHTML = "0";
+    productCounterMobile.innerHTML = "0";
     mobileBasketProductCount.innerHTML = "(0)";
     finalPriceBasketElem.innerHTML = "$ 0";
     basketMobileTotalPrice.innerHTML = "$ 0";
@@ -271,6 +340,7 @@ const calculateFinalPrice = (basket) => {
 
     productCountElem.innerHTML = `(${productCounter})`;
     productCounterDesktop.innerHTML = productCounter;
+    productCounterMobile.innerHTML = productCounter;
     mobileBasketProductCount.innerHTML = `(${productCounter})`;
     finalPriceBasketElem.innerHTML = `$${finalPrice}`;
     basketMobileTotalPrice.innerHTML = `$${finalPrice}`;

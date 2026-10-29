@@ -49,6 +49,7 @@ const basketMobileTotalPrice = document.querySelector(
 const productCounterDesktop = document.querySelector(
   ".product-counter-desctop",
 );
+const productCounterMobile = document.querySelector(".product-counter-mobile");
 
 let productCount = 1;
 let category = "";
@@ -460,7 +461,7 @@ const createMobileBasketBanner = (basket) => {
       `
               <!-- product -->
         <a
-          href="#"
+          href="../product file/index.html?id=${product.id}"
           class="flex flex-col gap-y-3 p-2 border border-border rounded-[10px] hover:border-Accent-Primary transition"
         >
 
@@ -500,6 +501,7 @@ const calculateFinalPrice = (basket) => {
   if (!basket) {
     productCountElem.innerHTML = "(0)";
     productCounterDesktop.innerHTML = "0";
+    productCounterMobile.innerHTML = "0";
     mobileBasketProductCount.innerHTML = "(0)";
     finalPriceBasketElem.innerHTML = "$ 0";
     basketMobileTotalPrice.innerHTML = "$ 0";
@@ -510,6 +512,7 @@ const calculateFinalPrice = (basket) => {
     });
     productCountElem.innerHTML = `(${productCounter})`;
     productCounterDesktop.innerHTML = productCounter;
+    productCounterMobile.innerHTML = productCounter;
     mobileBasketProductCount.innerHTML = `(${productCounter})`;
     finalPriceBasketElem.innerHTML = `$${finalPrice}`;
     basketMobileTotalPrice.innerHTML = `$${finalPrice}`;
