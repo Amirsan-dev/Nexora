@@ -10,6 +10,7 @@
       "Courier New", monospace;
     --color-red-500: oklch(63.7% 0.237 25.331);
     --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-amber-50: oklch(98.7% 0.022 95.277);
     --color-emerald-50: oklch(97.9% 0.021 166.113);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-cyan-400: oklch(78.9% 0.154 211.53);
@@ -42,6 +43,7 @@
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
     --blur-2xl: 40px;
+    --blur-3xl: 64px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -305,6 +307,9 @@
   }
   .z-50 {
     z-index: 50;
+  }
+  .z-90 {
+    z-index: 90;
   }
   .z-100 {
     z-index: 100;
@@ -600,6 +605,9 @@
   .h-57\.5 {
     height: calc(var(--spacing) * 57.5);
   }
+  .h-70 {
+    height: calc(var(--spacing) * 70);
+  }
   .h-75 {
     height: calc(var(--spacing) * 75);
   }
@@ -674,6 +682,9 @@
   }
   .w-22 {
     width: calc(var(--spacing) * 22);
+  }
+  .w-25 {
+    width: calc(var(--spacing) * 25);
   }
   .w-30 {
     width: calc(var(--spacing) * 30);
@@ -959,6 +970,9 @@
   }
   .border-\[rgba\(0\,212\,255\,0\.30\)\] {
     border-color: rgba(0,212,255,0.30);
+  }
+  .border-amber-50 {
+    border-color: var(--color-amber-50);
   }
   .border-border {
     border-color: var(--color-border);
@@ -1480,6 +1494,11 @@
   }
   .backdrop-blur-2xl {
     --tw-backdrop-blur: blur(var(--blur-2xl));
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .backdrop-blur-3xl {
+    --tw-backdrop-blur: blur(var(--blur-3xl));
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
@@ -2122,7 +2141,7 @@ body {
   .right-mobile-menu {
     right: 8px;
   }
-  .overlay, .basket-overlay, .search-bar-overlay, .desktop-basket-overlay, .search-product-overlay {
+  .overlay, .basket-overlay, .search-bar-overlay, .desktop-basket-overlay, .search-product-overlay, .sign-in-overlay {
     position: fixed;
     z-index: 10;
     inset: 0;
@@ -2303,6 +2322,9 @@ body {
     background-color: var(--color-Accent-Secondary);
     filter: blur(200px);
     z-index: 0;
+  }
+  .sign-in-overlay {
+    backdrop-filter: blur(3px);
   }
 }
 @property --tw-border-style {

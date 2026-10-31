@@ -93,7 +93,8 @@ body {
   .basket-overlay,
   .search-bar-overlay,
   .desktop-basket-overlay,
-  .search-product-overlay {
+  .search-product-overlay,
+  .sign-in-overlay {
     position: fixed;
     z-index: 10;
     inset: 0;
@@ -285,5 +286,8 @@ body {
     background-color: var(--color-Accent-Secondary);
     filter: blur(200px);
     z-index: 0;
+  }
+  .sign-in-overlay {
+    backdrop-filter: blur(3px);
   }
 }
