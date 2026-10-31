@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../../../src/output.css" />
+  </head>
+  <body
+    class="min-h-screen flex items-center justify-center bg-[#080d1b] p-7.5"
+  >
+    <div
+      class="wrapper flex items-center w-full max-w-262.5 h-[738px] overflow-hidden rounded-2xl border border-border"
+    >
+      <!-- left -->
+      <section class="w-[50%] h-full bg-bg-secondary px-15 py-[55px]">
+        <!-- logo -->
+        <div class="logo-of-page mb-[65px]">
+          <h1 class="text-Accent-Primary text-[28px] font-bold tracking-[6px]">
+            NEXORA
+          </h1>
+          <p class="text-text-secondary text-[10px] tracking-[3px] mt-1.5">
+            ADMIN CONTROL CENTER
+          </p>
+        </div>
+        <!-- header -->
+        <div class="logo-header mb-[35px]">
+          <h2 class="text-text-primary text-[30px] font-bold mb-3">
+            Welcome Back
+          </h2>
+          <p class="text-text-secondary text-sm/[1.7]">
+            Sign in to manage your store, products and everything in your
+            dashboard.
+          </p>
+        </div>
+        <!-- main -->
+        <div class="form">
+          <label
+            for="useremail"
+            class="mb-3 block text-text-secondary text-sm font-semibold"
+            >Email Address</label
+          >
+          <input
+            type="text"
+            id="useremail"
+            placeholder="admin@nexora.com"
+            class="w-full h-13 block rounded-[10px] border border-border px-3 text-emerald-50 mb-5.5 focus:outline-Accent-Primary focus:outline-2 bg-card-bg"
+          />
+
+          <label
+            for="password"
+            class="mb-3 block text-text-secondary text-sm font-semibold"
+            >Email Address</label
+          >
+          <input
+            type="text"
+            id="password"
+            placeholder="Enter your Password"
+            class="w-full h-13 block rounded-[10px] border border-border px-3 text-emerald-50 mb-5.5 focus:outline-Accent-Primary focus:outline-2 bg-card-bg"
+            required
+          />
+        </div>
+        <!-- footer -->
+        <div class="flex items-center justify-between mb-10">
+          <span class="flex items-center gap-2">
+            <input type="checkbox" id="remember-me" required />
+            <label for="remember-me" class="text-text-primary text-sm"
+              >Remember me</label
+            >
+          </span>
+          <a
+            href="#"
+            class="text-Accent-Primary text-sm hover:text-shadow-high transition"
+            >Forgot password?</a
+          >
+        </div>
+        <!-- login btn -->
+        <button
+          class="log-in-btn w-full rounded-2xl bg-linear-to-r from-[#007fff] to-[#00d4ff] flex items-center justify-center text-text-primary text-lg transition hover:-translate-y-2 hover:shadow-normal h-15 cursor-pointer"
+        >
+          Sign In To Dashboard
+        </button>
+      </section>
+      <!-- right -->
+      <section
+        class="log-in-right-wrapper overflow-hidden w-[50%] h-full relative bg-bg-secondary px-15 py-[55px] border-l border-border"
+      >
+        <!-- circle -->
+        <div
+          class="size-95 absolute rounded-full border border-Accent-Primary/40 flex items-center justify-center inset-0 m-auto"
+        >
+          <!-- circle 2 -->
+          <div
+            class="size-62.5 rounded-full border border-Accent-Primary/40 pt-4"
+          >
+            <span
+              class="size-25 rounded-3xl border border-Accent-Primary flex items-center justify-center text-Accent-Primary text-4xl mx-auto -rotate-12"
+              >N</span
+            >
+          </div>
+        </div>
+        <!-- content -->
+        <h2 class="text-Accent-Primary text-xs tracking-[3px]">
+          ADMINISTRATION
+        </h2>
+        <!-- main content -->
+        <div class="mt-78">
+          <h2
+            class="text-text-primary text-center text-[28px] mb-[15px] font-bold"
+          >
+            Control Your Store
+          </h2>
+          <p
+            class="text-text-secondary text-[13px]/[1.9] max-w-[300px] text-center mx-auto"
+          >
+            Everything you need to manage your products, orders and store
+            experience in one place.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="sign-in.js"></script>
+  </body>
+</html>

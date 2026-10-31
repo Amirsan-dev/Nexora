@@ -23,6 +23,7 @@
   --shadow-btn-hover-link: 0 0 38px rgba(0, 212, 255, 0.55);
 
   --text-shadow-normal: 0 0 24px rgba(0, 212, 255, 0.3);
+  --text-shadow-high: 0 0 18px rgba(0, 212, 255, 0.9);
 
   --breakpoint-sm: 480px;
 }
@@ -239,7 +240,8 @@ body {
   }
   .basket-product-wrapper::-webkit-scrollbar,
   .product-wrapper-in-searchbar::-webkit-scrollbar,
-  .mobile-basket-wrapper::-webkit-scrollbar {
+  .mobile-basket-wrapper::-webkit-scrollbar,
+  body::-webkit-scrollbar {
     display: none;
   }
   .desktop-basket {
@@ -259,5 +261,29 @@ body {
   .desktop-basket-overlay--show {
     opacity: 100;
     visibility: visible;
+  }
+  .log-in-right-wrapper::before {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-color: var(--color-Accent-Primary);
+    filter: blur(200px);
+    z-index: 0;
+  }
+  .log-in-right-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    background-color: var(--color-Accent-Secondary);
+    filter: blur(200px);
+    z-index: 0;
   }
 }
