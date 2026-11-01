@@ -29,3 +29,6 @@ const closeModalScreen = () => {
 
 logInBtn.addEventListener("click", GoIntoDashboard);
 confirmBtn.addEventListener("click", closeModalScreen);
+
+
+

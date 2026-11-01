@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Panel</title>
+    <link rel="stylesheet" href="../../../../src/output.css" />
+  </head>
+  <body class="bg-bg-primary min-h-screen flex items-start">
+    <!-- svgs -->
+    <svg class="hidden">
+      <symbol
+        id="dashboard"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-layout-dashboard preview-icon"
+      >
+        <rect width="7" height="9" x="3" y="3" rx="1" />
+        <rect width="7" height="5" x="14" y="3" rx="1" />
+        <rect width="7" height="9" x="14" y="12" rx="1" />
+        <rect width="7" height="5" x="3" y="16" rx="1" />
+      </symbol>
+      <symbol
+        id="products-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-package-search preview-icon"
+      >
+        <path d="M12 22V12" />
+        <path d="M20.27 18.27 22 20" />
+        <path
+          d="M21 10.498V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l.98-.559"
+        />
+        <path d="M3.29 7 12 12l8.71-5" />
+        <path d="m7.5 4.27 8.997 5.148" />
+        <circle cx="18.5" cy="16.5" r="2.5" />
+      </symbol>
+      <symbol
+        id="categories-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-layers preview-icon"
+      >
+        <path
+          d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"
+        />
+        <path
+          d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"
+        />
+        <path
+          d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"
+        />
+      </symbol>
+      <symbol
+        id="basket-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-shopping-cart preview-icon"
+      >
+        <path
+          d="m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18"
+        />
+        <path
+          d="M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25"
+        />
+        <circle cx="18" cy="20" r="2" />
+        <circle cx="8" cy="20" r="2" />
+      </symbol>
+      <symbol
+        id="users-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-users preview-icon"
+      >
+        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+        <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+        <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+        <circle cx="9" cy="7" r="4" />
+      </symbol>
+      <symbol
+        id="setting-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-settings preview-icon"
+      >
+        <path
+          d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"
+        />
+        <circle cx="12" cy="12" r="3" />
+      </symbol>
+      <symbol
+        id="logout-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-log-out preview-icon"
+      >
+        <path d="m16 17 5-5-5-5" />
+        <path d="M21 12H9" />
+        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      </symbol>
+      <symbol
+        id="right-top-arrow-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-move-up-right preview-icon"
+      >
+        <path d="M13 5H19V11" />
+        <path d="M19 5L5 19" />
+      </symbol>
+      <symbol
+        id="boxes-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-boxes preview-icon"
+      >
+        <path
+          d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"
+        />
+        <path d="m7 16.5-4.74-2.85" />
+        <path d="m7 16.5 5-3" />
+        <path d="M7 16.5v5.17" />
+        <path
+          d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"
+        />
+        <path d="m17 16.5-5-3" />
+        <path d="m17 16.5 4.74-2.85" />
+        <path d="M17 16.5v5.17" />
+        <path
+          d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"
+        />
+        <path d="M12 8 7.26 5.15" />
+        <path d="m12 8 4.74-2.85" />
+        <path d="M12 13.5V8" />
+      </symbol>
+      <symbol
+        id="list-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-clipboard-list preview-icon"
+      >
+        <rect width="8" height="4" x="8" y="2" rx="1" ry="1" />
+        <path
+          d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
+        />
+        <path d="M12 11h4" />
+        <path d="M12 16h4" />
+        <path d="M8 11h.01" />
+        <path d="M8 16h.01" />
+      </symbol>
+      <symbol
+        id="circle-user-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-circle-user-round preview-icon"
+      >
+        <path d="M17.925 20.056a6 6 0 0 0-11.851.001" />
+        <circle cx="12" cy="11" r="4" />
+        <circle cx="12" cy="12" r="10" />
+      </symbol>
+      <symbol
+        id="alert-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-triangle-alert preview-icon"
+      >
+        <path
+          d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+        />
+        <path d="M12 9v4" />
+        <path d="M12 17h.01" />
+      </symbol>
+      <symbol
+        id="plus-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-plus preview-icon"
+      >
+        <path d="M5 12h14" />
+        <path d="M12 5v14" />
+      </symbol>
+      <symbol
+        id="laptop-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-laptop preview-icon"
+      >
+        <path
+          d="M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z"
+        />
+        <path d="M20.054 15.987H3.946" />
+      </symbol>
+      <symbol
+        id="edit-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-square-pen preview-icon"
+      >
+        <path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+        <path
+          d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"
+        />
+      </symbol>
+      <symbol
+        id="trash-icon"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-trash preview-icon"
+      >
+        <path d="M10 11v6" />
+        <path d="M14 11v6" />
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+        <path d="M3 6h18" />
+        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      </symbol>
+    </svg>
+    <!-- dashboard panel -->
+    <aside
+      class="sidebar w-[20%] min-h-screen border-r border-border bg-bg-secondary flex flex-col p-8"
+    >
+      <h1
+        class="text-Accent-Primary text-3xl tracking-[6px] font-bold mb-[45px]"
+      >
+        NEXORA
+      </h1>
+      <span class="text-text-secondary text-[16px] mb-4">Main Menu </span>
+      <!-- sidebar item wrapper -->
+      <div class="sidebar-items-wrapper flex flex-col gap-2 mb-6">
+        <!-- item -->
+        <a
+          href="../Main Dashboard/index.html"
+          class="sidebar-item sidebar-item--active"
+        >
+          <svg class="size-5">
+            <use xlink:href="#dashboard"></use>
+          </svg>
+          <span class="font-medium text-[16px]">Dashboard</span>
+        </a>
+        <!-- item -->
+        <a href="../ProductsPage/index.html" class="sidebar-item">
+          <svg class="size-5">
+            <use xlink:href="#products-icon"></use>
+          </svg>
+          <span class="font-medium text-[16px]">Products</span>
+        </a>
+        <!-- item -->
+        <button class="sidebar-item">
+          <svg class="size-5">
+            <use xlink:href="#categories-icon"></use>
+          </svg>
+          <span class="font-medium text-[16px]">Categories</span>
+        </button>
+        <!-- item -->
+        <button class="sidebar-item">
+          <svg class="size-5">
+            <use xlink:href="#basket-icon"></use>
+          </svg>
+          <span class="font-medium text-[16px]">Orders</span>
+        </button>
+        <!-- item -->
+        <button class="sidebar-item">
+          <svg class="size-5">
+            <use xlink:href="#users-icon"></use>
+          </svg>
+          <span class="font-medium text-[16px]">Users</span>
+        </button>
+      </div>
+      <!-- system wrapper -->
+      <div class="flex flex-col">
+        <span class="text-text-secondary text-[16px] mb-4">System</span>
+        <div class="sidebar-items-wrapper flex flex-col gap-2 mb-6">
+          <!-- item -->
+          <button class="sidebar-item">
+            <svg class="size-5">
+              <use xlink:href="#setting-icon"></use>
+            </svg>
+            <span class="font-medium text-[16px]">Setting</span>
+          </button>
+          <!-- item -->
+          <button class="sidebar-item">
+            <svg class="size-5">
+              <use xlink:href="#logout-icon"></use>
+            </svg>
+            <span class="font-medium text-[16px]">Log Out</span>
+          </button>
+        </div>
+      </div>
+      <div
+        class="text-center rounded-[16px] border border-text-primary mt-4 gap-3 p-4"
+      >
+        <h4 class="text-text-primary text-[16px] font-bold">Admin Panel</h4>
+        <p class="mt-3 text-text-secondary text-sm">
+          Manage your NEXORA store from one place.
+        </p>
+      </div>
+    </aside>
+    <main class="w-full min-h-screen p-8">
+      <!-- header of main -->
+      <section class="flex items-center justify-between mb-10">
+        <!-- left -->
+        <div class="flex flex-col gap-3">
+          <h2 class="text-text-primary text-2xl font-bold">Dashboard</h2>
+          <p class="text-text-secondary text-sm">
+            Welcome back! Here's what's happening with your store.
+          </p>
+        </div>
+        <!-- right -->
+        <div class="flex items-center gap-5">
+          <a
+            href="#"
+            class="log-out-btn rounded-[10px] font-bold text-[16px] text-text-secondary flex items-center justify-center border px-4 py-2 gap-1 border-border hover:text-Accent-Primary hover:border-Accent-Primary transition cursor-pointer"
+          >
+            <svg class="size-4">
+              <use xlink:href="#right-top-arrow-icon"></use>
+            </svg>
+            View Store
+          </a>
+          <!-- profile wrapper -->
+          <div class="profile-wrapper flex items-center gap-3">
+            <span
+              class="rounded-full size-10 bg-linear-60 from-Accent-Primary to-Accent-Secondary flex items-center justify-center text-[20px] font-semibold text-text-primary"
+              >A</span
+            >
+            <span class="flex flex-col gap-0.5">
+              <span class="admin-name text-text-primary text-sm"
+                >Administrator</span
+              >
+              <span class="admin-role text-xs text-text-secondary"
+                >Super Admin</span
+              >
+            </span>
+          </div>
+        </div>
+      </section>
+      <!-- info wrapper -->
+      <section class="information">
+        <!-- wrapper -->
+        <div class="grid grid-cols-4 items-center gap-5">
+          <!-- item -->
+          <div
+            class="flex items-center flex-col border border-border bg-card-bg h-[170px] rounded-[10px] p-4"
+          >
+            <!-- top -->
+            <div class="flex items-center justify-between gap-x-3 w-full mb-4">
+              <p class="text-text-secondary text-[16px]">Total products</p>
+              <span
+                class="flex items-center justify-center rounded-[10px] bg-gray-800 size-10"
+              >
+                <svg class="size-6 text-green-500">
+                  <use xlink:href="#boxes-icon"></use></svg
+              ></span>
+            </div>
+            <!-- bottom -->
+            <div class="flex flex-col gap-3 w-full">
+              <span
+                class="total-procudt-number text-text-primary text-2xl font-bold"
+                >40</span
+              >
+              <span class="text-sm text-green-400">Products in your store</span>
+            </div>
+          </div>
+          <!-- item -->
+          <div
+            class="flex items-center flex-col border border-border bg-card-bg h-[170px] rounded-[10px] p-4"
+          >
+            <!-- top -->
+            <div class="flex items-center justify-between gap-x-3 w-full mb-4">
+              <p class="text-text-secondary text-[16px]">Total Orders</p>
+              <span
+                class="flex items-center justify-center rounded-[10px] bg-gray-800 size-10"
+              >
+                <svg class="size-6 text-yellow-300">
+                  <use xlink:href="#list-icon"></use></svg
+              ></span>
+            </div>
+            <!-- bottom -->
+            <div class="flex flex-col gap-3 w-full">
+              <span
+                class="total-orders-number text-text-primary text-2xl font-bold"
+                >128</span
+              >
+              <span class="text-sm text-green-400">+12% this month</span>
+            </div>
+          </div>
+          <!-- item -->
+          <div
+            class="flex items-center flex-col border border-border bg-card-bg h-[170px] rounded-[10px] p-4"
+          >
+            <!-- top -->
+            <div class="flex items-center justify-between gap-x-3 w-full mb-4">
+              <p class="text-text-secondary text-[16px]">Total Customers</p>
+              <span
+                class="flex items-center justify-center rounded-[10px] bg-gray-800 size-10"
+              >
+                <svg class="size-6 text-blue-500">
+                  <use xlink:href="#circle-user-icon"></use></svg
+              ></span>
+            </div>
+            <!-- bottom -->
+            <div class="flex flex-col gap-3 w-full">
+              <span
+                class="total-orders-number text-text-primary text-2xl font-bold"
+                >86</span
+              >
+              <span class="text-sm text-green-400">+8 new customers</span>
+            </div>
+          </div>
+          <!-- item -->
+          <div
+            class="flex items-center flex-col border border-border bg-card-bg h-[170px] rounded-[10px] p-4"
+          >
+            <!-- top -->
+            <div class="flex items-center justify-between gap-x-3 w-full mb-4">
+              <p class="text-text-secondary text-[16px]">Low Stock</p>
+              <span
+                class="flex items-center justify-center rounded-[10px] bg-gray-800 size-10"
+              >
+                <svg class="size-6 text-red-500">
+                  <use xlink:href="#alert-icon"></use></svg
+              ></span>
+            </div>
+            <!-- bottom -->
+            <div class="flex flex-col gap-3 w-full">
+              <span
+                class="total-orders-number text-text-primary text-2xl font-bold"
+                >5
+              </span>
+              <span class="text-sm text-yellow-500">Needs attention </span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- main content -->
+      <section class="flex flex-col mt-7">
+        <!-- top -->
+        <div class="flex gap-4">
+          <div
+            class="bg-card-bg w-full rounded-[10px] border border-border py-4"
+          >
+            <!-- header -->
+            <div
+              class="flex items-center justify-between gap-x-3 px-4 pb-5 border-b border-border"
+            >
+              <div class="flex flex-col gap-2">
+                <h4 class="text-text-primary text-[16px] font-bold">
+                  Recent Products
+                </h4>
+                <p class="text-text-secondary text-sm">
+                  Manage your store products
+                </p>
+              </div>
+              <button
+                class="add-product-btn flex items-center justify-center rounded-[10px] bg-green-500 text-text-primary text-sm font-bold p-3 cursor-pointer transition hover:-translate-y-1 hover:shadow-btn-green"
+              >
+                <svg class="size-5"><use xlink:href="#plus-icon"></use></svg>
+                Add Product
+              </button>
+            </div>
+            <!-- main -->
+            <div class="flex flex-col pt-5">
+              <!-- select wrapper -->
+              <div class="flex items-center justify-between gap-4 px-4">
+                <select
+                  name="category"
+                  id="products-category"
+                  class="w-full bg-bg-primary rounded-[10px] text-text-primary p-3 cursor-pointer"
+                >
+                  <option value="all-categories">All Categories</option>
+                  <option value="gaming">Gaming</option>
+                  <option value="laptops">Laptops</option>
+                  <option value="accessories">Accessories</option>
+                </select>
+                <select
+                  name="state"
+                  id="products-state"
+                  class="w-full bg-bg-primary rounded-[10px] text-text-primary p-3 cursor-pointer"
+                >
+                  <option value="all-states">All States</option>
+                  <option value="in-stock">In Stock</option>
+                  <option value="low-stock">Low Stock</option>
+                  <option value="out-of-stock">Out Of Stock</option>
+                </select>
+              </div>
+              <!-- info header -->
+              <div
+                class="grid grid-cols-[2.5fr_1fr_1fr_1fr_1.5fr] gap-3 bg-bg-primary px-5 py-3 mt-5"
+              >
+                <span class="text-text-secondary text-xs tracking-[2px]">
+                  PRODUCT</span
+                >
+                <span
+                  class="text-text-secondary text-xs tracking-[2px] text-center"
+                >
+                  PRICE</span
+                >
+                <span
+                  class="text-text-secondary text-xs tracking-[2px] text-center"
+                >
+                  STOCK</span
+                >
+                <span
+                  class="text-text-secondary text-xs tracking-[2px] text-center"
+                >
+                  STATUS</span
+                >
+                <span
+                  class="text-text-secondary text-xs text-center tracking-[2px]"
+                >
+                  ACTIONS</span
+                >
+              </div>
+              <!-- item wrapper -->
+              <div
+                class="flex flex-col child:border-b child:border-border child:py-5 child:px-4 child:grid child:gap-3 child:grid-cols-[2.5fr_1fr_1fr_1fr_1.5fr]"
+              >
+                <!-- item -->
+                <div class="">
+                  <div class="flex items-center gap-3">
+                    <!-- img wrapper -->
+                    <div
+                      class="size-10 rounded-[10px] bg-card-bg border border-blue-500 flex items-center justify-center"
+                    >
+                      <img src="" class="w-full h-full" alt="product-img" />
+                    </div>
+                    <!-- title wrapper -->
+                    <div class="flex flex-col gap-0.5 max-w-[135px] w-full">
+                      <a
+                        href="#"
+                        class="text-text-primary text-sm font-bold truncate"
+                      >
+                        ASUS ROG Strix G16
+                      </a>
+                      <p class="text-text-secondary text-xs">Gaming</p>
+                    </div>
+                  </div>
+                  <span class="text-text-primary text-sm text-center"
+                    >1,499$</span
+                  >
+                  <span class="text-text-primary text-sm text-center">14</span>
+                  <span
+                    class="px-2 py-2 rounded-[10px] bg-green-900/20 text-green-700 text-xs font-bold flex items-center justify-center"
+                    >In stock</span
+                  >
+                  <div class="flex items-center justify-center gap-2">
+                    <button
+                      class="size-8 rounded-[10px] bg-card-bg border border-border flex items-center justify-center text-text-secondary hover:border-Accent-Primary hover:text-Accent-Primary transition cursor-pointer"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#edit-icon"></use>
+                      </svg>
+                    </button>
+                    <button
+                      class="size-8 rounded-[10px] bg-card-bg border border-border flex items-center justify-center text-text-secondary transition hover:border-red-500 hover:text-red-500 cursor-pointer"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#trash-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+                <!-- item -->
+                <div class="">
+                  <div class="flex items-center gap-3">
+                    <!-- img wrapper -->
+                    <div
+                      class="size-10 rounded-[10px] bg-card-bg border border-blue-500 flex items-center justify-center"
+                    >
+                      <img src="" class="w-full h-full" alt="product-img" />
+                    </div>
+                    <!-- title wrapper -->
+                    <div class="flex flex-col gap-0.5 max-w-[135px] w-full">
+                      <a
+                        href="#"
+                        class="text-text-primary text-sm font-bold truncate"
+                      >
+                        ASUS ROG Strix G16
+                      </a>
+                      <p class="text-text-secondary text-xs">Gaming</p>
+                    </div>
+                  </div>
+                  <span class="text-text-primary text-sm text-center"
+                    >1,499$</span
+                  >
+                  <span class="text-text-primary text-sm text-center">14</span>
+                  <span
+                    class="px-2 py-2 rounded-[10px] bg-green-900/20 text-green-700 text-xs font-bold flex items-center justify-center"
+                    >In stock</span
+                  >
+                  <div class="flex items-center justify-center gap-2">
+                    <button
+                      class="size-8 rounded-[10px] bg-card-bg border border-border flex items-center justify-center text-text-secondary hover:border-Accent-Primary hover:text-Accent-Primary transition cursor-pointer"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#edit-icon"></use>
+                      </svg>
+                    </button>
+                    <button
+                      class="size-8 rounded-[10px] bg-card-bg border border-border flex items-center justify-center text-text-secondary transition hover:border-red-500 hover:text-red-500 cursor-pointer"
+                    >
+                      <svg class="size-4">
+                        <use xlink:href="#trash-icon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center pt-6 pb-3 px-4 mt-auto">
+                <p class="text-text-secondary text-sm">
+                  Showing <span class="text-text-primary font-bold">4</span> of
+                  <span class="text-text-primary font-bold">40</span> products
+                </p>
+                <!-- pagination -->
+                <div class="flex items-center justify-center gap-2 mx-auto">
+                  <span class="cms-pagination-item cms-pagination-item--active"
+                    >1</span
+                  >
+                  <span class="cms-pagination-item">2</span>
+                  <span class="cms-pagination-item">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="main-dashboard-modal-screen hidden"></div>
+    <div class="main-dashboard-overlay hidden"></div>
+    <script src="dashboard.js"></script>
+  </body>
+</html>
