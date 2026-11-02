@@ -10,10 +10,12 @@
     class="min-h-screen relative flex items-center justify-center bg-[#080d1b] p-7.5"
   >
     <div
-      class="wrapper flex items-center w-full max-w-262.5 h-[738px] overflow-hidden rounded-2xl border border-border"
+      class="wrapper flex w-full max-w-262.5 overflow-hidden rounded-2xl border border-border"
     >
       <!-- left -->
-      <section class="w-[50%] h-full bg-bg-secondary px-15 py-[55px]">
+      <section
+        class="w-full md:w-[50%] h-full bg-bg-secondary p-5 sm:px-15 py-[55px]"
+      >
         <!-- logo -->
         <div class="logo-of-page mb-[65px]">
           <h1 class="text-Accent-Primary text-[28px] font-bold tracking-[6px]">
@@ -61,7 +63,9 @@
           />
         </div>
         <!-- footer -->
-        <div class="flex items-center justify-between mb-10">
+        <div
+          class="flex flex-col sm:flex-row gap-3 items-center justify-between mb-10"
+        >
           <span class="flex items-center gap-2">
             <input type="checkbox" id="remember-me" required />
             <label for="remember-me" class="text-text-primary text-sm"
@@ -83,8 +87,9 @@
       </section>
       <!-- right -->
       <section
-        class="log-in-right-wrapper overflow-hidden w-[50%] h-full relative bg-bg-secondary px-15 py-[55px] border-l border-border"
+        class="log-in-right-wrapper hidden md:block overflow-hidden w-[50%] relative bg-bg-secondary px-15 py-[55px] border-l border-border"
       >
+
         <!-- circle -->
         <div
           class="size-95 absolute rounded-full border border-Accent-Primary/40 flex items-center justify-center inset-0 m-auto"

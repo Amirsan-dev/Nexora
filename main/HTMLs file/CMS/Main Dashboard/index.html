@@ -279,77 +279,91 @@
     </svg>
     <!-- dashboard panel -->
     <aside
-      class="sidebar w-[20%] min-h-screen border-r border-border bg-bg-secondary flex flex-col p-8"
+      class="sidebar w-25 lg:w-60 shrink-0 min-h-screen border-r border-border bg-bg-secondary flex flex-col py-8 px-4"
     >
       <h1
-        class="text-Accent-Primary text-3xl tracking-[6px] font-bold mb-[45px]"
+        class="hidden lg:block text-Accent-Primary text-3xl tracking-[6px] font-bold mb-[45px]"
       >
         NEXORA
       </h1>
-      <span class="text-text-secondary text-[16px] mb-4">Main Menu </span>
+      <h1
+        class="block lg:hidden text-center text-Accent-Primary text-3xl tracking-[6px] font-bold mb-[45px]"
+      >
+        N.
+      </h1>
+      <span class="text-text-secondary text-xs lg:text-[16px] mb-4"
+        >Main Menu
+      </span>
       <!-- sidebar item wrapper -->
       <div class="sidebar-items-wrapper flex flex-col gap-2 mb-6">
         <!-- item -->
         <a
           href="../Main Dashboard/index.html"
-          class="sidebar-item sidebar-item--active"
+          class="sidebar-item sidebar-item--active justify-center lg:justify-start"
         >
           <svg class="size-5">
             <use xlink:href="#dashboard"></use>
           </svg>
-          <span class="font-medium text-[16px]">Dashboard</span>
+          <span class="hidden lg:block font-medium text-[16px]">Dashboard</span>
         </a>
         <!-- item -->
-        <a href="../ProductsPage/index.html" class="sidebar-item">
+        <a
+          href="../ProductsPage/index.html"
+          class="sidebar-item justify-center lg:justify-start"
+        >
           <svg class="size-5">
             <use xlink:href="#products-icon"></use>
           </svg>
-          <span class="font-medium text-[16px]">Products</span>
+          <span class="hidden lg:block font-medium text-[16px]">Products</span>
         </a>
         <!-- item -->
-        <button class="sidebar-item">
+        <a href="#" class="sidebar-item justify-center lg:justify-start">
           <svg class="size-5">
             <use xlink:href="#categories-icon"></use>
           </svg>
-          <span class="font-medium text-[16px]">Categories</span>
-        </button>
+          <span class="hidden lg:block font-medium text-[16px]"
+            >Categories</span
+          >
+        </a>
         <!-- item -->
-        <button class="sidebar-item">
+        <a href="#" class="sidebar-item justify-center lg:justify-start">
           <svg class="size-5">
             <use xlink:href="#basket-icon"></use>
           </svg>
-          <span class="font-medium text-[16px]">Orders</span>
-        </button>
+          <span class="hidden lg:block font-medium text-[16px]">Orders</span>
+        </a>
         <!-- item -->
-        <button class="sidebar-item">
+        <a href="#" class="sidebar-item justify-center lg:justify-start">
           <svg class="size-5">
             <use xlink:href="#users-icon"></use>
           </svg>
-          <span class="font-medium text-[16px]">Users</span>
-        </button>
+          <span class="hidden lg:block font-medium text-[16px]">Users</span>
+        </a>
       </div>
       <!-- system wrapper -->
       <div class="flex flex-col">
-        <span class="text-text-secondary text-[16px] mb-4">System</span>
+        <span class="text-text-secondary text-xs lg:text-[16px] mb-4"
+          >System</span
+        >
         <div class="sidebar-items-wrapper flex flex-col gap-2 mb-6">
           <!-- item -->
-          <button class="sidebar-item">
+          <a href="#" class="sidebar-item justify-center lg:justify-start">
             <svg class="size-5">
               <use xlink:href="#setting-icon"></use>
             </svg>
-            <span class="font-medium text-[16px]">Setting</span>
-          </button>
+            <span class="hidden lg:block font-medium text-[16px]">Setting</span>
+          </a>
           <!-- item -->
-          <button class="sidebar-item">
+          <a href="#" class="sidebar-item justify-center lg:justify-start">
             <svg class="size-5">
               <use xlink:href="#logout-icon"></use>
             </svg>
-            <span class="font-medium text-[16px]">Log Out</span>
-          </button>
+            <span class="hidden lg:block font-medium text-[16px]">Log Out</span>
+          </a>
         </div>
       </div>
       <div
-        class="text-center rounded-[16px] border border-text-primary mt-4 gap-3 p-4"
+        class="hidden lg:block text-center rounded-[16px] border border-text-primary mt-4 gap-3 p-4"
       >
         <h4 class="text-text-primary text-[16px] font-bold">Admin Panel</h4>
         <p class="mt-3 text-text-secondary text-sm">
@@ -357,9 +371,9 @@
         </p>
       </div>
     </aside>
-    <main class="w-full min-h-screen p-8">
+    <main class="flex-1 min-w-0 min-h-screen p-4 md:p-6 lg:p-8">
       <!-- header of main -->
-      <section class="flex items-center justify-between mb-10">
+      <section class="flex items-center justify-between gap-3 mb-10">
         <!-- left -->
         <div class="flex flex-col gap-3">
           <h2 class="text-text-primary text-2xl font-bold">Dashboard</h2>
@@ -371,7 +385,7 @@
         <div class="flex items-center gap-5">
           <a
             href="#"
-            class="log-out-btn rounded-[10px] font-bold text-[16px] text-text-secondary flex items-center justify-center border px-4 py-2 gap-1 border-border hover:text-Accent-Primary hover:border-Accent-Primary transition cursor-pointer"
+            class="hidden log-out-btn rounded-[10px] font-bold text-[13px] text-text-secondary md:flex items-center justify-center border px-2 lg:px-4 py-2 gap-1 border-border hover:text-Accent-Primary hover:border-Accent-Primary transition cursor-pointer"
           >
             <svg class="size-4">
               <use xlink:href="#right-top-arrow-icon"></use>
@@ -398,7 +412,9 @@
       <!-- info wrapper -->
       <section class="information">
         <!-- wrapper -->
-        <div class="grid grid-cols-4 items-center gap-5">
+        <div
+          class="grid grid-cols-1 middle:grid-cols-2 lg:grid-cols-4 items-center gap-5"
+        >
           <!-- item -->
           <div
             class="flex items-center flex-col border border-border bg-card-bg h-[170px] rounded-[10px] p-4"

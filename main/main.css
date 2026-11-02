@@ -26,6 +26,7 @@
   --text-shadow-high: 0 0 18px rgba(0, 212, 255, 0.9);
 
   --breakpoint-sm: 480px;
+  --breakpoint-middle: 605px;
 }
 
 body {

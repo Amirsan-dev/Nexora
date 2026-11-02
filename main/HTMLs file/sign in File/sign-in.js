@@ -11,7 +11,7 @@ const GoIntoDashboard = () => {
 
   if (passwordValue === "admin" && userEmailValue === "admin") {
     window.location.replace(
-      "http://127.0.0.1:5500/main/HTMLs%20file/Dashboard%20File/index.html",
+      "http://127.0.0.1:5500/main/HTMLs%20file/CMS/Main%20Dashboard/index.html",
     );
   } else {
     modalScreen.classList.remove("hidden");
@@ -29,6 +29,3 @@ const closeModalScreen = () => {
 
 logInBtn.addEventListener("click", GoIntoDashboard);
 confirmBtn.addEventListener("click", closeModalScreen);
-
-
-
